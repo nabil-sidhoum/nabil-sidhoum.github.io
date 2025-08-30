@@ -1,0 +1,39 @@
+﻿@using BlazorPortfolio.Client.Models
+@code {
+    [Parameter]
+    public Experience Experience { get; set; } = new();
+}
+
+
+<div class="card">
+    <div class="header">
+        <div class="logo">
+            <img src="@Experience.Logo" alt="Logo">
+        </div>
+        <div class="title">
+            <h3>@Experience.Poste</h3>
+            <p>@Experience.Lieu</p>
+            <span class="badge">
+                @Experience.DateDebut.ToString("MMMM yyyy") - @(Experience.DateFin?.ToString("MMMM yyyy") ?? "Aujourd’hui")
+            </span>
+        </div>
+    </div>
+    <div class="content">
+        <ul>
+            @foreach (var description in Experience.Descriptions)
+            {
+                <li>@description</li>
+            }
+        </ul>
+        <br />
+        <div>
+            @foreach (var skill in Experience.Competences)
+            {
+                <span class="badge">@skill</span>
+            }
+
+        </div>
+    </div>
+</div>
+<br />
+

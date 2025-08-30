@@ -1,0 +1,38 @@
+﻿@using BlazorPortfolio.Client.Components
+@using Microsoft.AspNetCore.Components.Routing
+
+<div class="sidebar @(isOpen ? "open" : "")">
+    <div class="profile">
+        <img src="images/avatar.jpg" alt="Photo de profil" />
+        <h2 class="name">Nabil Sidhoum</h2>
+        <p class="title">Architecte Logiciel .NET</p>
+    </div>
+    <hr />
+    <nav class="nav-links">
+        <NavLink href="" Match="NavLinkMatch.All" class="nav-link" activeClass="active">
+            <i class="bi bi-house"></i> Accueil
+        </NavLink>
+        <NavLink href="experiences" class="nav-link" activeClass="active">
+            <i class="bi bi-briefcase"></i> Expériences
+        </NavLink>
+        <NavLink href="educations" class="nav-link" activeClass="active">
+            <i class="bi bi-mortarboard"></i> Formations
+        </NavLink>
+    </nav>
+</div>
+
+<!-- Topbar pour mobile -->
+<div class="topbar d-md-none">
+    <button @onclick="ToggleMenu" class="menu-toggle">
+        <i class="bi bi-list"></i>
+    </button>
+</div>
+
+@code {
+    private bool isOpen = false;
+
+    private void ToggleMenu()
+    {
+        isOpen = !isOpen;
+    }
+}

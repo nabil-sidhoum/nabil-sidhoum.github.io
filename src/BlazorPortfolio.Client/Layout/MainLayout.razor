@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+<!-- Top Button -->
+<button id="topbtn" title="Go to top"><i class="bi bi-arrow-bar-up"></i></button>
+<!-- End Top Button -->
+
+<div class="bgrd-screen">
+    <div class="bgrd-opacity">
+        <div class="layout-wrapper d-flex">
+            <NavMenu />
+
+            <main class="main-content flex-fill">
+                @Body
+            </main>
+        </div>
+    </div>
+</div>

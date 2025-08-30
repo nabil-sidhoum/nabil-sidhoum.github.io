@@ -1,0 +1,31 @@
+name: Deploy Blazor to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]   # déclenchement sur chaque push sur main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Récupérer ton code source
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Installer .NET 8
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      # Compiler et publier Blazor
+      - name: Publish
+        run: dotnet publish src/BlazorPortfolio.Client/BlazorPortfolio.Client.csproj -c Release -o build
+
+      # Déployer le contenu du wwwroot généré vers GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/wwwroot

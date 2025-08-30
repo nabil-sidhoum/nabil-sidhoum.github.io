@@ -1,0 +1,52 @@
+﻿.name {
+    font-size: 6rem;
+    font-weight: 900;
+    background: var(--portfoliosecondarycolor);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: var(--portfoliosecondarycolor);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--portfolioboxshadow);
+    padding: 2vmin;
+    width: 100%;
+    color: var(--portfoliosecondarycolor);
+    padding: 5vmin 5vmin;
+    letter-spacing: 0.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    font-weight: 400;
+    border-top: 4px solid var(--portfoliosecondarycolor);
+    margin: 0 5vmin ;
+    width: initial;
+}
+
+.description-title {
+    position: relative;
+    font-size: 1.5rem;
+    background: var(--portfoliotertiarycolor);
+    border-radius: 12px;
+    color: white;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    font-weight: bolder;
+    width: fit-content;
+    padding: 1vmin 10vmax;
+    margin: auto;
+    bottom: -1.2rem;
+}

@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@inject NavigationManager NavManager
+
+<a href="@Href"
+   class="custom-nav @(Class) @(IsActive? ActiveClass : null)"
+   @onclick="HandleClick">
+    @ChildContent
+</a>
+
+@code {
+    [Parameter] public string Href { get; set; } = "/";
+    [Parameter] public string Class { get; set; } = "custom-nav-link";
+    [Parameter] public string ActiveClass { get; set; } = "active";
+    [Parameter] public NavLinkMatch Match { get; set; } = NavLinkMatch.Prefix;
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    private string ComputedCssClass => IsActive ? $"{Class} {ActiveClass}" : Class;
+
+    private bool IsActive =>
+        Match == NavLinkMatch.All
+        ? NormalizeUri(NavManager.Uri) == NormalizeUri(NavManager.ToAbsoluteUri(Href).ToString())
+        : NormalizeUri(NavManager.Uri).StartsWith(NormalizeUri(NavManager.ToAbsoluteUri(Href).ToString()));
+
+    private string NormalizeUri(string uri) =>
+        uri.TrimEnd('/').ToLowerInvariant();
+
+    private void HandleClick(MouseEventArgs e)
+    {
+    }
+}

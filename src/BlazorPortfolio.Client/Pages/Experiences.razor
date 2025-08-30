@@ -1,0 +1,27 @@
+﻿@page "/experiences"
+@inject ExperienceService ExperienceService
+@using BlazorPortfolio.Client.Components
+@using BlazorPortfolio.Client.Models
+@using BlazorPortfolio.Client.Services
+
+<h2 class="title"><i class="bi bi-briefcase-fill"></i> Expériences</h2>
+@if (experiences == null)
+{
+    <p>Chargement des expériences...</p>
+}
+else
+{
+    @foreach (var exp in experiences)
+    {
+        <ExperienceCard Experience="exp" />
+    }
+}
+
+@code {
+    private List<Experience> experiences;
+
+    protected override async Task OnInitializedAsync()
+    {
+        experiences = await ExperienceService.GetExperiencesAsync();
+    }
+}

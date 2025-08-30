@@ -1,0 +1,28 @@
+﻿@page "/educations"
+@inject EducationService EducationService
+@using BlazorPortfolio.Client.Components
+@using BlazorPortfolio.Client.Models
+@using BlazorPortfolio.Client.Services
+
+<h2 class="title"><i class="bi bi-mortarboard"></i> Formations</h2>
+
+@if (educations == null)
+{
+    <p>Chargement des formations...</p>
+}
+else
+{
+    @foreach (var school in educations)
+    {
+        <EducationCard Education="school" />
+    }
+}
+
+@code {
+    private List<Education> educations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        educations = await EducationService.GetEducationsAsync();
+    }
+}

@@ -15,7 +15,7 @@ Bienvenue sur le dépôt de mon **portfolio en ligne**, développé avec **Blazo
 ---
 
 ## 📂 Organisation
-- `src/Portfolio` → Code source Blazor
+- `src/BlazorPortfolio.Client` → Code source Blazor
 - `.github/workflows/deploy.yml` → Pipeline CI/CD
 - `README.md` → Présentation du projet
 

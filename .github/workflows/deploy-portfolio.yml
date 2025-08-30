@@ -2,30 +2,38 @@ name: Deploy Blazor to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]   # déclenchement sur chaque push sur main
+    branches: [ "main" ]   # Déclenchement sur chaque push sur main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 👈 Donne les droits d'écriture au GITHUB_TOKEN
 
     steps:
-      # Récupérer ton code source
+      # 1. Récupérer le code source
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Installer .NET 8
+      # 2. Installer .NET 8
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
-      # Compiler et publier Blazor
+      # 3. Publier Blazor
       - name: Publish
         run: dotnet publish src/BlazorPortfolio.Client/BlazorPortfolio.Client.csproj -c Release -o build
 
-      # Déployer le contenu du wwwroot généré vers GitHub Pages
+      # 4. Corriger le chemin de base Blazor pour GitHub Pages
+      - name: Update base href
+        run: |
+          sed -i 's/<base href="\/" \/>/<base href="\/nabil-sidhoum.github.io\/" \/>/' build/wwwroot/index.html
+
+      # 5. Déployer vers GitHub Pages (branche gh-pages)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/wwwroot
+          publish_branch: gh-pages   # 👈 Branche utilisée pour GitHub Pages

@@ -1,6 +1,9 @@
 ﻿using BlazorPortfolio.Client.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 
 namespace BlazorPortfolio.Client.Data
 {
@@ -14,7 +17,7 @@ namespace BlazorPortfolio.Client.Data
             model.AddRange(GetSoftFluentExperiences());
             model.AddRange(GetCapgeminiExperiences());
 
-            return model;
+            return model.OrderByDescending(exp => exp.DateDebut).ToList();
         }
 
         public static List<Experience> GetIRBISExperiences()
@@ -23,6 +26,39 @@ namespace BlazorPortfolio.Client.Data
 
             List<Experience> model =
             [
+                new Experience
+                {
+                    Societe = "IRBIS",
+                    Logo = irbisLogo,
+                    Poste = "Directeur technique",
+                    Lieu = "Paris 08, Île-de-France",
+                    DateDebut = new DateTime(2025, 1, 1),
+                    Descriptions =
+                    [
+                        "Conduite d'un refonte UX/UI.",
+                        "Mise en place d’une démarche DevSecOps dans Azure DevOps afin d’intégrer la sécurité et l’analyse de code (via IntelliSense) directement dans les pipelines CI/CD.",
+                        "Refonte et unification des pipelines de déploiement pour fiabiliser et automatiser la livraison des projets.",
+                        "Création d’un repository NuGet interne permettant de mutualiser et de standardiser les outils et librairies maison.",
+                        "Introduction du versioning SemVer afin de garantir la traçabilité des versions, la compatibilité ascendante et une gestion plus professionnelle des livrables."
+                    ],
+                    Competences =
+                    [
+                        ".NET 8",
+                        "Clean Architecture",
+                        "ASP.NET Core MVC",
+                        "Entity Framework Core",
+                        "ASP.NET Core Identity",
+                        "CRM Dynamics",
+                        "Hangfire",
+                        "Swagger",
+                        "PuppeteerSharp",
+                        "SQL Server",
+                        "Revue de code",
+                        "Gestion d’équipe",
+                        "Gestion de projet",
+                        "Leadership technique",
+                    ]
+                },
                 new Experience
                 {
                     Societe = "IRBIS",
@@ -50,6 +86,7 @@ namespace BlazorPortfolio.Client.Data
                         "CRM Dynamics",
                         "Hangfire",
                         "Swagger",
+                        "PuppeteerSharp",
                         "SQL Server",
                         "Revue de code",
                         "Gestion d’équipe",
@@ -82,6 +119,7 @@ namespace BlazorPortfolio.Client.Data
                         "CRM Dynamics",
                         "Hangfire",
                         "Swagger",
+                        "SelectPDF",
                         "SQL Server",
                         "Revue de code",
                         "Gestion d’équipe",
@@ -113,7 +151,8 @@ namespace BlazorPortfolio.Client.Data
                         "ASP.NET Core Identity",
                         "CRM Dynamics",
                         "Hangfire",
-                        "Swagger",
+                        "Swagger",  
+                        "SelectPDF",
                         "SQL Server",
                         "Revue de code",
                         "Gestion d’équipe"
@@ -143,6 +182,7 @@ namespace BlazorPortfolio.Client.Data
                         "Entity Framework",
                         "ASP.NET Identity",
                         "Hangfire",
+                        "SelectPDF",
                         "SQL Server"
                     ]
                 }
@@ -204,7 +244,8 @@ namespace BlazorPortfolio.Client.Data
                         "Entity Framework",
                         "ASP.NET Identity",
                         "SQL Server",
-                        "Hangfire"
+                        "Hangfire", 
+                        "SelectPDF"
                     ]
                 },
                 new Experience
@@ -255,7 +296,8 @@ namespace BlazorPortfolio.Client.Data
                         "Entity Framework",
                         "ASP.NET Identity",
                         "SQL Server",
-                        "Hangfire"
+                        "Hangfire",
+                        "SelectPDF"
                     ]
                 },
                 new Experience

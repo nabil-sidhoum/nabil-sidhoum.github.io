@@ -1,0 +1,21 @@
+.title {
+    font-size: 2.7rem;
+    color: var(--portfoliosecondarycolor);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

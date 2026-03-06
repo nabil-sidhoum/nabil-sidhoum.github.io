@@ -1,0 +1,30 @@
+@page "/projects"
+@inject ProjectService ProjectService
+@using BlazorPortfolio.Client.Components
+@using BlazorPortfolio.Client.Models
+@using BlazorPortfolio.Client.Services
+
+<h2 class="title"><i class="bi bi-code-slash"></i> Projets</h2>
+
+@if (projects == null)
+{
+    <p>Chargement des projets...</p>
+}
+else
+{
+    <div class="projects-grid">
+        @foreach (var project in projects)
+        {
+            <ProjectCard Project="project" />
+        }
+    </div>
+}
+
+@code {
+    private List<Project> projects;
+
+    protected override async Task OnInitializedAsync()
+    {
+        projects = await ProjectService.GetProjectsAsync();
+    }
+}

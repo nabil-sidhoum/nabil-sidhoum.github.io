@@ -53,11 +53,22 @@
 
 /* Skills section */
 .skills-section {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .skills-title {
-    margin-bottom: 1.5rem;
+    position: relative;
+    font-size: 1.5rem;
+    background: var(--portfoliotertiarycolor);
+    border-radius: 12px;
+    color: white;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    font-weight: bolder;
+    width: fit-content;
+    padding: 1vmin 10vmax;
+    margin: auto;
+    bottom: -1.2rem;
 }
 
 .skills-grid {

@@ -20,6 +20,7 @@ namespace BlazorPortfolio.Client
 
             builder.Services.AddScoped<ExperienceService>();
             builder.Services.AddScoped<EducationService>();
+            builder.Services.AddScoped<ProjectService>();
 
             await builder.Build().RunAsync();
         }

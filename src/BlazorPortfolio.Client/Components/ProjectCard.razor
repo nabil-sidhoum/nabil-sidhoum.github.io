@@ -1,0 +1,43 @@
+@using BlazorPortfolio.Client.Models
+@code {
+    [Parameter]
+    public Project Project { get; set; } = new();
+}
+
+<div class="card">
+    <div class="project-header">
+        <div class="project-icon" style="background-color: @Project.IconColor">
+            <i class="@Project.IconClass"></i>
+        </div>
+        <div class="project-meta">
+            <h3 class="project-title">@Project.Nom</h3>
+            <div class="project-badges">
+                @foreach (var skill in Project.Competences.Take(3))
+                {
+                    <span class="badge badge-lang">@skill</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <p class="project-desc">@Project.Description</p>
+
+    <div class="project-features">
+        @foreach (var feature in Project.Fonctionnalites)
+        {
+            <span class="feature"><i class="bi bi-check2"></i> @feature</span>
+        }
+    </div>
+
+    <div class="project-footer">
+        <a href="@Project.GithubUrl" target="_blank" class="project-link">
+            <i class="bi bi-github"></i> Voir le code
+        </a>
+        @if (Project.ExtraUrl != null)
+        {
+            <a href="@Project.ExtraUrl" target="_blank" class="project-link project-link-extra">
+                <i class="bi bi-box-seam"></i> @Project.ExtraLabel
+            </a>
+        }
+    </div>
+</div>

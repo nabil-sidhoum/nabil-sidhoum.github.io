@@ -1,18 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
-using BlazorPortfolio.Client.Data;
 using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Services
 {
     public class ExperienceService
     {
-        public async Task<List<Experience>> GetExperiencesAsync()
-        {
-            // Simule un appel asynchrone (comme une vraie API)
-            await Task.Delay(500);
+        private readonly HttpClient _client;
 
-            return ExperienceData.GetExperiences();
+        public ExperienceService(HttpClient client)
+        {
+            _client = client;
+        }
+
+        public Task<List<Experience>> GetExperiencesAsync()
+        {
+            return _client.GetFromJsonAsync<List<Experience>>("data/experiences.json")
+                ?? Task.FromResult(new List<Experience>());
         }
     }
 }

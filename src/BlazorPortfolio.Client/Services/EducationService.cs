@@ -1,18 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
-using BlazorPortfolio.Client.Data;
 using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Services
 {
     public class EducationService
     {
-        public async Task<List<Education>> GetEducationsAsync()
-        {
-            // Simule un appel asynchrone (comme une vraie API)
-            await Task.Delay(500);
+        private readonly HttpClient _client;
 
-            return EducationData.GetEducations();
+        public EducationService(HttpClient client)
+        {
+            _client = client;
+        }
+
+        public Task<List<Education>> GetEducationsAsync()
+        {
+            return _client.GetFromJsonAsync<List<Education>>("data/educations.json")
+                ?? Task.FromResult(new List<Education>());
         }
     }
 }

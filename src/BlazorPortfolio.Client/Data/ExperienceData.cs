@@ -1,7 +1,7 @@
-using BlazorPortfolio.Client.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Data
 {
@@ -149,7 +149,7 @@ namespace BlazorPortfolio.Client.Data
                         "ASP.NET Core Identity",
                         "CRM Dynamics",
                         "Hangfire",
-                        "Swagger",  
+                        "Swagger",
                         "SelectPDF",
                         "SQL Server",
                         "Revue de code",
@@ -242,7 +242,7 @@ namespace BlazorPortfolio.Client.Data
                         "Entity Framework",
                         "ASP.NET Identity",
                         "SQL Server",
-                        "Hangfire", 
+                        "Hangfire",
                         "SelectPDF"
                     ]
                 },

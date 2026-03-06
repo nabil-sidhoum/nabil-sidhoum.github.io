@@ -10,7 +10,7 @@ namespace BlazorPortfolio.Client.Models
         public string Diploma { get; set; } = "";
         public string Domain { get; set; } = "";
         public DateTime StartDate { get; set; }
-        public DateTime? EndDate { get; set; }  
+        public DateTime? EndDate { get; set; }
         public List<string> Descriptions { get; set; } = [];
     }
 }

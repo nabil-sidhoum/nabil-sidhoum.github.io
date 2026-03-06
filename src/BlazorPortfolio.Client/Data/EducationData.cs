@@ -1,6 +1,6 @@
-﻿using BlazorPortfolio.Client.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Data
 {

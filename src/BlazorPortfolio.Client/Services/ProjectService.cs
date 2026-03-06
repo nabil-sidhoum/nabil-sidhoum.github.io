@@ -1,15 +1,16 @@
-using BlazorPortfolio.Client.Data;
-using BlazorPortfolio.Client.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BlazorPortfolio.Client.Data;
+using BlazorPortfolio.Client.Models;
 
-namespace BlazorPortfolio.Client.Services;
-
-public class ProjectService
+namespace BlazorPortfolio.Client.Services
 {
-    public async Task<List<Project>> GetProjectsAsync()
+    public class ProjectService
     {
-        await Task.Delay(500);
-        return ProjectData.GetProjects();
+        public async Task<List<Project>> GetProjectsAsync()
+        {
+            await Task.Delay(500);
+            return ProjectData.GetProjects();
+        }
     }
 }

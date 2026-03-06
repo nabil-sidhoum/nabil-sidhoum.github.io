@@ -1,5 +1,5 @@
-using BlazorPortfolio.Client.Models;
 using System.Collections.Generic;
+using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Data
 {
@@ -11,7 +11,7 @@ namespace BlazorPortfolio.Client.Data
             [
                 new Project
                 {
-                    Nom = "DynamicsCrmConnector",
+                    Nom = "Dynamics CRM Connector",
                     IconClass = "bi bi-plug-fill",
                     IconColor = "#0078D4",
                     Description = "Connecteur HTTP asynchrone pour interagir avec l'API Web OData de Microsoft Dynamics CRM depuis une application .NET Core. Authentification sécurisée via ClientId / SecretId, injection de dépendance intégrée et gestion complète des opérations CRUD.",
@@ -30,7 +30,7 @@ namespace BlazorPortfolio.Client.Data
                 },
                 new Project
                 {
-                    Nom = "OpenstackSwiftConnector",
+                    Nom = "Openstack Swift Connector",
                     IconClass = "bi bi-cloud-arrow-up-fill",
                     IconColor = "#E95420",
                     Description = "Connecteur HTTP asynchrone pour l'API REST OpenStack Swift, conçu pour interagir avec un espace de stockage objet hébergé chez OVH. Configuration via appsettings.json, injection de dépendance native et renouvellement automatique des tokens.",

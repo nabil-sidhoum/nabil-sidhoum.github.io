@@ -225,6 +225,141 @@
         margin-top: 8px;
     }
 }
+/* /Components/ProjectCard.razor.rz.scp.css */
+.card[b-tax0qkm4es] {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: var(--portfolioboxshadow);
+    border-top: 4px solid var(--portfolioprimarycolor);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+    .card:hover[b-tax0qkm4es] {
+        transform: translateY(-3px);
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+.project-header[b-tax0qkm4es] {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.project-icon[b-tax0qkm4es] {
+    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.project-meta[b-tax0qkm4es] {
+    flex: 1;
+}
+
+.project-title[b-tax0qkm4es] {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 0.5rem 0;
+}
+
+.project-badges[b-tax0qkm4es] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.badge[b-tax0qkm4es] {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    letter-spacing: 0.03rem;
+}
+
+.badge-lang[b-tax0qkm4es] {
+    background: #EBF3FB;
+    color: #1F4E79;
+    border: 1px solid #BDD7EE;
+}
+
+.project-desc[b-tax0qkm4es] {
+    font-size: 0.95rem;
+    color: #4A5568;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.project-features[b-tax0qkm4es] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.feature[b-tax0qkm4es] {
+    font-size: 0.88rem;
+    color: #2C3E50;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.5;
+}
+
+    .feature i[b-tax0qkm4es] {
+        color: var(--portfolioprimarycolor);
+        font-size: 0.95rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+    }
+
+.project-footer[b-tax0qkm4es] {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid #EDF2F7;
+    flex-wrap: wrap;
+}
+
+.project-link[b-tax0qkm4es] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background: var(--portfolioprimarycolor);
+    color: white;
+}
+
+    .project-link:hover[b-tax0qkm4es] {
+        background: #163A5F;
+        color: white;
+        transform: translateY(-1px);
+    }
+
+.project-link-extra[b-tax0qkm4es] {
+    background: #F59E0B;
+    color: white;
+}
+
+    .project-link-extra:hover[b-tax0qkm4es] {
+        background: #D97706;
+        color: white;
+    }
 /* /Layout/MainLayout.razor.rz.scp.css */
 
 .bgrd-screen[b-xf42p4le1w] {
@@ -478,11 +613,22 @@
 
 /* Skills section */
 .skills-section[b-s1pa21lcn1] {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .skills-title[b-s1pa21lcn1] {
-    margin-bottom: 1.5rem;
+    position: relative;
+    font-size: 1.5rem;
+    background: var(--portfoliotertiarycolor);
+    border-radius: 12px;
+    color: white;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    font-weight: bolder;
+    width: fit-content;
+    padding: 1vmin 10vmax;
+    margin: auto;
+    bottom: -1.2rem;
 }
 
 .skills-grid[b-s1pa21lcn1] {
@@ -527,6 +673,28 @@
 
 @media (max-width: 480px) {
     .skills-grid[b-s1pa21lcn1] {
+        grid-template-columns: 1fr;
+    }
+}
+/* /Pages/Projects.razor.rz.scp.css */
+.title[b-hk1d1hrxuq] {
+    font-size: 2.7rem;
+    color: var(--portfoliosecondarycolor);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+.projects-grid[b-hk1d1hrxuq] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid[b-hk1d1hrxuq] {
         grid-template-columns: 1fr;
     }
 }

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazorPortfolio.Client",
   "resources": {
-    "hash": "sha256-ESDSM/RVWccxEILprGI/idhxPJX+kUAUK2rbBxNR2d0=",
+    "hash": "sha256-BnvKliVfYZlwvDHVlzPWZ+/xlY8pH9J9i+ibsiPm0nE=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-NljIbpK/1KCj0+knpX8U77Rbl5kTtfFIuFjK7AuczEw="
     },
@@ -48,7 +48,7 @@
       "System.Text.Json.wasm": "sha256-1KgIAMAl2smt63FtxqMONS0r7ox8LJZ7eD4HpHMyFeQ=",
       "System.Text.RegularExpressions.wasm": "sha256-nE7XCiyeCswUnRGdXOQvcHP+XMWXcToACrazpZlocBI=",
       "System.Private.CoreLib.wasm": "sha256-AaJfEM0Bpa+K0dkQNBXlKCRDNb6SO2k56+vOSueKoj0=",
-      "BlazorPortfolio.Client.wasm": "sha256-z9TPFBIGi/du9k3vm9YYFFvrYCrw3r6j26eIpeWSGVc="
+      "BlazorPortfolio.Client.wasm": "sha256-2k0hTz/wYssLhmfPS+epxPywE0s5zEc3Ofq34+CQioY="
     }
   },
   "cacheBootResources": true,

@@ -1,4 +1,4 @@
-﻿.name {
+.name {
     font-size: 6rem;
     font-weight: 900;
     background: var(--portfoliosecondarycolor);
@@ -25,13 +25,13 @@
     box-shadow: var(--portfolioboxshadow);
     padding: 2vmin;
     width: 100%;
-    color: var(--portfoliosecondarycolor);
+    color: #2C3E50;
     padding: 5vmin 5vmin;
     letter-spacing: 0.05rem;
     line-height: 1.8;
     text-align: justify;
     font-weight: 400;
-    border-top: 4px solid var(--portfoliosecondarycolor);
+    border-top: 4px solid var(--portfolioprimarycolor);
     margin: 0 5vmin ;
     width: initial;
 }
@@ -49,4 +49,59 @@
     padding: 1vmin 10vmax;
     margin: auto;
     bottom: -1.2rem;
+}
+
+/* Skills section */
+.skills-section {
+    margin-top: 3rem;
+}
+
+.skills-title {
+    margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0 5vmin;
+    margin-top: 1.5rem;
+}
+
+.skill-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: var(--portfolioboxshadow);
+    border-left: 4px solid var(--portfolioprimarycolor);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2C3E50;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 16px rgba(0,0,0,0.15);
+}
+
+.skill-card i {
+    font-size: 1.4rem;
+    color: var(--portfolioprimarycolor);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -1,4 +1,4 @@
-﻿using BlazorPortfolio.Client.Models;
+using BlazorPortfolio.Client.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -414,7 +414,7 @@ namespace BlazorPortfolio.Client.Data
                     Poste = "Consultant stagiaire Dynamics CRM",
                     Lieu = "Suresnes, Île-de-France, France",
                     DateDebut = new DateTime(2015, 3, 1),
-                    DateFin = new DateTime(2017, 8, 31),
+                    DateFin = new DateTime(2015, 8, 31),
                     Descriptions =
                     [
                         "Client : Prosodie.",

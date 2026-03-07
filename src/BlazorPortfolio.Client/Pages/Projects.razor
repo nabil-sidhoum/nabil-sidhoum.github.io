@@ -21,7 +21,7 @@ else
 }
 
 @code {
-    private List<Project> projects;
+    private IEnumerable<Project> projects = Enumerable.Empty<Project>();
 
     protected override async Task OnInitializedAsync()
     {

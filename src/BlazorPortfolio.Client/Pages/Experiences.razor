@@ -18,7 +18,7 @@ else
 }
 
 @code {
-    private List<Experience> experiences;
+    private IEnumerable<Experience> experiences = Enumerable.Empty<Experience>();
 
     protected override async Task OnInitializedAsync()
     {

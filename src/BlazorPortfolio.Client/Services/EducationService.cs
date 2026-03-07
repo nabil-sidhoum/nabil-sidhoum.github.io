@@ -15,10 +15,17 @@ namespace BlazorPortfolio.Client.Services
             _client = client;
         }
 
-        public Task<List<Education>> GetEducationsAsync()
+        public async Task<IEnumerable<Education>> GetEducationsAsync()
         {
-            return _client.GetFromJsonAsync<List<Education>>("data/educations.json")
-                ?? Task.FromResult(new List<Education>());
+            try
+            {
+                IEnumerable<Education> result = await _client.GetFromJsonAsync<List<Education>>("data/educations.json");
+                return result ?? [];
+            }
+            catch (HttpRequestException)
+            {
+                return [];
+            }
         }
     }
 }

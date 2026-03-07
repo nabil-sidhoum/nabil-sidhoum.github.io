@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -15,10 +16,18 @@ namespace BlazorPortfolio.Client.Services
             _client = client;
         }
 
-        public Task<List<Experience>> GetExperiencesAsync()
+        public async Task<IEnumerable<Experience>> GetExperiencesAsync()
         {
-            return _client.GetFromJsonAsync<List<Experience>>("data/experiences.json")
-                ?? Task.FromResult(new List<Experience>());
+            try
+            {
+                IEnumerable<Experience> result = await _client.GetFromJsonAsync<List<Experience>>("data/experiences.json");
+
+                return result?.OrderByDescending(e => e.DateDebut) ?? Enumerable.Empty<Experience>();
+            }
+            catch (HttpRequestException)
+            {
+                return [];
+            }
         }
     }
 }

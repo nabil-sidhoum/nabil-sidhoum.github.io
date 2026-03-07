@@ -19,7 +19,7 @@ else
 }
 
 @code {
-    private List<Education> educations;
+    private IEnumerable<Education> educations = Enumerable.Empty<Education>();
 
     protected override async Task OnInitializedAsync()
     {

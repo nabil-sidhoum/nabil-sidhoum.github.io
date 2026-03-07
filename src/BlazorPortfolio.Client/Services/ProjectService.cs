@@ -15,10 +15,18 @@ namespace BlazorPortfolio.Client.Services
             _client = client;
         }
 
-        public Task<List<Project>> GetProjectsAsync()
+        public async Task<IEnumerable<Project>> GetProjectsAsync()
         {
-            return _client.GetFromJsonAsync<List<Project>>("data/projects.json")
-                ?? Task.FromResult(new List<Project>());
+            try
+            {
+                IEnumerable<Project> result = await _client.GetFromJsonAsync<List<Project>>("data/projects.json");
+
+                return result ?? [];
+            }
+            catch (HttpRequestException)
+            {
+                return [];
+            }
         }
     }
 }

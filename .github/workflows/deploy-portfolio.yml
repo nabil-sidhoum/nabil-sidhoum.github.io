@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
+      
+      # 3. Lancer les tests unitaires
+      - name: Tests
+        run: dotnet test src/BlazorPortfolio.Client.Tests/BlazorPortfolio.Client.Tests.csproj -c Release
 
       # 3. Compiler et publier Blazor WebAssembly
       - name: Publish Blazor

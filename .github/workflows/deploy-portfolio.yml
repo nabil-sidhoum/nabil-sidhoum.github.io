@@ -25,20 +25,20 @@ jobs:
       - name: Tests
         run: dotnet test src/BlazorPortfolio.Client.Tests/BlazorPortfolio.Client.Tests.csproj -c Release
 
-      # 3. Compiler et publier Blazor WebAssembly
+      # 4. Compiler et publier Blazor WebAssembly
       - name: Publish Blazor
         run: dotnet publish src/BlazorPortfolio.Client/BlazorPortfolio.Client.csproj -c Release -o build
 
-      # 4. Corriger le chemin de base pour GitHub Pages
+      # 5. Corriger le chemin de base pour GitHub Pages
       # Pour le repo principal username.github.io, base href = /
       - name: Update base href
         run: sed -i 's#<base href=".*" />#<base href="/" />#' build/wwwroot/index.html
 
-      # 5. Ajouter un fallback 404 pour Blazor SPA
+      # 6. Ajouter un fallback 404 pour Blazor SPA
       - name: Create 404.html for SPA fallback
         run: cp build/wwwroot/index.html build/wwwroot/404.html
 
-      # 6. Déployer vers GitHub Pages (branche gh-pages)
+      # 7. Déployer vers GitHub Pages (branche gh-pages)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

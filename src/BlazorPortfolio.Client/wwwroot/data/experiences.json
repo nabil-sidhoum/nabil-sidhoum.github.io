@@ -1,247 +1,99 @@
 [
   {
-    "Societe": "IRBIS",
+    "Societe": "IRBIS Finance",
     "Logo": "/images/experiences/irbis_finance_logo.jpg",
-    "Poste": "Directeur technique",
-    "Lieu": "Paris 08, Île-de-France",
-    "DateDebut": "2025-01-01",
-    "DateFin": null,
-    "Descriptions": [
-      "Conduite d'un refonte UX/UI.",
-      "Mise en place d'une démarche DevSecOps dans Azure DevOps afin d'intégrer la sécurité et l'analyse de code (via IntelliSense) directement dans les pipelines CI/CD.",
-      "Refonte et unification des pipelines de déploiement pour fiabiliser et automatiser la livraison des projets.",
-      "Création d'un repository NuGet interne permettant de mutualiser et de standardiser les outils et librairies maison.",
-      "Introduction du versioning SemVer afin de garantir la traçabilité des versions, la compatibilité ascendante et une gestion plus professionnelle des livrables."
-    ],
-    "Competences": [
-      ".NET 8", "Clean Architecture", "ASP.NET Core MVC", "Entity Framework Core",
-      "ASP.NET Core Identity", "CRM Dynamics", "Hangfire", "Swagger",
-      "PuppeteerSharp", "SQL Server", "Revue de code", "Gestion d'équipe",
-      "Gestion de projet", "Leadership technique"
-    ]
-  },
-  {
-    "Societe": "IRBIS",
-    "Logo": "/images/experiences/irbis_finance_logo.jpg",
-    "Poste": "Directeur technique",
-    "Lieu": "Paris 08, Île-de-France",
-    "DateDebut": "2024-01-01",
-    "DateFin": "2024-12-31",
-    "Descriptions": [
-      "Pilotage de l'évolution de l'architecture logicielle vers un modèle scalable, maintenable et sécurisé.",
-      "Migration de .NET 6 vers .NET 8 et adoption des nouvelles fonctionnalités du framework.",
-      "Optimisation des performances et de la scalabilité applicative (requêtes EF Core, architecture).",
-      "Mise en place de solutions d'observabilité (logs structurés) pour améliorer la supervision.",
-      "Renforcement de la sécurité applicative et des API (authentification, autorisation, conformité).",
-      "Encadrement technique et transfert de compétences auprès des développeurs."
-    ],
-    "Competences": [
-      ".NET 8", "Clean Architecture", "ASP.NET Core MVC", "Entity Framework Core",
-      "ASP.NET Core Identity", "CRM Dynamics", "Hangfire", "Swagger",
-      "PuppeteerSharp", "SQL Server", "Revue de code", "Gestion d'équipe",
-      "Gestion de projet", "Leadership technique"
-    ]
-  },
-  {
-    "Societe": "IRBIS",
-    "Logo": "/images/experiences/irbis_finance_logo.jpg",
-    "Poste": "Technical Leader",
-    "Lieu": "Paris 08, Île-de-France",
-    "DateDebut": "2023-01-01",
-    "DateFin": "2023-12-31",
-    "Descriptions": [
-      "Migration de .NET 5 vers .NET 6 et adaptation de l'architecture aux nouvelles capacités du framework.",
-      "Mise en place de standards techniques (revues de code, pratiques de développement).",
-      "Formation et accompagnement d'un développeur junior.",
-      "Supervision de l'automatisation des processus métiers et amélioration continue."
-    ],
-    "Competences": [
-      ".NET 6", "Clean Architecture", "ASP.NET Core MVC", "Entity Framework Core",
-      "ASP.NET Core Identity", "CRM Dynamics", "Hangfire", "Swagger",
-      "SelectPDF", "SQL Server", "Revue de code", "Gestion d'équipe", "Gestion de projet"
-    ]
-  },
-  {
-    "Societe": "IRBIS",
-    "Logo": "/images/experiences/irbis_finance_logo.jpg",
-    "Poste": "Technical Leader",
-    "Lieu": "Paris 08, Île-de-France",
-    "DateDebut": "2022-01-01",
-    "DateFin": "2022-12-31",
-    "Descriptions": [
-      "Conception et mise en œuvre de l'architecture logicielle définie en 2021.",
-      "Migration de .NET Framework 4.6.1 vers .NET 5, garantissant performance et compatibilité.",
-      "Mise en place d'une architecture modulaire et évolutive.",
-      "Encadrement technique et recrutement de développeurs pour soutenir la montée en charge.",
-      "Rédaction et maintien de la documentation d'architecture (diagrammes, décisions techniques)."
-    ],
-    "Competences": [
-      ".NET 5", "Clean Architecture", "ASP.NET Core MVC", "Entity Framework Core",
-      "ASP.NET Core Identity", "CRM Dynamics", "Hangfire", "Swagger",
-      "SelectPDF", "SQL Server", "Revue de code", "Gestion d'équipe"
-    ]
-  },
-  {
-    "Societe": "IRBIS",
-    "Logo": "/images/experiences/irbis_finance_logo.jpg",
-    "Poste": "Technical Leader",
+    "Poste": "Directeur Technique & Tech Lead .NET",
     "Lieu": "Paris 08, Île-de-France",
     "DateDebut": "2021-04-01",
-    "DateFin": "2021-12-31",
+    "DateFin": null,
     "Descriptions": [
-      "Audit technique complet de la plateforme existante.",
-      "Rédaction des plans d'architecture logicielle : définition des choix technologiques (Clean Architecture, modularité).",
-      "Conduite d'une refonte UX/UI et cadrage technique pour moderniser l'existant.",
-      "Élaboration d'une feuille de route technique."
+      "Reprise et refonte complète d'une plateforme finance B2B/B2C (200+ connexions/jour) — audit technique, Clean Architecture modulaire, migration .NET Framework 4.6 → .NET 8 en environnement parallèle sans interruption de service.",
+      "Optimisation des performances : reportings 2h → 5 min (x24) via réécriture LINQ et remplacement SelectPdf par PuppeteerSharp.",
+      "Conception et maintenance d'un écosystème de 5 applications .NET Core interconnectées (API centrale, jobs Hangfire, MVC, reporting, extension CRM).",
+      "Création d'une librairie d'intégration interne : 9 packages NuGet privés (Bloomberg BLPAPI, SIX Telekurs, Dynamics CRM, OpenStack Swift, SFTP, Email, AI/ChatGPT) publiés sur Azure Artifacts.",
+      "Structuration complète d'Azure DevOps from scratch : pipelines CI, conventions de code et de commit, revues de code systématiques via PR.",
+      "Plugins et workflows Dynamics CRM custom (commissions, fundraising, valorisations) + batchs d'import données financières via SIX Telekurs.",
+      "Encadrement d'un développeur interne et d'un consultant ponctuel."
     ],
     "Competences": [
-      ".NET Framework 4.6.1", "Audit technique", "ASP.NET MVC", "CRM Dynamics",
-      "Entity Framework", "ASP.NET Identity", "Hangfire", "SelectPDF", "SQL Server"
+      "C#", ".NET 8", "ASP.NET Core", "Entity Framework Core", "Clean Architecture",
+      "SQL Server", "Azure DevOps", "Hangfire", "PuppeteerSharp", "Dynamics CRM",
+      "NuGet", "Bloomberg BLPAPI", "SIX Telekurs", "OpenStack Swift"
     ]
   },
   {
     "Societe": "SoftFluent",
     "Logo": "/images/experiences/softfluent_logo.jpg",
-    "Poste": "Consultant C#/.Net",
+    "Poste": "Consultant C#/.NET",
     "Lieu": "Clichy, Île-de-France, France",
-    "DateDebut": "2020-07-31",
+    "DateDebut": "2020-07-01",
     "DateFin": "2021-03-31",
     "Descriptions": [
-      "Client : EIG.",
-      "Étude et conception d'une nouvelle architecture logicielle basée sur les microservices en .NET Core pour remplacer une architecture vieillissante développée en Delphi.",
-      "Définition des bonnes pratiques de développement et mise en place des standards de qualité du code.",
-      "Accompagnement et formation des équipes internes sur .NET Core et l'approche microservices.",
-      "Développement de composants techniques clés pour valider et illustrer l'architecture cible."
+      "Client : EIG (éditeur logiciels de gestion secteur médico-social). Formation et accompagnement des Lead Devs Delphi vers .NET Core et Clean Architecture. Développement de composants techniques clés pour valider l'architecture cible.",
+      "Définition des bonnes pratiques de développement et mise en place des standards de qualité du code."
     ],
     "Competences": [
-      ".NET Core 3.1", "Architecture microservice", "Entity Framework", "SQL Server"
+      ".NET Core", "Clean Architecture", "Entity Framework Core", "SQL Server"
     ]
   },
   {
     "Societe": "SoftFluent",
     "Logo": "/images/experiences/softfluent_logo.jpg",
-    "Poste": "Consultant C#/.Net",
+    "Poste": "Consultant C#/.NET",
     "Lieu": "Paris 08, Île-de-France, France",
-    "DateDebut": "2020-01-01",
-    "DateFin": "2020-04-30",
+    "DateDebut": "2018-04-01",
+    "DateFin": "2020-06-30",
     "Descriptions": [
-      "Client : Irbis Finance.",
-      "Identification des besoins client et analyse fonctionnelle.",
-      "Découpage et estimation des tâches techniques.",
-      "Encadrement technique et transfert de compétences auprès des équipes internes."
+      "Client : IRBIS Finance. Conception et développement en solo du MVP espace client (prise de besoin, architecture, back-end .NET Core) — mission à l'origine du recrutement en CDI chez IRBIS.",
+      "Client : IRBIS Finance (2020). Identification des besoins, découpage technique, encadrement et transfert de compétences."
     ],
     "Competences": [
-      ".NET Framework 4.6.1", "ASP.NET MVC", "CRM Dynamics", "Entity Framework",
-      "ASP.NET Identity", "SQL Server", "Hangfire", "SelectPDF"
+      ".NET Core", "ASP.NET Core MVC", "Entity Framework", "Dynamics CRM",
+      "ASP.NET Identity", "SQL Server", "Hangfire"
     ]
   },
   {
     "Societe": "SoftFluent",
     "Logo": "/images/experiences/softfluent_logo.jpg",
-    "Poste": "Consultant C#/.Net",
+    "Poste": "Consultant C#/.NET Junior",
     "Lieu": "Paris 10, Île-de-France, France",
     "DateDebut": "2019-06-01",
     "DateFin": "2019-12-31",
     "Descriptions": [
-      "Client : Groupe IGS.",
-      "Traitement des anomalies et correction des bugs sur les applications internes.",
-      "Optimisation des performances et des ressources des logiciels existants.",
-      "Migration des applications de .NET Framework 4.5.2 vers .NET Framework 4.7.2.",
-      "Mise en place d'un repository Git et gestion des versions avec Azure DevOps."
+      "Client : Groupe IGS (aujourd'hui IGENSIA Education). Maintenance applicative, migration .NET Framework 4.5 → 4.7, VS2008 → VS2019, migration TFS local vers Azure DevOps."
     ],
     "Competences": [
-      ".NET Framework 4.5.1", "ASP.NET Winforms", "SQL Server"
+      ".NET Framework 4.7", "ASP.NET", "SQL Server", "Azure DevOps"
     ]
   },
   {
     "Societe": "SoftFluent",
     "Logo": "/images/experiences/softfluent_logo.jpg",
-    "Poste": "Consultant C#/.Net Junior",
-    "Lieu": "Paris 08, Île-de-France, France",
-    "DateDebut": "2018-04-01",
-    "DateFin": "2019-04-30",
-    "Descriptions": [
-      "Client : Irbis Finance.",
-      "Identification des besoins client et analyse fonctionnelle.",
-      "Étude de faisabilité technique par rapport aux besoins fonctionnels.",
-      "Découpage et estimation des tâches techniques.",
-      "Conception du MVP (Minimum Viable Product) pour valider rapidement les fonctionnalités essentielles.",
-      "Mise en place de l'architecture applicative et développement technique des fonctionnalités en ASP.NET MVC."
-    ],
-    "Competences": [
-      ".NET Framework 4.6.1", "ASP.NET MVC", "CRM Dynamics", "Entity Framework",
-      "ASP.NET Identity", "SQL Server", "Hangfire", "SelectPDF"
-    ]
-  },
-  {
-    "Societe": "SoftFluent",
-    "Logo": "/images/experiences/softfluent_logo.jpg",
-    "Poste": "Consultant C#/.Net Junior",
+    "Poste": "Consultant C#/.NET Junior",
     "Lieu": "Paris 08, Île-de-France, France",
     "DateDebut": "2017-10-01",
     "DateFin": "2018-03-31",
     "Descriptions": [
-      "Client : Linxea.",
-      "Identification des besoins client et rédaction des spécifications techniques.",
-      "Découpage et estimation des tâches techniques.",
-      "Mise en place de l'architecture applicative du site partenaire.",
-      "Développement des fonctionnalités en ASP.NET MVC."
+      "Client : Linxea (plateforme d'épargne en ligne). Maintenance applicative et développement de fonctionnalités en ASP.NET MVC. Mission à l'origine de la rencontre avec IRBIS Finance, qui a conduit au MVP espace client."
     ],
     "Competences": [
-      ".NET Framework 4.6.1", "ASP.NET MVC", "CRM Dynamics", "Entity Framework",
-      "ASP.NET Identity", "SQL Server"
+      ".NET Framework 4.6", "ASP.NET MVC", "Dynamics CRM", "Entity Framework", "SQL Server"
     ]
   },
   {
     "Societe": "Capgemini",
     "Logo": "/images/experiences/capgemini_logo.jpg",
-    "Poste": "Consultant C#/.Net",
-    "Lieu": "Paris 09, Île-de-France, France",
-    "DateDebut": "2017-07-01",
+    "Poste": "Consultant C#/.NET",
+    "Lieu": "Suresnes, Île-de-France, France",
+    "DateDebut": "2015-09-01",
     "DateFin": "2017-09-30",
     "Descriptions": [
-      "Client : Itelios/Domus VI.",
-      "Maintenance applicative du site ASP.NET dédié aux résidents des maisons de retraite Domus VI.",
-      "Support et évolutions correctives sur le web service WCF d'accès aux données pour les applications mobiles.",
-      "Amélioration de la fiabilité et de la stabilité des services existants."
+      "Client principal : Orange Caraïbe & Orange Réunion. Développement d'un CRM métier services opérations — customisations Dynamics CRM (JavaScript, plugins C#), API dédiée. Équipe de 2 développeurs + jusqu'à 5 stagiaires.",
+      "POC intégration Dynamics CRM + Odigo via Unified Service Desk — écarté pour problèmes mémoire du moteur Edge embarqué.",
+      "Encadrement informel de stagiaires."
     ],
     "Competences": [
-      ".NET Framework 4.6.1", "SQL Server"
-    ]
-  },
-  {
-    "Societe": "Capgemini",
-    "Logo": "/images/experiences/capgemini_logo.jpg",
-    "Poste": "Consultant Dynamics CRM",
-    "Lieu": "Paris 08, Île-de-France, France",
-    "DateDebut": "2017-03-01",
-    "DateFin": "2017-06-30",
-    "Descriptions": [
-      "Client : Unibail-Rodamco.",
-      "Mise en place d'une infrastructure DevOps pour accompagner le développement du CRM personnalisé.",
-      "Découpage et estimation des tâches techniques.",
-      "Développement et intégration des solutions techniques en .NET."
-    ],
-    "Competences": [
-      ".NET Framework 4.5.1", "CRM Dynamics", "HTML", "Javascripts", "CSS"
-    ]
-  },
-  {
-    "Societe": "Capgemini",
-    "Logo": "/images/experiences/capgemini_logo.jpg",
-    "Poste": "Consultant Dynamics CRM",
-    "Lieu": "Suresnes, Île-de-France, France",
-    "DateDebut": "2015-10-01",
-    "DateFin": "2017-01-31",
-    "Descriptions": [
-      "Client : Orange Caraïbes & Réunion-Mayotte.",
-      "Découpage et estimation des tâches techniques.",
-      "Mise en place de l'architecture applicative pour le CRM personnalisé.",
-      "Conception et développement de plusieurs web services WCF.",
-      "Encadrement et coordination d'une équipe de 10 développeurs."
-    ],
-    "Competences": [
-      ".NET Framework 4.5.1", "CRM Dynamics", "HTML", "Javascripts", "CSS"
+      ".NET Framework", "C#", "Dynamics CRM", "JavaScript", "API REST"
     ]
   },
   {
@@ -252,14 +104,10 @@
     "DateDebut": "2015-03-01",
     "DateFin": "2015-08-31",
     "Descriptions": [
-      "Client : Prosodie.",
-      "Analyse de faisabilité technique en fonction des besoins fonctionnels pour un projet de couplage téléphonie-informatique (CTI).",
-      "Découpage et estimation des tâches techniques.",
-      "Mise en place de l'architecture applicative.",
-      "Développement et intégration des solutions techniques en .NET."
+      "Stage de fin d'études. Analyse de faisabilité technique pour un projet de couplage téléphonie-informatique (CTI) via Unified Service Desk. Développement et intégration en .NET."
     ],
     "Competences": [
-      ".NET Framework 4.5.1", "CRM Dynamics", "Application WPF"
+      ".NET Framework", "Dynamics CRM", "WPF"
     ]
   }
 ]

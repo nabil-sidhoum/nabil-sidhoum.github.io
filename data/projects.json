@@ -1,5 +1,22 @@
 [
   {
+    "Nom": "PageCorrelationId",
+    "IconClass": "bi bi-diagram-3-fill",
+    "IconColor": "#2088FF",
+    "Description": "Propagation automatique d'un Correlation ID métier entre un front ASP.NET Core MVC et une Web API — sans modifier le JavaScript ni les controllers. Né d'un besoin réel en production : relier dans les logs toutes les requêtes déclenchées par une même ouverture de page.",
+    "GithubUrl": "https://github.com/nabil-sidhoum/PageCorrelationId",
+    "ExtraUrl": null,
+    "ExtraLabel": null,
+    "Fonctionnalites": [
+      "Middleware de génération/réutilisation du CID via Sec-Fetch-Mode header",
+      "DelegatingHandler pour injection automatique du header X-Correlation-ID vers l'API",
+      "Zéro modification côté JavaScript ou controllers métier",
+      "13 tests unitaires (xUnit + Moq)",
+      "Pipeline CI GitHub Actions avec badge build"
+    ],
+    "Competences": [ "C#", ".NET 8", "ASP.NET Core MVC", "Web API", "Middleware", "xUnit", "Moq", "GitHub Actions" ]
+  },
+  {
     "Nom": "Dynamics CRM Connector",
     "IconClass": "bi bi-plug-fill",
     "IconColor": "#0078D4",

@@ -1,12 +1,16 @@
-Examine les fichiers modifiés dans la branche courante et vérifie leur conformité avec les règles du projet, puis écrit les anomalies trouvées dans `anomalies.local.md`.
+Effectue une analyse complète de la solution et ajoute les nouvelles anomalies dans `anomalies.local.md`.
 
-## Étape 1 — Identifier les fichiers modifiés
+## Étape 1 — Analyse du build (Roslyn / compilateur)
 
-Exécute `git diff --name-only HEAD` pour obtenir la liste des fichiers modifiés.
+Exécute :
+```
+dotnet build src/BlazorPortfolio.sln --no-incremental
+```
+Capture toutes les lignes contenant `warning` ou `error` (ignore `0 Avertissement(s)` et `0 Erreur(s)`).
 
-## Étape 2 — Analyse des fichiers modifiés
+## Étape 2 — Analyse statique du code source
 
-Pour chaque fichier `.cs` ou `.razor` modifié, vérifie :
+Lis tous les fichiers `.cs` et `.razor` sous `src/BlazorPortfolio.Client/` et `src/BlazorPortfolio.Client.Tests/` et vérifie les règles suivantes :
 
 ### Architecture (.claude/rules/clean-architecture.md)
 - Models (`Models/*.cs`) : aucune méthode, aucune propriété calculée, aucune dépendance
@@ -34,14 +38,17 @@ Pour chaque fichier `.cs` ou `.razor` modifié, vérifie :
 ## Étape 3 — Mise à jour de `anomalies.local.md`
 
 1. Lis le fichier `anomalies.local.md` existant
-2. Pour chaque anomalie trouvée :
+2. Met à jour la date en haut : `# Anomalies détectées — YYYY-MM-DD`
+3. Pour chaque anomalie trouvée :
    - Vérifie qu'elle n'est pas déjà présente (évite les doublons)
    - Ajoute-la sous la section correspondante (`clean-architecture.md`, `csharp-conventions.md`, `testing.md`)
    - Format : `- [ ] \`fichier:ligne\` — règle violée — correction attendue`
-3. Pour les sections sans anomalie nouvelle, ne touche pas au contenu existant
+4. Pour les sections sans anomalie, indique `✅ RAS`
+5. En bas du fichier, ajoute une section `## Build` avec les warnings/erreurs Roslyn
 
-## Étape 4 — Rapport dans le chat
+## Étape 4 — Résumé
 
-Affiche pour chaque violation : `fichier:ligne — règle violée — correction attendue`
-
-Si aucune violation : affiche `✅ Aucune anomalie détectée sur les fichiers modifiés.`
+Affiche :
+- Nombre total d'anomalies ajoutées (nouvelles uniquement)
+- Répartition par section
+- Nombre de warnings/erreurs Roslyn

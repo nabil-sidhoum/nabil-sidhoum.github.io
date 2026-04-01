@@ -15,7 +15,7 @@ namespace BlazorPortfolio.Client.Tests.Services
     public class ExperienceServiceTests
     {
         [Fact]
-        public async Task GetExperiencesAsync_ReturnsExperiences_WhenJsonIsValid()
+        public async Task GetExperiencesAsync_RetourneExperiences_QuandJsonEstValide()
         {
             // Arrange
             MockHttpMessageHandler mockHttp = new();

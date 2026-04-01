@@ -10,7 +10,7 @@ using BlazorPortfolio.Client.Tests.Fixtures;
 using RichardSzalay.MockHttp;
 using Xunit;
 
-namespace BlazorPortfolio.Tests.Services
+namespace BlazorPortfolio.Client.Tests
 {
     public class ProjectServiceTests
     {

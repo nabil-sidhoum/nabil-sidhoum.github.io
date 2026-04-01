@@ -7,7 +7,7 @@
     "DateDebut": "2021-04-01",
     "DateFin": null,
     "Descriptions": [
-      "Reprise et refonte complète d'une plateforme finance B2B/B2C (200+ connexions/jour) — audit technique, Clean Architecture modulaire, migration .NET Framework 4.6 → .NET 8 en environnement parallèle sans interruption de service.",
+      "Reprise et refonte complète d'une plateforme finance B2B (200+ connexions/jour) — audit technique, Clean Architecture modulaire, migration .NET Framework 4.6 → .NET 8 en environnement parallèle sans interruption de service.",
       "Optimisation des performances : reportings 2h → 5 min (x24) via réécriture LINQ et remplacement SelectPdf par PuppeteerSharp.",
       "Conception et maintenance d'un écosystème de 5 applications .NET Core interconnectées (API centrale, jobs Hangfire, MVC, reporting, extension CRM).",
       "Création d'une librairie d'intégration interne : 9 packages NuGet privés (Bloomberg BLPAPI, SIX Telekurs, Dynamics CRM, OpenStack Swift, SFTP, Email, AI/ChatGPT) publiés sur Azure Artifacts.",
@@ -89,7 +89,6 @@
     "DateFin": "2017-09-30",
     "Descriptions": [
       "Client principal : Orange Caraïbe & Orange Réunion. Développement d'un CRM métier services opérations — customisations Dynamics CRM (JavaScript, plugins C#), API dédiée. Équipe de 2 développeurs + jusqu'à 5 stagiaires.",
-      "POC intégration Dynamics CRM + Odigo via Unified Service Desk — écarté pour problèmes mémoire du moteur Edge embarqué.",
       "Encadrement informel de stagiaires."
     ],
     "Competences": [
@@ -104,10 +103,10 @@
     "DateDebut": "2015-03-01",
     "DateFin": "2015-08-31",
     "Descriptions": [
-      "Stage de fin d'études. Analyse de faisabilité technique pour un projet de couplage téléphonie-informatique (CTI) via Unified Service Desk. Développement et intégration en .NET."
+      "Stage de fin d'études. POC intégration Dynamics CRM + Odigo (solution centre de contact) via Unified Service Desk — POC écarté pour problèmes mémoire du moteur Edge embarqué dans USD."
     ],
     "Competences": [
-      ".NET Framework", "Dynamics CRM", "WPF"
+      ".NET Framework", "Dynamics CRM", "Unified Service Desk", "WPF"
     ]
   }
 ]

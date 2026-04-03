@@ -444,4 +444,5 @@ $RECYCLE.BIN/
 # Log file
 *.dblog
 
+.claude/history/
 anomalies.local.md

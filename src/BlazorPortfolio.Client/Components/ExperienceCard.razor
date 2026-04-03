@@ -20,14 +20,14 @@
     </div>
     <div class="content">
         <ul>
-            @foreach (var description in Experience.Descriptions)
+            @foreach (string description in Experience.Descriptions)
             {
                 <li>@description</li>
             }
         </ul>
         <br />
         <div>
-            @foreach (var skill in Experience.Competences)
+            @foreach (string skill in Experience.Competences)
             {
                 <span class="badge">@skill</span>
             }

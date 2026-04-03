@@ -11,14 +11,14 @@
 }
 else
 {
-    @foreach (var exp in experiences)
+    @foreach (Experience exp in experiences)
     {
         <ExperienceCard Experience="exp" />
     }
 }
 
 @code {
-    private IEnumerable<Experience> experiences = Enumerable.Empty<Experience>();
+    private IEnumerable<Experience> experiences = [];
 
     protected override async Task OnInitializedAsync()
     {

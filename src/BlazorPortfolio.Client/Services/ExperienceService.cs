@@ -22,7 +22,9 @@ namespace BlazorPortfolio.Client.Services
             {
                 IEnumerable<Experience> result = await _client.GetFromJsonAsync<List<Experience>>("data/experiences.json");
 
-                return result?.OrderByDescending(e => e.DateDebut) ?? Enumerable.Empty<Experience>();
+                if (result is null) { return []; }
+
+                return result.OrderByDescending(e => e.DateDebut);
             }
             catch (HttpRequestException)
             {

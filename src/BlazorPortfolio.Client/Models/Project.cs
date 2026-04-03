@@ -9,8 +9,8 @@ namespace BlazorPortfolio.Client.Models
         public string IconColor { get; set; } = "#1F4E79";
         public string Description { get; set; } = "";
         public string GithubUrl { get; set; } = "";
-        public string ExtraUrl { get; set; }
-        public string ExtraLabel { get; set; }
+        public string ExtraUrl { get; set; } = "";
+        public string ExtraLabel { get; set; } = "";
         public List<string> Fonctionnalites { get; set; } = [];
         public List<string> Competences { get; set; } = [];
     }

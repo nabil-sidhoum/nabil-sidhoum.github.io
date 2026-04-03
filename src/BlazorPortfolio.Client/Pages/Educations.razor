@@ -12,14 +12,14 @@
 }
 else
 {
-    @foreach (var school in educations)
+    @foreach (Education school in educations)
     {
         <EducationCard Education="school" />
     }
 }
 
 @code {
-    private IEnumerable<Education> educations = Enumerable.Empty<Education>();
+    private IEnumerable<Education> educations = [];
 
     protected override async Task OnInitializedAsync()
     {

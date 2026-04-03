@@ -12,7 +12,7 @@
         <div class="project-meta">
             <h3 class="project-title">@Project.Nom</h3>
             <div class="project-badges">
-                @foreach (var skill in Project.Competences.Take(3))
+                @foreach (string skill in Project.Competences.Take(3))
                 {
                     <span class="badge badge-lang">@skill</span>
                 }
@@ -23,7 +23,7 @@
     <p class="project-desc">@Project.Description</p>
 
     <div class="project-features">
-        @foreach (var feature in Project.Fonctionnalites)
+        @foreach (string feature in Project.Fonctionnalites)
         {
             <span class="feature"><i class="bi bi-check2"></i> @feature</span>
         }
@@ -33,7 +33,7 @@
         <a href="@Project.GithubUrl" target="_blank" class="project-link">
             <i class="bi bi-github"></i> Voir le code
         </a>
-        @if (Project.ExtraUrl != null)
+        @if (!string.IsNullOrEmpty(Project.ExtraUrl))
         {
             <a href="@Project.ExtraUrl" target="_blank" class="project-link project-link-extra">
                 <i class="bi bi-box-seam"></i> @Project.ExtraLabel

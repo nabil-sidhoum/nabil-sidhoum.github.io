@@ -41,6 +41,7 @@
 
 .description-title {
     position: relative;
+    z-index: 1;
     font-size: 1.5rem;
     background: var(--portfoliotertiarycolor);
     border-radius: 12px;

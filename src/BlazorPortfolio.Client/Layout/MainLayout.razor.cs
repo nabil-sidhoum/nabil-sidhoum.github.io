@@ -6,7 +6,7 @@ namespace BlazorPortfolio.Client.Layout
 {
     public partial class MainLayout : LayoutComponentBase
     {
-        [Inject] private IJSRuntime JS { get; set; } = default!;
+        [Inject] private IJSRuntime JS { get; set; } = default;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {

@@ -1,4 +1,4 @@
-Examine les fichiers modifiés dans la branche courante et vérifie leur conformité avec les règles du projet, puis écrit les anomalies trouvées dans `anomalies.local.md`.
+Examine les fichiers modifiés dans la branche courante et vérifie leur conformité avec les règles du projet.
 
 ## Étape 1 — Identifier les fichiers modifiés
 
@@ -9,34 +9,35 @@ Exécute `git diff --name-only HEAD` pour obtenir la liste des fichiers modifié
 Pour chaque fichier `.cs` ou `.razor` modifié, vérifie :
 
 ### Architecture (.claude/rules/clean-architecture.md)
-- Models (`Models/*.cs`) : aucune méthode, aucune propriété calculée, aucune dépendance
-- Components (`Components/*.razor`) : pas d'`@inject`, données uniquement via `[Parameter]`
-- Services (`Services/*.cs`) : retournent `IEnumerable<T>`, gèrent `HttpRequestException` → `[]`
-- Pages (`Pages/*.razor`) : chargement dans `OnInitializedAsync`, logique dans `@code {}` uniquement
-- Code-behind `.razor.cs` : interdit sauf `MainLayout.razor.cs`
+- Respect des responsabilités par couche
+- Pas de logique métier dans les Controllers
+- Pas d'accès direct aux données depuis Application
+- Pas de dépendance circulaire entre couches
+- Données sensibles absentes des logs
 
 ### Conventions C# (.claude/rules/csharp-conventions.md)
 - Pas de `var` — types explicites partout
 - Modificateurs d'accès explicites sur toutes les déclarations
 - Accolades obligatoires sur tous les blocs
-- Collections vides : `[]` uniquement — jamais `new List<T>()` ni `Enumerable.Empty<T>()`
-- Namespaces block-scoped uniquement (`namespace Foo { }`, pas `namespace Foo;`)
+- Collections vides : `[]` uniquement
+- Namespaces block-scoped uniquement
 - Pas de primary constructors
 - Pas de `.Result` / `.Wait()`
-- Nullable reference types : non-nullable initialisé avec `""` ou `[]`, nullable avec `?`
+- Nullable reference types correctement déclarés
+- Arguments publics validés
 
 ### Tests (.claude/rules/testing.md)
-- Nommage `Methode_Scenario_ResultatAttendu` en français
-- Pattern AAA avec commentaires `// Arrange`, `// Act`, `// Assert` explicites
-- Données JSON dans `JsonFixtures.cs` avec `/*lang=json,strict*/`
-- Couverture minimale par service : nominal, erreur 404, mapping, tri (ExperienceService)
+- Nommage `Methode_Scenario_ResultatAttendu`
+- Pattern AAA avec commentaires `// Arrange`, `// Act`, `// Assert`
+- Données JSON dans `JsonFixtures.cs`
+- Couverture minimale 80% sur les nouveaux services
 
 ## Étape 3 — Mise à jour de `anomalies.local.md`
 
 1. Lis le fichier `anomalies.local.md` existant
 2. Pour chaque anomalie trouvée :
    - Vérifie qu'elle n'est pas déjà présente (évite les doublons)
-   - Ajoute-la sous la section correspondante (`clean-architecture.md`, `csharp-conventions.md`, `testing.md`)
+   - Ajoute-la sous la section correspondante
    - Format : `- [ ] \`fichier:ligne\` — règle violée — correction attendue`
 3. Pour les sections sans anomalie nouvelle, ne touche pas au contenu existant
 

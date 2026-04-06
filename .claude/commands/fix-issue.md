@@ -2,7 +2,7 @@ Analyse le bug décrit et applique un fix conforme à l'architecture et aux conv
 
 ## Processus
 
-1. **Identifier la couche** — quel fichier, quelle couche (Model / Service / Page / Component / Layout) ?
+1. **Identifier la couche** — quel fichier, quelle couche (Domain / Application / Infrastructure / Api) ?
 2. **Lire le code concerné** avant de proposer quoi que ce soit
 3. **Consulter `.claude/history/fixes.md`** — un bug similaire a-t-il déjà été corrigé ?
 4. **Proposer le fix** — conforme à `.claude/rules/`

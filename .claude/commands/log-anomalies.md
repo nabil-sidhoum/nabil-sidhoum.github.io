@@ -1,23 +1,23 @@
 Effectue une analyse complète de la solution et ajoute les nouvelles anomalies dans `anomalies.local.md`.
 
-## Étape 1 — Analyse du build (Roslyn / compilateur)
+## Étape 1 — Analyse du build
 
 Exécute :
 ```
-dotnet build src/BlazorPortfolio.sln --no-incremental
+dotnet build --no-incremental
 ```
 Capture toutes les lignes contenant `warning` ou `error` (ignore `0 Avertissement(s)` et `0 Erreur(s)`).
 
 ## Étape 2 — Analyse statique du code source
 
-Lis tous les fichiers `.cs` et `.razor` sous `src/BlazorPortfolio.Client/` et `src/BlazorPortfolio.Client.Tests/` et vérifie les règles suivantes :
+Parcours tous les fichiers `.cs` et `.razor` du projet et vérifie les règles suivantes :
 
 ### Architecture (.claude/rules/clean-architecture.md)
-- Models (`Models/*.cs`) : aucune méthode, aucune propriété calculée, aucune dépendance
-- Components (`Components/*.razor`) : pas d'`@inject`, données uniquement via `[Parameter]`
-- Services (`Services/*.cs`) : retournent `IEnumerable<T>`, gèrent `HttpRequestException` → `[]`
-- Pages (`Pages/*.razor`) : chargement dans `OnInitializedAsync`, logique dans `@code {}` uniquement
-- Code-behind `.razor.cs` : interdit sauf `MainLayout.razor.cs`
+- Respect des responsabilités par couche (Domain / Application / Infrastructure / Api)
+- Absence de logique métier dans les Controllers
+- Absence d'accès direct aux données depuis Application
+- Absence de dépendance circulaire entre couches
+- Absence de données sensibles dans les logs
 
 ### Conventions C# (.claude/rules/csharp-conventions.md)
 - Pas de `var` — types explicites partout
@@ -28,12 +28,13 @@ Lis tous les fichiers `.cs` et `.razor` sous `src/BlazorPortfolio.Client/` et `s
 - Pas de primary constructors
 - Pas de `.Result` / `.Wait()`
 - Nullable reference types : non-nullable initialisé avec `""` ou `[]`, nullable avec `?`
+- Arguments publics validés (`ArgumentNullException`)
 
 ### Tests (.claude/rules/testing.md)
-- Nommage `Methode_Scenario_ResultatAttendu` en français
+- Nommage `Methode_Scenario_ResultatAttendu`
 - Pattern AAA avec commentaires `// Arrange`, `// Act`, `// Assert` explicites
 - Données JSON dans `JsonFixtures.cs` avec `/*lang=json,strict*/`
-- Couverture minimale par service : nominal, erreur 404, mapping, tri (ExperienceService)
+- Couverture minimale : nominal, erreur HTTP, mapping, cas limites
 
 ## Étape 3 — Mise à jour de `anomalies.local.md`
 

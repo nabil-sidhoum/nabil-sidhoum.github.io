@@ -12,10 +12,12 @@
 }
 else
 {
-    @foreach (Education school in educations)
-    {
-        <EducationCard Education="school" />
-    }
+    <div class="cards-container">
+        @foreach (Education school in educations)
+        {
+            <EducationCard Education="school" />
+        }
+    </div>
 }
 
 @code {

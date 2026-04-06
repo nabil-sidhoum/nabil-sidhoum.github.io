@@ -1,5 +1,5 @@
 .name {
-    font-size: 6rem;
+    font-size: clamp(2rem, 8vw, 6rem);
     font-weight: 900;
     background: var(--portfoliosecondarycolor);
     -webkit-text-fill-color: transparent;
@@ -7,6 +7,7 @@
     margin-bottom: 1rem;
     text-align: center;
     letter-spacing: 0.05rem;
+    overflow-wrap: break-word;
     animation: fadeInDown 0.6s ease both;
 }
 
@@ -31,7 +32,7 @@
     padding: 5vmin 5vmin;
     letter-spacing: 0.05rem;
     line-height: 1.8;
-    text-align: justify;
+    text-align: left;
     font-weight: 400;
     border-top: 4px solid var(--portfolioprimarycolor);
     margin: 0 5vmin ;
@@ -87,27 +88,28 @@
 
 .skill-card {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.2rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
     box-shadow: var(--portfolioboxshadow);
-    border-left: 4px solid var(--portfolioprimarycolor);
+    border-left: 4px solid transparent;
     font-size: 1rem;
     font-weight: 600;
     color: #2C3E50;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0px 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--portfoliosecondarycolor);
 }
 
 .skill-card i {
     font-size: 1.4rem;
-    color: var(--portfolioprimarycolor);
+    color: var(--portfoliosecondarycolor);
     flex-shrink: 0;
 }
 
@@ -120,5 +122,19 @@
 @media (max-width: 480px) {
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .description-title,
+    .skills-title {
+        padding: 0.8rem 2rem;
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    .description {
+        margin: 0;
+        padding: 1.5rem;
     }
 }

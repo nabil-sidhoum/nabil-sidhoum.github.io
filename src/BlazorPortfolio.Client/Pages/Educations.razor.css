@@ -1,8 +1,24 @@
-﻿.title {
-    font-size: 2.7rem;
-    color: var(--portfoliosecondarycolor);
-    margin-bottom: 2rem;
-    font-weight: 500;
-    text-align: center;
-    letter-spacing: 0.04rem
+﻿.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin-inline: auto;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--portfolioprimarycolor);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 2.5rem;
+    margin: 0 auto 2rem auto;
+    width: fit-content;
+    animation: fadeInDown 0.5s ease both;
 }

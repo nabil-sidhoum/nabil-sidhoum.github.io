@@ -1,0 +1,14 @@
+# Forcer CRLF sur les fichiers C# et Razor (convention editorconfig)
+*.cs    text eol=crlf
+*.razor text eol=crlf
+
+# LF pour les fichiers Unix/cross-platform
+*.sh    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# Binaires — pas de conversion
+*.png   binary
+*.jpg   binary
+*.ico   binary
+*.wasm  binary

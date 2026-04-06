@@ -1,0 +1,28 @@
+name: quality-portfolio
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  SOLUTION_PATH: src/BlazorPortfolio.sln
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    name: Conventions C# (dotnet format)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
+
+      - name: Vérifier les conventions
+        run: dotnet format ${{ env.SOLUTION_PATH }} --verify-no-changes --verbosity diagnostic

@@ -1,12 +1,15 @@
-name: Deploy Blazor to GitHub Pages
+name: deploy-portfolio
 
 on:
-  push:
-    branches: [ "main" ]   # Déclenchement à chaque push sur main
+  workflow_run:
+    workflows: [ "ci-portfolio" ]   # Se déclenche uniquement après la CI
+    types: [ completed ]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     permissions:
       contents: write   # Donne les droits d'écriture au GITHUB_TOKEN
 
@@ -20,12 +23,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
-      
-      # 3. Lancer les tests unitaires
-      - name: Tests
-        run: dotnet test src/BlazorPortfolio.Client.Tests/BlazorPortfolio.Client.Tests.csproj -c Release
 
-      # 4. Compiler et publier Blazor WebAssembly
+      # 3. Compiler et publier Blazor WebAssembly
       - name: Publish Blazor
         run: dotnet publish src/BlazorPortfolio.Client/BlazorPortfolio.Client.csproj -c Release -o build
 

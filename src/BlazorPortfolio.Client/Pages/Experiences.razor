@@ -11,10 +11,12 @@
 }
 else
 {
-    @foreach (Experience exp in experiences)
-    {
-        <ExperienceCard Experience="exp" />
-    }
+    <div class="cards-container">
+        @foreach (Experience exp in experiences)
+        {
+            <ExperienceCard Experience="exp" />
+        }
+    </div>
 }
 
 @code {

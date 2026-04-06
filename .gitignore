@@ -446,3 +446,7 @@ $RECYCLE.BIN/
 
 .claude/history/
 anomalies.local.md
+
+# Playwright MCP (screenshots et snapshots temporaires)
+.playwright-mcp/
+.claude/settings.local.json

@@ -1,0 +1,29 @@
+#!/bin/bash
+# pre-commit — BlazorPortfolio / Projet .NET
+# Activé via : git config core.hooksPath .githooks
+
+set -e
+
+echo "🔍 Vérification des anomalies ouvertes..."
+if [ -f "anomalies.local.md" ] && grep -q "\- \[ \]" anomalies.local.md 2>/dev/null; then
+    echo "❌ Des anomalies sont ouvertes dans anomalies.local.md"
+    echo "   Lance /project:cleanup pour les traiter avant de commiter."
+    exit 1
+fi
+echo "✅ Aucune anomalie bloquante"
+
+echo "🔍 Vérification des conventions (dotnet format)..."
+if ! dotnet format --verify-no-changes --verbosity quiet 2>/dev/null; then
+    echo "❌ Conventions non respectées — lance 'dotnet format' pour corriger."
+    exit 1
+fi
+echo "✅ Conventions OK"
+
+echo "🔍 Lancement des tests..."
+if ! dotnet test --no-build -q 2>/dev/null; then
+    echo "❌ Tests en échec — commit bloqué."
+    exit 1
+fi
+echo "✅ Tests OK"
+
+echo "✅ Toutes les vérifications sont passées — commit autorisé."

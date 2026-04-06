@@ -1,0 +1,78 @@
+#!/bin/bash
+# commit-msg — Validation des conventions de commit
+# Activé via : git config core.hooksPath .githooks
+#
+# Convention : Conventional Commits en français
+# Format attendu : <type>(<scope optionnel>): <description en français>
+#
+# Types autorisés :
+#   feat     — nouvelle fonctionnalité
+#   fix      — correction de bug
+#   chore    — tâche technique (dépendances, config, CI...)
+#   refactor — refactoring sans changement de comportement
+#   test     — ajout ou modification de tests
+#   docs     — documentation uniquement
+#   style    — formatage, espaces (pas de changement logique)
+#   perf     — amélioration de performance
+#   ci       — modifications CI/CD
+#   build    — système de build, outils
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Ignorer les merges et les fixups
+if echo "$COMMIT_MSG" | grep -qE "^(Merge|Revert|fixup!|squash!)"; then
+    exit 0
+fi
+
+# Regex de validation
+# Format : type(scope optionnel): description
+PATTERN="^(feat|fix|chore|refactor|test|docs|style|perf|ci|build)(\(.+\))?: .{3,}"
+
+if ! echo "$COMMIT_MSG" | grep -qE "$PATTERN"; then
+    echo ""
+    echo "❌ Message de commit non conforme."
+    echo ""
+    echo "   Format attendu : <type>(<scope optionnel>): <description en français>"
+    echo ""
+    echo "   Types autorisés :"
+    echo "     feat     — nouvelle fonctionnalité"
+    echo "     fix      — correction de bug"
+    echo "     chore    — tâche technique"
+    echo "     refactor — refactoring"
+    echo "     test     — tests"
+    echo "     docs     — documentation"
+    echo "     style    — formatage"
+    echo "     perf     — performance"
+    echo "     ci       — CI/CD"
+    echo "     build    — build"
+    echo ""
+    echo "   Exemples valides :"
+    echo "     feat: ajout de la pagination des résultats"
+    echo "     fix(auth): correction du token expiré non détecté"
+    echo "     chore: mise à jour de Newtonsoft.Json vers 13.0.3"
+    echo "     refactor(handlers): extraction de la logique de validation"
+    echo ""
+    echo "   Message rejeté : \"$COMMIT_MSG\""
+    echo ""
+    exit 1
+fi
+
+# Vérifier que la description n'est pas en anglais (heuristique simple)
+# Mots anglais courants qui trahissent un message en anglais
+ENGLISH_WORDS="^(feat|fix|chore|refactor|test|docs|style|perf|ci|build)(\(.+\))?: (add|update|fix|remove|change|refactor|improve|create|delete|implement|use|move|rename|replace|enable|disable|handle|support|allow|prevent|ensure|make|set|get|init|check|validate|clean|apply|extract)"
+
+if echo "$COMMIT_MSG" | grep -qiE "$ENGLISH_WORDS"; then
+    echo ""
+    echo "⚠️  La description semble être en anglais."
+    echo "   Convention : descriptions en français."
+    echo ""
+    echo "   Message détecté : \"$COMMIT_MSG\""
+    echo ""
+    echo "   Pour forcer le commit malgré cet avertissement :"
+    echo "   git commit --no-verify"
+    echo ""
+    exit 1
+fi
+
+exit 0

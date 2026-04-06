@@ -27,7 +27,7 @@
 .card[b-nwgwvnprxp] {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: var(--portfolioboxshadow);
     border-left: 4px solid transparent;
     padding: 2vmin;
     width: 100%;
@@ -131,7 +131,7 @@
 .card[b-ktqmqsxpbp] {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: var(--portfolioboxshadow);
     border-left: 4px solid transparent;
     padding: 2vmin;
     width: 100%;
@@ -238,20 +238,20 @@
 /* /Components/ProjectCard.razor.rz.scp.css */
 .card[b-tax0qkm4es] {
     background: #fff;
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 1.8rem;
     box-shadow: var(--portfolioboxshadow);
     border-top: 4px solid var(--portfolioprimarycolor);
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
     animation: fadeInUp 0.5s ease both;
 }
 
     .card:hover[b-tax0qkm4es] {
-        transform: translateY(-3px);
+        transform: translateY(-2px);
         box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
     }
 
@@ -403,7 +403,8 @@
 @media (max-width: 767.98px) {
     .main-content[b-xf42p4le1w] {
         margin-left: 0;
-        width: 100%
+        width: 100%;
+        padding: 1rem;
     }
 }
 
@@ -551,26 +552,58 @@
     }
 }
 /* /Pages/Educations.razor.rz.scp.css */
+.cards-container[b-4foboexpca] {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin-inline: auto;
+}
+
 .title[b-4foboexpca] {
-    font-size: 2.7rem;
-    color: var(--portfoliosecondarycolor);
-    margin-bottom: 2rem;
-    font-weight: 500;
-    text-align: center;
-    letter-spacing: 0.04rem
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--portfolioprimarycolor);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 2.5rem;
+    margin: 0 auto 2rem auto;
+    width: fit-content;
+    animation: fadeInDown 0.5s ease both;
 }
 /* /Pages/Experiences.razor.rz.scp.css */
+.cards-container[b-0c6za4gkjy] {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin-inline: auto;
+}
+
 .title[b-0c6za4gkjy] {
-    font-size: 2.7rem;
-    color: var(--portfoliosecondarycolor);
-    margin-bottom: 2rem;
-    font-weight: 500;
-    text-align: center;
-    letter-spacing: 0.05rem
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--portfolioprimarycolor);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 2.5rem;
+    margin: 0 auto 2rem auto;
+    width: fit-content;
+    animation: fadeInDown 0.5s ease both;
 }
 /* /Pages/Home.razor.rz.scp.css */
 .name[b-s1pa21lcn1] {
-    font-size: 6rem;
+    font-size: clamp(2rem, 8vw, 6rem);
     font-weight: 900;
     background: var(--portfoliosecondarycolor);
     -webkit-text-fill-color: transparent;
@@ -578,6 +611,7 @@
     margin-bottom: 1rem;
     text-align: center;
     letter-spacing: 0.05rem;
+    overflow-wrap: break-word;
     animation: fadeInDown 0.6s ease both;
 }
 
@@ -602,7 +636,7 @@
     padding: 5vmin 5vmin;
     letter-spacing: 0.05rem;
     line-height: 1.8;
-    text-align: justify;
+    text-align: left;
     font-weight: 400;
     border-top: 4px solid var(--portfolioprimarycolor);
     margin: 0 5vmin ;
@@ -658,27 +692,28 @@
 
 .skill-card[b-s1pa21lcn1] {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.2rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
     box-shadow: var(--portfolioboxshadow);
-    border-left: 4px solid var(--portfolioprimarycolor);
+    border-left: 4px solid transparent;
     font-size: 1rem;
     font-weight: 600;
     color: #2C3E50;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
 }
 
 .skill-card:hover[b-s1pa21lcn1] {
     transform: translateY(-2px);
-    box-shadow: 0px 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--portfoliosecondarycolor);
 }
 
 .skill-card i[b-s1pa21lcn1] {
     font-size: 1.4rem;
-    color: var(--portfolioprimarycolor);
+    color: var(--portfoliosecondarycolor);
     flex-shrink: 0;
 }
 
@@ -693,14 +728,36 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 767.98px) {
+    .description-title[b-s1pa21lcn1],
+    .skills-title[b-s1pa21lcn1] {
+        padding: 0.8rem 2rem;
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    .description[b-s1pa21lcn1] {
+        margin: 0;
+        padding: 1.5rem;
+    }
+}
 /* /Pages/Projects.razor.rz.scp.css */
 .title[b-hk1d1hrxuq] {
-    font-size: 2.7rem;
-    color: var(--portfoliosecondarycolor);
-    margin-bottom: 2rem;
-    font-weight: 500;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--portfolioprimarycolor);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
     letter-spacing: 0.05rem;
+    padding: 0.75rem 2.5rem;
+    margin: 0 auto 2rem auto;
+    width: fit-content;
+    animation: fadeInDown 0.5s ease both;
 }
 
 .projects-grid[b-hk1d1hrxuq] {
@@ -708,6 +765,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     padding-bottom: 2rem;
+    max-width: 1100px;
+    margin-inline: auto;
 }
 
 @media (max-width: 768px) {

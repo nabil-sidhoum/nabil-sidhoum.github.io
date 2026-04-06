@@ -1,0 +1,25 @@
+name: quality-portfolio
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    name: Conventions C# (dotnet format)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Vérifier les conventions
+        run: dotnet format --verify-no-changes --verbosity diagnostic

@@ -12,6 +12,7 @@ namespace BlazorPortfolio.Client.Models
         public string Lieu { get; set; } = "";
         public DateTime DateDebut { get; set; }
         public DateTime? DateFin { get; set; }
+        public string Accroche { get; set; } = "";
         public List<string> Descriptions { get; set; } = [];
         public List<string> Competences { get; set; } = [];
     }

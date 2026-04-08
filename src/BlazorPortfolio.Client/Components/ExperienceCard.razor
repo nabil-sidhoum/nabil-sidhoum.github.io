@@ -19,19 +19,24 @@
         </div>
     </div>
     <div class="content">
-        <ul>
-            @foreach (string description in Experience.Descriptions)
-            {
-                <li>@description</li>
-            }
-        </ul>
-        <br />
+        @if (!string.IsNullOrEmpty(Experience.Accroche))
+        {
+            <p class="accroche">@Experience.Accroche</p>
+        }
+        @if (Experience.Descriptions.Count > 0)
+        {
+            <ul>
+                @foreach (string description in Experience.Descriptions)
+                {
+                    <li>@description</li>
+                }
+            </ul>
+        }
         <div>
             @foreach (string skill in Experience.Competences)
             {
                 <span class="badge">@skill</span>
             }
-
         </div>
     </div>
 </div>

@@ -581,8 +581,6 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    max-width: 860px;
-    margin-inline: auto;
 }
 
 .title[b-0c6za4gkjy] {

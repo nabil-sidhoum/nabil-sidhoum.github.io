@@ -144,6 +144,17 @@ code {
 
 
 
+/*
+ * Experience Card
+ */
+.accroche {
+    color: #333;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.55;
+    margin-bottom: 0.6rem;
+}
+
 .project-card {
     border: 1px solid #ccc;
     padding: 1rem;

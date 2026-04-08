@@ -11,7 +11,8 @@ namespace BlazorPortfolio.Client.Tests.Fixtures
                 "Lieu": "Paris 08, Île-de-France",
                 "DateDebut": "2025-01-01",
                 "DateFin": null,
-                "Descriptions": ["Conduite d'un refonte UX/UI."],
+                "Accroche": "Responsabilité technique complète d'un écosystème de 5 applications .NET interconnectées.",
+                "Descriptions": ["Migration .NET Framework 4.6 vers .NET 8 sans interruption de service."],
                 "Competences": [".NET 8", "Clean Architecture"]
               },
               {
@@ -21,7 +22,8 @@ namespace BlazorPortfolio.Client.Tests.Fixtures
                 "Lieu": "Clichy, Île-de-France",
                 "DateDebut": "2020-07-31",
                 "DateFin": "2021-03-31",
-                "Descriptions": ["Client : EIG."],
+                "Accroche": "Client : EIG (éditeur de logiciels de gestion secteur médico-social).",
+                "Descriptions": ["Formation et accompagnement des Lead Devs Delphi vers .NET Core."],
                 "Competences": [".NET Core 3.1"]
               }
             ]

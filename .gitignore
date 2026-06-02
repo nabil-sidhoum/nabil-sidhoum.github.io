@@ -445,6 +445,8 @@ $RECYCLE.BIN/
 *.dblog
 
 .claude/history/
+.claude/agents/
+.claude/reports/
 anomalies.local.md
 
 # Playwright MCP (screenshots et snapshots temporaires)

@@ -198,4 +198,5 @@ ci: configuration GitHub Actions déploiement
 
 - [Architecture](.claude/rules/clean-architecture.md)
 - [Conventions C#](.claude/rules/csharp-conventions.md)
+- [Conventions Blazor](.claude/rules/blazor-conventions.md)
 - [Tests](.claude/rules/testing.md)

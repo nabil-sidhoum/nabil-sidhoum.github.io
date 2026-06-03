@@ -44,6 +44,14 @@ body {
 
 Tester les deux et garder celui qui correspond le mieux à l'esthétique README.
 
+**Important — fallback mobile** : `background-attachment: fixed` n'est pas accéléré GPU sur iOS Safari. Le scroll peut déclencher un lag visible (~50-200 ms par frame) sur iPhone. Ajouter systématiquement dans le même bloc :
+
+```css
+@media (max-width: 767px) {
+  body { background-attachment: scroll; }
+}
+```
+
 ### 9.2 — Audit de contraste dark mode
 
 Ouvrir le portfolio en dark mode et vérifier systématiquement chaque type de texte :

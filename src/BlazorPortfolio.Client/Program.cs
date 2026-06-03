@@ -1,13 +1,14 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using BlazorPortfolio.Client.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorPortfolio.Client
 {
-    public class Program
+    public sealed class Program
     {
         public static async Task Main(string[] args)
         {
@@ -16,6 +17,7 @@ namespace BlazorPortfolio.Client
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped<UIStateService>();
 
             await builder.Build().RunAsync();
         }

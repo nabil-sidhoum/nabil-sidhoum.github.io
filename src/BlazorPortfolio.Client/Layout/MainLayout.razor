@@ -1,5 +1,12 @@
 @inherits LayoutComponentBase
+@using BlazorPortfolio.Client.Components.Nav
+@using BlazorPortfolio.Client.Components.Shared
+
+<Nav />
+<MobileMenu />
 
 <main class="doc" id="top">
+    <PathStrip />
     @Body
+    <Footer />
 </main>

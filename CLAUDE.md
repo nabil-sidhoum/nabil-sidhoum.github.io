@@ -121,8 +121,8 @@ feature/redesign-portfolio        ← branche d'intégration (base et cible de t
 2. git checkout -b feature/redesign-pXX-nom
 3. Implémenter la phase
 4. dotnet build        → 0 erreur obligatoire avant de continuer
-5. dotnet run          → vérifier que le site démarre (Playwright si UI visible)
-6. dotnet test         → si des tests existent pour cette phase
+5. dotnet test         → si des tests existent pour cette phase
+6. ui-verifier         → screenshots dans .claude/screenshots/phase-XX-nom/ (phases UI uniquement)
 7. /project:review     → dotnet-reviewer + architecture-reviewer sur les fichiers modifiés
 8. git commit
 9. git push + PR vers feature/redesign-portfolio
@@ -147,6 +147,7 @@ Les agents sont dans `.claude/agents/` (gitignored — proviennent d'un repo pri
 | `test-reviewer` | Haiku | Qualité tests xUnit | Si `*Tests.cs` dans le diff |
 | `security-reviewer` | Sonnet | Sécurité Blazor WASM, CSP, secrets | Si `index.html`, `wwwroot/` ou Services touchés |
 | `lead-dev` | Sonnet | Orchestration review PR complète | `/project:review-pr` |
+| `ui-verifier` | Sonnet | Vérification visuelle Blazor — screenshots par phase dans `.claude/screenshots/phase-XX/` | En fin de chaque phase UI |
 
 ---
 

@@ -1,0 +1,120 @@
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 60;
+    display: none;
+    flex-direction: column;
+    padding: 18px 24px 32px;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu-head {
+    display: flex;
+    align-items: center;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.brand {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--fg-strong);
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+}
+
+.brand .slash { color: var(--accent); }
+.brand .dim   { color: var(--fg-muted); }
+
+.mobile-menu-close {
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid var(--rule-strong);
+    background: transparent;
+    color: var(--fg);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-close svg { width: 18px; height: 18px; }
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 28px;
+}
+
+nav a {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--fg);
+    font-size: 22px;
+    padding: 14px 6px;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+nav a .idx {
+    color: var(--fg-muted);
+    font-size: 13px;
+    min-width: 32px;
+}
+
+nav a:hover { color: var(--accent); }
+
+.mobile-menu-cta {
+    margin-top: auto;
+    padding-top: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+.mobile-menu-cta .btn {
+    flex: 1;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .08s ease;
+    white-space: nowrap;
+}
+
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.btn-primary:hover {
+    background: color-mix(in oklab, var(--accent) 88%, white);
+}
+
+.btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}

@@ -1,0 +1,89 @@
+@using BlazorPortfolio.Client.Services
+@inject UIStateService UIState
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+<aside class="mobile-menu @(UIState.IsMobileMenuOpen ? "open" : "")" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-head">
+        <span class="brand">
+            <span class="dim">~/</span>nabil-sidhoum<span class="slash">/</span>
+        </span>
+        <button class="mobile-menu-close" @onclick="Close" aria-label="Fermer le menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav>
+        <a href="#about"      @onclick="Close"><span class="idx">01</span> about</a>
+        <a href="#stack"      @onclick="Close"><span class="idx">02</span> stack</a>
+        <a href="#projets"    @onclick="Close"><span class="idx">03</span> projets</a>
+        <a href="#experience" @onclick="Close"><span class="idx">04</span> experience</a>
+        <a href="/blog"       @onclick="Close"><span class="idx">05</span> blog</a>
+        <a href="#contact"    @onclick="Close"><span class="idx">06</span> contact</a>
+    </nav>
+
+    <div class="mobile-menu-cta">
+        <a class="btn btn-primary" href="assets/cv.pdf" download @onclick="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Télécharger le CV
+        </a>
+    </div>
+</aside>
+
+@code {
+    private IJSObjectReference _module;
+    private bool _previousMenuOpen;
+
+    protected override void OnInitialized()
+    {
+        UIState.OnChange += HandleStateChange;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/scroll.js");
+        }
+
+        bool currentOpen = UIState.IsMobileMenuOpen;
+        if (currentOpen != _previousMenuOpen && _module != null)
+        {
+            _previousMenuOpen = currentOpen;
+            if (currentOpen)
+            {
+                await _module.InvokeVoidAsync("lockScroll");
+            }
+            else
+            {
+                await _module.InvokeVoidAsync("unlockScroll");
+            }
+        }
+    }
+
+    private void HandleStateChange()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void Close()
+    {
+        UIState.CloseMobileMenu();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        UIState.OnChange -= HandleStateChange;
+        if (_module != null)
+        {
+            await _module.DisposeAsync();
+        }
+    }
+}

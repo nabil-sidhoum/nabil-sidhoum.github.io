@@ -68,7 +68,7 @@ namespace BlazorPortfolio.Client.Services
             }
 
             _cache = await _httpClient.GetFromJsonAsync<List<ProjectInfo>>("data/projects.json");
-            return _cache ?? new List<ProjectInfo>();
+            return _cache ?? [];
         }
     }
 }
@@ -200,7 +200,7 @@ Charge les projets via `ProjectService`, affiche un état de chargement pendant 
 </section>
 
 @code {
-    private List<ProjectInfo> _projects = new List<ProjectInfo>();
+    private List<ProjectInfo> _projects = [];
     private bool _loading = true;
 
     protected override async Task OnInitializedAsync()

@@ -57,11 +57,12 @@ jobs:
       - name: Publish
         run: dotnet publish -c Release -o output
 
-      - name: Corriger le base path
+      - name: Vérifier le base href
         run: |
-          # Pour un repo <username>.github.io, le base path est "/"
-          # Si le repo est nommé autrement, ajuster le base href ici
-          sed -i 's|<base href="/" />|<base href="/" />|g' output/wwwroot/index.html
+          # Pour nabil-sidhoum.github.io le base href "/" est correct — aucune modification.
+          # Si le repo avait un autre nom (ex: "portfolio"), utiliser :
+          # sed -i 's|<base href="/" />|<base href="/portfolio/" />|g' output/wwwroot/index.html
+          grep -q '<base href="/" />' output/wwwroot/index.html && echo "base href OK" || (echo "ERREUR : base href inattendu" && exit 1)
 
       - name: Créer le fallback 404.html pour le SPA routing
         run: cp output/wwwroot/index.html output/wwwroot/404.html

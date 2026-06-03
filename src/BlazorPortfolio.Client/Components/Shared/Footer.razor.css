@@ -1,0 +1,35 @@
+.eof {
+    margin-top: 64px;
+    color: var(--fg-dim);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.eof::before { content: "// EOF "; color: var(--fg-dim); }
+.eof::after  { content: "────────────────────────────────────────────────────────────"; }
+
+.footer-meta {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    color: var(--fg-muted);
+}
+
+.footer-meta a {
+    color: var(--fg-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-meta a:hover {
+    color: var(--accent);
+    border-color: var(--accent-line);
+}

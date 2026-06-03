@@ -1,0 +1,90 @@
+@using BlazorPortfolio.Client.Services
+@inject UIStateService UIState
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+<header class="nav" role="banner">
+    <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Nabil Sidhoum — accueil">
+            <span class="dim">~/</span>nabil-sidhoum<span class="slash">/</span><span class="dim">README.md</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigation principale">
+            <a href="#about"      class="@ActiveClass("about")">about</a>
+            <a href="#stack"      class="@ActiveClass("stack")">stack</a>
+            <a href="#projets"    class="@ActiveClass("projets")">projets</a>
+            <a href="#experience" class="@ActiveClass("experience")">experience</a>
+            <a href="/blog">blog</a>
+            <a href="#contact"    class="@ActiveClass("contact")">contact</a>
+        </nav>
+
+        <div class="nav-spacer"></div>
+
+        <div class="nav-actions">
+            <ThemeToggle />
+
+            <a class="btn btn-primary" href="assets/cv.pdf" download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span class="label">CV.pdf</span>
+            </a>
+
+            <button class="burger" @onclick="OpenMenu" aria-label="Ouvrir le menu" aria-expanded="@_menuExpanded">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+@code {
+    private IJSObjectReference _module;
+    private DotNetObjectReference<Nav> _dotnetRef;
+    private string _activeSection = string.Empty;
+
+    private string _menuExpanded => UIState.IsMobileMenuOpen ? "true" : "false";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _dotnetRef = DotNetObjectReference.Create(this);
+            _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/scroll-spy.js");
+            await _module.InvokeVoidAsync("init", _dotnetRef);
+        }
+    }
+
+    [JSInvokable]
+    public void OnSectionVisible(string id)
+    {
+        _activeSection = id;
+        _ = InvokeAsync(StateHasChanged);
+    }
+
+    private string ActiveClass(string id)
+    {
+        return _activeSection == id ? "active" : string.Empty;
+    }
+
+    private void OpenMenu()
+    {
+        UIState.OpenMobileMenu();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_module != null)
+        {
+            await _module.InvokeVoidAsync("dispose");
+            await _module.DisposeAsync();
+        }
+
+        _dotnetRef?.Dispose();
+    }
+}

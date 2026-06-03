@@ -1,0 +1,37 @@
+.path-strip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12.5px;
+    color: var(--fg-muted);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.path-strip .seg { color: var(--fg-muted); }
+.path-strip .seg.current { color: var(--fg); }
+
+.path-strip .meta {
+    margin-left: auto;
+    color: var(--fg-dim);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.path-strip .pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .path-strip { font-size: 11.5px; margin-bottom: 28px; padding-bottom: 14px; }
+    .path-strip .meta { width: 100%; margin-left: 0; margin-top: 6px; }
+}

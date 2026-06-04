@@ -2,10 +2,9 @@ name: quality-portfolio
 
 on:
   pull_request:
-    branches: [ main, develop ]
 
 env:
-  SOLUTION_PATH: src/BlazorPortfolio.sln
+  SOLUTION_PATH: src/BlazorPortfolio.slnx
 
 jobs:
   format-check:
@@ -19,7 +18,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.x'
+          dotnet-version: '10.x'
 
       - name: Restore dependencies
         run: dotnet restore ${{ env.SOLUTION_PATH }}

@@ -382,6 +382,10 @@ dotnet_diagnostic.SYSLIB1045.severity = none
 # Raison : Les method groups diminuent la lisibilité ; nous préférons conserver les lambdas explicites.
 dotnet_diagnostic.IDE0200.severity = none
 
+# IDE0090 : Suggère d'utiliser new() implicite (target-typed new) — désactivé
+# Raison : la convention du projet exige les types explicites (cohérent avec IDE0007 = none)
+dotnet_diagnostic.IDE0090.severity = none
+
 # CA1848 : Use the LoggerMessage delegates — désactivé
 # Raison : Le gain de performance est marginal dans notre contexte ; la règle génère du bruit et réduit la lisibilité.
 dotnet_diagnostic.CA1848.severity = none

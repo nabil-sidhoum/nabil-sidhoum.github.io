@@ -18,7 +18,7 @@ namespace BlazorPortfolio.Client.Components.Nav
         private DotNetObjectReference<Nav> _dotnetRef;
         private string _activeSection = string.Empty;
 
-        private string _menuExpanded => UIState.IsMobileMenuOpen ? "true" : "false";
+        private string MenuExpanded => UIState.IsMobileMenuOpen ? "true" : "false";
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {

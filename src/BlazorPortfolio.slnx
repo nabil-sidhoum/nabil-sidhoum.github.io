@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="BlazorPortfolio.Client.Tests/BlazorPortfolio.Client.Tests.csproj" />
+  <Project Path="BlazorPortfolio.Client/BlazorPortfolio.Client.csproj" />
+</Solution>

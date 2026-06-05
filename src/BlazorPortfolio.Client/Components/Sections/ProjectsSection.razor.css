@@ -1,0 +1,9 @@
+.section-comment {
+    margin-bottom: 18px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}

@@ -1,0 +1,57 @@
+.section-comment {
+    margin-bottom: 18px;
+}
+
+.skills-block {
+    background: var(--bg-elev);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 22px 24px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 13px;
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.skill-row:first-child {
+    padding-top: 4px;
+}
+
+.skill-row:last-child {
+    padding-bottom: 4px;
+    border-bottom: none;
+}
+
+.skill-row .key {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.skill-row .key::after {
+    content: ":";
+    color: var(--fg-muted);
+    margin-left: 1px;
+}
+
+.skill-row .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+@media (max-width: 767px) {
+    .skills-block {
+        padding: 18px;
+    }
+
+    .skill-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}

@@ -1,0 +1,43 @@
+<section id="experience" data-screen-label="04 Experience">
+    <h2 class="h-readme">experience <span class="sub">— git log --oneline</span></h2>
+    <p class="comment section-comment">Trois postes. Onze ans. Tous .NET.</p>
+
+    @if (_loading)
+    {
+        <p class="comment">chargement...</p>
+    }
+    else
+    {
+        <div class="git-log">
+            @for (int i = 0; i < _experiences.Count; i++)
+            {
+                ExperienceInfo exp = _experiences[i];
+                bool isHead = i == 0;
+                <div class="commit @(isHead ? "head" : "")">
+                    <span class="hash">@GenerateHash(exp.Societe + exp.DateDebut)</span>
+                    <span class="when">
+                        @YearOf(exp.DateDebut) →
+                        @if (string.IsNullOrEmpty(exp.DateFin))
+                        {
+                            <span class="now">now</span>
+                        }
+                        else
+                        {
+                            @YearOf(exp.DateFin)
+                        }
+                    </span>
+                    <div class="commit-body">
+                        <span class="msg">
+                            <b>@exp.Poste</b><span class="at">@@</span>@exp.Societe
+                            <span class="loc">— @exp.Lieu</span>
+                        </span>
+                        @if (!string.IsNullOrEmpty(exp.Accroche))
+                        {
+                            <p class="accroche">@exp.Accroche</p>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</section>

@@ -2,7 +2,7 @@
   {
     "Nom": "VeilleTech",
     "BadgeType": "Showcase",
-    "Description": "Système de veille tech automatisé. <b>RSS aggregation → LLM scoring via Groq/Llama 3.3 → publication Discord</b>. Trois cron workflows indépendants sur GitHub Actions, complètement découplés, avec leur propre cycle de vie.",
+    "Description": "Système de veille tech automatisé. RSS aggregation → LLM scoring via Groq/Llama 3.3 → publication Discord. Trois cron workflows indépendants sur GitHub Actions, complètement découplés, avec leur propre cycle de vie.",
     "GithubUrl": null,
     "ExtraUrl": null,
     "ExtraLabel": null,
@@ -11,7 +11,7 @@
   {
     "Nom": "dotnet-claude-template",
     "BadgeType": "Showcase",
-    "Description": "Template Claude Code <b>réutilisable pour projets .NET</b>. Architecture multi-agent, conventions Clean Architecture, système ADR pour tracer les décisions techniques, pipeline CI configurée par défaut.",
+    "Description": "Template Claude Code réutilisable pour projets .NET. Architecture multi-agent, conventions Clean Architecture, système ADR pour tracer les décisions techniques, pipeline CI configurée par défaut.",
     "GithubUrl": null,
     "ExtraUrl": null,
     "ExtraLabel": null,
@@ -20,7 +20,7 @@
   {
     "Nom": "PageCorrelationId",
     "BadgeType": "OpenSource",
-    "Description": "<b>Middleware ASP.NET Core de propagation d'un Correlation ID métier</b>. Né d'un besoin réel en production : relier dans les logs toutes les requêtes déclenchées par une même ouverture de page. Package NuGet, badge CI.",
+    "Description": "Middleware ASP.NET Core de propagation d'un Correlation ID métier. Né d'un besoin réel en production : relier dans les logs toutes les requêtes déclenchées par une même ouverture de page. Package NuGet, badge CI.",
     "GithubUrl": "https://github.com/nabil-sidhoum/PageCorrelationId",
     "ExtraUrl": null,
     "ExtraLabel": null,
@@ -29,7 +29,7 @@
   {
     "Nom": "DynamicsCrmConnector",
     "BadgeType": "OpenSource",
-    "Description": "Connecteur HTTP asynchrone pour l'<b>API Web OData de Microsoft Dynamics CRM</b>. Authentification OAuth2 (ClientId / SecretId), CRUD complet, mapping fortement typé, support FetchXML et pagination automatique. Tests xUnit + Moq + MockHttp, CI gated publish.",
+    "Description": "Connecteur HTTP asynchrone pour l'API Web OData de Microsoft Dynamics CRM. Authentification OAuth2 (ClientId / SecretId), CRUD complet, mapping fortement typé, support FetchXML et pagination automatique. Tests xUnit + Moq + MockHttp, CI gated publish.",
     "GithubUrl": "https://github.com/nabil-sidhoum/DynamicsCrmConnector",
     "ExtraUrl": "https://www.nuget.org/packages/Tools.DynamicsCRM",
     "ExtraLabel": "NuGet",
@@ -38,7 +38,7 @@
   {
     "Nom": "OpenstackSwiftConnector",
     "BadgeType": "OpenSource",
-    "Description": "Connecteur HTTP asynchrone pour l'<b>API REST OpenStack Swift</b>. Configuration via appsettings.json, injection de dépendance native et renouvellement automatique des tokens. Publié sur NuGet.",
+    "Description": "Connecteur HTTP asynchrone pour l'API REST OpenStack Swift. Configuration via appsettings.json, injection de dépendance native et renouvellement automatique des tokens. Publié sur NuGet.",
     "GithubUrl": "https://github.com/nabil-sidhoum/OpenstackSwiftConnector",
     "ExtraUrl": "https://www.nuget.org/packages/Tools.Swift.Connector",
     "ExtraLabel": "NuGet",

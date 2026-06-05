@@ -1,0 +1,11 @@
+<section class="projets" id="projets" data-screen-label="03 Projets">
+    <h2 class="h-readme">projets <span class="sub">— par impact</span></h2>
+    <p class="comment section-comment">SHOWCASE = artefact privé, OPEN SOURCE = repo public + package NuGet.</p>
+
+    <div class="projects">
+        @foreach (ProjectInfo project in _projects)
+        {
+            <ProjectCard Project="project" />
+        }
+    </div>
+</section>

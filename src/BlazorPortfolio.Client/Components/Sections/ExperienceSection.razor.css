@@ -1,0 +1,116 @@
+.section-comment {
+    margin-bottom: 18px;
+}
+
+.git-log {
+    background: var(--bg-elev);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 4px 0;
+    overflow: hidden;
+}
+
+.commit {
+    display: grid;
+    grid-template-columns: 100px 130px 1fr;
+    gap: 18px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--rule);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13.5px;
+}
+
+.commit:last-child {
+    border-bottom: none;
+}
+
+.commit .hash {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.commit .when {
+    color: var(--fg-muted);
+}
+
+.commit .when .now {
+    color: #22c55e;
+    font-weight: 500;
+}
+
+.commit .msg {
+    color: var(--fg);
+}
+
+.commit .msg b {
+    color: var(--fg-strong);
+    font-weight: 600;
+}
+
+.commit .msg .at {
+    color: var(--fg-muted);
+    margin: 0 4px;
+}
+
+.commit .msg .loc {
+    color: var(--fg-muted);
+    font-size: 12px;
+}
+
+.commit.head .hash::after {
+    content: " (HEAD)";
+    color: var(--fg-muted);
+    font-weight: 400;
+}
+
+.commit-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.commit-body .accroche {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--fg-muted);
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.commit-body .accroche::before {
+    content: "// ";
+    color: var(--fg-dim);
+}
+
+@media (max-width: 767px) {
+    .commit {
+        grid-template-columns: auto auto 1fr;
+        grid-template-areas:
+            "hash when ."
+            "body body body";
+        gap: 6px 12px;
+        padding: 14px 16px;
+        font-size: 13px;
+    }
+
+    .commit .hash {
+        grid-area: hash;
+    }
+
+    .commit .when {
+        grid-area: when;
+    }
+
+    .commit-body {
+        grid-area: body;
+        line-height: 1.5;
+    }
+
+    .commit .msg .loc {
+        display: block;
+    }
+
+    .commit-body .accroche {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,130 @@
+.blog-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 96px 24px 64px;
+}
+
+.section-comment {
+    margin-bottom: 18px;
+}
+
+/* Placeholder — liste vide */
+.ghost-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.ghost {
+    background: var(--bg-elev);
+    border: 1px dashed var(--rule-strong);
+    border-radius: 10px;
+    padding: 22px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.ghost .ghost-tag {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+.ghost .ghost-title {
+    font-size: 14px;
+    color: var(--fg-muted);
+    line-height: 1.4;
+}
+
+/* Liste d'articles */
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.article-card {
+    display: block;
+    background: var(--bg-elev);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 22px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.article-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.article-card time {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--fg-dim);
+}
+
+.article-card time::before {
+    content: "// ";
+}
+
+.article-card h3 {
+    margin: 10px 0 6px;
+    font-size: 18px;
+    color: var(--fg);
+}
+
+.article-card p {
+    margin: 0 0 14px;
+    font-size: 14px;
+    color: var(--fg-muted);
+    line-height: 1.6;
+}
+
+.article-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pill {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 3px 10px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 32px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--fg-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 767px) {
+    .blog-page {
+        padding: 80px 18px 48px;
+    }
+
+    .ghost-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ghost {
+        min-height: 110px;
+        padding: 18px;
+    }
+}

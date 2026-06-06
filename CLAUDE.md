@@ -57,7 +57,7 @@ src/BlazorPortfolio.Client/
 │   ├── Nav/          # Nav.razor, MobileMenu.razor, ThemeToggle.razor
 │   ├── Sections/     # HeroSection, AboutSection, StackSection, ProjectCard,
 │   │                 # ProjectsSection, ExperienceSection, BlogSection, ContactSection
-│   └── Shared/       # PathStrip.razor, Footer.razor
+│   └── Common/       # PathStrip.razor, Footer.razor
 ├── Layout/           # MainLayout.razor + .razor.css
 ├── Models/           # ProjectInfo.cs, ExperienceInfo.cs, BlogArticle.cs
 ├── Pages/            # Index.razor, Blog.razor, BlogPost.razor

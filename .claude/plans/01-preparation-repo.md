@@ -70,7 +70,7 @@ Portfolio/
 ├── Components/
 │   ├── Nav/                       ← Phase 03
 │   ├── Sections/                  ← Phases 04-06
-│   └── Shared/                    ← composants réutilisables
+│   └── Common/                    ← composants réutilisables
 ├── Pages/
 │   ├── Index.razor                ← Phase 04 (page principale)
 │   ├── Blog.razor                 ← Phase 07

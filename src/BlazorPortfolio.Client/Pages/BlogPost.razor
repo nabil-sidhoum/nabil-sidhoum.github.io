@@ -1,0 +1,23 @@
+@page "/blog/{Slug}"
+
+<PageTitle>Blog · Nabil Sidhoum</PageTitle>
+
+<article class="blog-post">
+    @if (_htmlContent == null && !_notFound)
+    {
+        <p class="comment">Chargement...</p>
+    }
+    else if (_notFound)
+    {
+        <h1 class="h-readme">404 <span class="sub">— article introuvable</span></h1>
+        <p class="comment">Cet article n'existe pas ou a été déplacé.</p>
+    }
+    else
+    {
+        <div class="prose">
+            @((MarkupString)_htmlContent)
+        </div>
+    }
+
+    <a href="/blog" class="back-link">← retour au blog</a>
+</article>

@@ -144,7 +144,7 @@ Recommandation : Option B — plus propre, et le service pourra gérer d'autres 
 
 ### 3.6 — PathStrip (breadcrumb)
 
-Créer `Components/Shared/PathStrip.razor` :
+Créer `Components/Common/PathStrip.razor` :
 
 Affiche : `~/ nabil-sidhoum/ README.md` avec metadata `● disponible juillet 2026 · Paris / remote FR`
 
@@ -154,7 +154,7 @@ Le `PathStrip.razor.css` contient les styles du breadcrumb. Reprendre les styles
 
 ### 3.7 — Footer
 
-Créer `Components/Shared/Footer.razor` :
+Créer `Components/Common/Footer.razor` :
 
 Affiche : `// EOF ───...` + ligne `© 2026 · Nabil Sidhoum` avec liens GitHub et LinkedIn.
 

@@ -175,8 +175,8 @@ Les agents sont dans `.claude/agents/` (gitignored — proviennent d'un repo pri
 | 04 — Hero + About | `feature/redesign-p04-hero-about` | ✅ Mergée (PR #11) |
 | 05 — Stack + Projects | `feature/redesign-p05-stack-projects` | ✅ Mergée (PR #12) |
 | 06 — Experience + Blog + Contact | `feature/redesign-p06-experience-blog-contact` | ✅ Mergée (PR #14) |
-| 07 — Blog routing | `feature/redesign-p07-blog-routing` | ⏳ À faire (prochaine) |
-| 08 — Sécurité CSP | `feature/redesign-p08-securite-csp` | ⏳ À faire |
+| 07 — Blog routing | `feature/redesign-p07-blog-routing` | ✅ Mergée (PR #15) |
+| 08 — Sécurité CSP | `feature/redesign-p08-securite-csp` | ⏳ À faire (prochaine) |
 | 09 — Polish + QA | `feature/redesign-p09-polish-qa` | ⏳ À faire |
 | 10 — Déploiement | `feature/redesign-p10-deploiement` | ⏳ À faire |
 

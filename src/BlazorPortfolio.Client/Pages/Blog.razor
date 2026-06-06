@@ -1,0 +1,51 @@
+@page "/blog"
+
+<PageTitle>Blog — Nabil Sidhoum</PageTitle>
+
+<section class="blog-page">
+    <h1 class="h-readme">blog <span class="sub">— articles techniques</span></h1>
+
+    @if (_articles == null)
+    {
+        <p class="comment">Chargement...</p>
+    }
+    else if (_articles.Count == 0)
+    {
+        <p class="comment section-comment">Drafts en cours. Les articles arriveront ici.</p>
+        <div class="ghost-grid">
+            <div class="ghost">
+                <span class="ghost-tag">// TODO[1]</span>
+                <span class="ghost-title">Article à venir</span>
+            </div>
+            <div class="ghost">
+                <span class="ghost-tag">// TODO[2]</span>
+                <span class="ghost-title">Article à venir</span>
+            </div>
+            <div class="ghost">
+                <span class="ghost-tag">// TODO[3]</span>
+                <span class="ghost-title">Article à venir</span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="article-list">
+            @foreach (BlogArticle article in _articles)
+            {
+                <a href="/blog/@article.Slug" class="article-card">
+                    <time>@article.PublishedAt</time>
+                    <h3>@article.Title</h3>
+                    <p>@article.Summary</p>
+                    <div class="tags">
+                        @foreach (string tag in article.Tags)
+                        {
+                            <span class="pill">@tag</span>
+                        }
+                    </div>
+                </a>
+            }
+        </div>
+    }
+
+    <a href="/" class="back-link">← retour au portfolio</a>
+</section>

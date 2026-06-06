@@ -54,5 +54,25 @@ namespace BlazorPortfolio.Client.Tests
                 }
             ]
             """;
+
+        public static readonly string BlogIndex = /*lang=json,strict*/ """
+            {
+                "articles": [
+                    {
+                        "slug": "mon-premier-article",
+                        "title": "Mon premier article",
+                        "summary": "Description courte de l'article.",
+                        "publishedAt": "2026-08-15",
+                        "tags": [".NET", "Claude Code"]
+                    }
+                ]
+            }
+            """;
+
+        public static readonly string BlogIndexVide = /*lang=json,strict*/ """
+            {
+                "articles": []
+            }
+            """;
     }
 }

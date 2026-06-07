@@ -21,6 +21,7 @@ namespace BlazorPortfolio.Client
             builder.Services.AddScoped<ProjectService>();
             builder.Services.AddScoped<ExperienceService>();
             builder.Services.AddScoped<BlogService>();
+            builder.Services.AddScoped<StackService>();
 
             await builder.Build().RunAsync();
         }

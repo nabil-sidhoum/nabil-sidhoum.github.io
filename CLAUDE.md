@@ -81,10 +81,13 @@ Les données sont chargées via `HttpClient` depuis `wwwroot/data/`. Ajouter du 
 
 | Fichier | Modèle | Service | Sections affichées |
 |---------|--------|---------|-------------------|
+| `data/stack.json` | `StackCategoryInfo` | `StackService` | StackSection |
 | `data/experiences.json` | `ExperienceInfo` | `ExperienceService` | ExperienceSection |
 | `data/projects.json` | `ProjectInfo` | `ProjectService` | ProjectsSection |
 | `data/educations.json` | *(non affiché pour l'instant)* | — | — |
 | `posts/index.json` + `posts/*.md` | `BlogArticle` | `BlogService` | Blog.razor, BlogPost.razor |
+
+Schema `stack.json` : champs `Key` (libellé de la catégorie, ex. `".net"`), `IsAccent` (`true` = pills en style accent), `Items` (liste de technos).
 
 Schema `projects.json` : champs `Nom`, `BadgeType` (`"Showcase"` ou `"OpenSource"`), `Description`, `GithubUrl`, `ExtraUrl`, `ExtraLabel`, `Competences`.
 

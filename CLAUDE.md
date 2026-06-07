@@ -200,3 +200,4 @@ ci: configuration GitHub Actions déploiement
 - [Conventions C#](.claude/rules/csharp-conventions.md)
 - [Conventions Blazor](.claude/rules/blazor-conventions.md)
 - [Tests](.claude/rules/testing.md)
+- [Sécurité CSP & headers](.claude/rules/csp-security.md)

@@ -5,16 +5,22 @@
     "Items": [
       "C# 14",
       ".NET 8 / 10",
+      "ASP.NET Core",
+      "Blazor WebAssembly",
+      "EF Core",
+      "SQL Server",
       "Clean Architecture",
+      "DDD",
       "CQRS",
       "MediatR",
-      "EF Core",
-      "ASP.NET Core",
-      "Azure DevOps",
+      "Hangfire",
+      "PuppeteerSharp",
+      "Microsoft Dynamics CRM",
       "Bloomberg BLPAPI",
       "SIX Telekurs",
-      "xUnit",
-      "Hangfire"
+      "NuGet",
+      "Azure DevOps",
+      "xUnit"
     ]
   },
   {
@@ -26,6 +32,7 @@
       "Multi-agent",
       "Groq",
       "Llama 3.3",
+      "OpenAI",
       "LLM integration"
     ]
   }

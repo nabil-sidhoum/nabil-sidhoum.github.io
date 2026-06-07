@@ -130,9 +130,8 @@ feature/redesign-portfolio        ← branche d'intégration (base et cible de t
 
 ### Règles commits et PR
 
-- Conventional Commits en français : `feat:`, `fix:`, `test:`, `refactor:`, `ci:`
-- Pas de co-auteur Claude dans les commits ou les PR
-- Un commit par phase (sauf si la phase est trop volumineuse)
+- Politique Git complète (branches, protection, méthodes de merge, conventions de commit) : voir [`git-workflow.md`](.claude/rules/git-workflow.md)
+- Spécifique refonte : un commit par phase (sauf si la phase est trop volumineuse)
 
 ---
 
@@ -182,18 +181,6 @@ Les agents sont dans `.claude/agents/` (gitignored — proviennent d'un repo pri
 
 ---
 
-## Conventions de commit (Conventional Commits, en français)
-
-```
-feat: ajout de la section stack
-fix: correction du scroll sur mobile
-test: ajout des tests pour ProjectService
-refactor: extraction du composant ProjectCard
-ci: configuration GitHub Actions déploiement
-```
-
----
-
 ## Règles détaillées
 
 - [Architecture](.claude/rules/clean-architecture.md)
@@ -201,3 +188,4 @@ ci: configuration GitHub Actions déploiement
 - [Conventions Blazor](.claude/rules/blazor-conventions.md)
 - [Tests](.claude/rules/testing.md)
 - [Sécurité CSP & headers](.claude/rules/csp-security.md)
+- [Workflow Git — branches, protection, contribution](.claude/rules/git-workflow.md)

@@ -1,0 +1,32 @@
+[
+  {
+    "Key": ".net",
+    "IsAccent": false,
+    "Items": [
+      "C# 14",
+      ".NET 8 / 10",
+      "Clean Architecture",
+      "CQRS",
+      "MediatR",
+      "EF Core",
+      "ASP.NET Core",
+      "Azure DevOps",
+      "Bloomberg BLPAPI",
+      "SIX Telekurs",
+      "xUnit",
+      "Hangfire"
+    ]
+  },
+  {
+    "Key": "ai",
+    "IsAccent": true,
+    "Items": [
+      "Claude Code",
+      "MCP servers",
+      "Multi-agent",
+      "Groq",
+      "Llama 3.3",
+      "LLM integration"
+    ]
+  }
+]

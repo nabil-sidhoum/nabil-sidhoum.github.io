@@ -74,5 +74,20 @@ namespace BlazorPortfolio.Client.Tests
                 "articles": []
             }
             """;
+
+        public static readonly string Stack = /*lang=json,strict*/ """
+            [
+                {
+                    "Key": ".net",
+                    "IsAccent": false,
+                    "Items": ["C# 14", ".NET 8 / 10"]
+                },
+                {
+                    "Key": "ai",
+                    "IsAccent": true,
+                    "Items": ["Claude Code"]
+                }
+            ]
+            """;
     }
 }

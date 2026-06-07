@@ -3,16 +3,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Sécurité -->
+    <!-- frame-ancestors et X-Frame-Options ne sont pas supportés en <meta> : assurés par _headers (Cloudflare) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO -->
     <title>Nabil Sidhoum — Tech Lead .NET | AI Agent Engineering</title>
+    <meta name="description" content="Portfolio de Nabil Sidhoum — Tech Lead .NET, 11 ans d'expérience. Clean Architecture, CQRS, MediatR, agents IA. Paris, France.">
+    <meta name="author" content="Nabil Sidhoum">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nabil Sidhoum — Tech Lead .NET">
+    <meta property="og:description" content="Senior .NET Tech Lead — Clean Architecture, CQRS, AI Agent Engineering. Paris.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nabil-sidhoum.github.io">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nabil Sidhoum — Tech Lead .NET">
+    <meta name="twitter:description" content="Senior .NET Tech Lead — Clean Architecture, CQRS, AI Agent Engineering.">
+
     <base href="/" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/theme.css" />
     <link href="BlazorPortfolio.Client.styles.css" rel="stylesheet" />
 </head>
 <body>
     <div id="app">
-        <div style="display:flex;justify-content:center;align-items:center;height:100vh;">
-            <p style="font-family:monospace;color:#6b7280;">chargement...</p>
+        <div class="app-loading">
+            <p>chargement...</p>
         </div>
     </div>
 

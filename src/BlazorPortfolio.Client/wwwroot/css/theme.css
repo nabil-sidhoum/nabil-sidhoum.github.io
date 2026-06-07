@@ -133,6 +133,23 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+
+/* ============================================================
+   SPLASH DE CHARGEMENT (avant démarrage WASM)
+   ============================================================ */
+
+.app-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-loading p {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  color: var(--fg-dim);
+}
+
 ::selection {
   background: var(--selection);
   color: var(--fg-strong);

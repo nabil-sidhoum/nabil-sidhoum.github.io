@@ -123,7 +123,10 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--rule) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
   color: var(--fg);
   font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 16px;
@@ -317,6 +320,8 @@ h2.h-readme .sub {
    ============================================================ */
 
 @media (max-width: 767px) {
+  /* background-attachment: fixed n'est pas accéléré GPU sur iOS Safari → lag au scroll */
+  body { background-attachment: scroll; }
   .divider { margin: 56px 0 36px; }
   h2.h-readme { flex-wrap: wrap; }
 }
@@ -333,7 +338,7 @@ h2.h-readme .sub {
 }
 
 @media print {
-  body { background: #fff; color: #000; }
+  body { background: #fff; background-image: none; color: #000; }
 }
 
 /* ============================================================ */

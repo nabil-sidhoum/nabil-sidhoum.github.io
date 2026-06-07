@@ -102,8 +102,8 @@
 
 .burger {
     display: none;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
     border: 1px solid var(--rule-strong);
     background: transparent;
@@ -115,10 +115,20 @@
 
 .burger svg { width: 18px; height: 18px; }
 
-@media (max-width: 767px) {
+/* 900px : le layout desktop complet (brand + liens + actions ≈ 788px) déborde
+   sous ~820px ; on bascule en burger avant pour éviter tout scroll horizontal,
+   notamment au breakpoint tablette 768px. */
+@media (max-width: 900px) {
     .nav-inner { padding: 12px 16px; gap: 12px; }
     .nav-links { display: none; }
     .burger { display: inline-flex; }
     .nav-actions .btn .label { display: none; }
     .nav-actions .btn { padding: 8px 10px; }
+}
+
+/* Petit mobile : le brand (~212px) + les actions (burger 44px inclus) saturent
+   la largeur. On resserre paddings et gaps pour rester sans débordement horizontal. */
+@media (max-width: 600px) {
+    .nav-inner { padding: 12px 12px; gap: 8px; }
+    .nav-actions { gap: 6px; }
 }

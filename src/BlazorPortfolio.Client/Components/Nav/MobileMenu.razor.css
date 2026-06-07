@@ -31,8 +31,8 @@
 
 .mobile-menu-close {
     margin-left: auto;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
     border: 1px solid var(--rule-strong);
     background: transparent;
@@ -82,6 +82,7 @@ nav a:hover { color: var(--accent); }
 .mobile-menu-cta .btn {
     flex: 1;
     justify-content: center;
+    min-height: 44px;
 }
 
 .btn {

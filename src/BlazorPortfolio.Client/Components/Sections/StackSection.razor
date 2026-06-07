@@ -3,33 +3,17 @@
     <p class="comment section-comment">Listés séparément par choix : la stack .NET est la base ; l'IA est l'extension récente.</p>
 
     <div class="skills-block">
-        <div class="skill-row">
-            <div class="key">.net</div>
-            <div class="pills">
-                <span class="pill">C# 14</span>
-                <span class="pill">.NET 8 / 10</span>
-                <span class="pill">Clean Architecture</span>
-                <span class="pill">CQRS</span>
-                <span class="pill">MediatR</span>
-                <span class="pill">EF Core</span>
-                <span class="pill">ASP.NET Core</span>
-                <span class="pill">Azure DevOps</span>
-                <span class="pill">Bloomberg BLPAPI</span>
-                <span class="pill">SIX Telekurs</span>
-                <span class="pill">xUnit</span>
-                <span class="pill">Hangfire</span>
+        @foreach (StackCategoryInfo category in _categories)
+        {
+            <div class="skill-row">
+                <div class="key">@category.Key</div>
+                <div class="pills">
+                    @foreach (string item in category.Items)
+                    {
+                        <span class="@(category.IsAccent ? "pill accent" : "pill")">@item</span>
+                    }
+                </div>
             </div>
-        </div>
-        <div class="skill-row">
-            <div class="key">ai</div>
-            <div class="pills">
-                <span class="pill accent">Claude Code</span>
-                <span class="pill accent">MCP servers</span>
-                <span class="pill accent">Multi-agent</span>
-                <span class="pill accent">Groq</span>
-                <span class="pill accent">Llama 3.3</span>
-                <span class="pill accent">LLM integration</span>
-            </div>
-        </div>
+        }
     </div>
 </section>

@@ -181,3 +181,39 @@ ci: configurer le déploiement GitHub Pages via GitHub Actions
 - [ ] Les meta tags SEO et Open Graph sont en place (vérifier avec https://metatags.io)
 - [ ] La branche de travail est supprimée
 - [ ] Le `Portfolio.html` de référence peut être archivé ou supprimé du repo
+
+---
+
+## Annexe — Cloudflare Pages : viser un score A+ (vitrine, optionnel)
+
+**Cadrage honnête.** Pour ce portfolio **statique, sans backend ni authentification ni données sensibles**, les headers HTTP ci-dessous ne corrigent **aucune faille exploitable** : les attaques qu'ils bloquent (clickjacking, MIME-sniffing, downgrade HTTPS…) n'ont pas de surface d'attaque ici. L'intérêt n'est donc **pas** la sécurité « risque », mais la **vitrine** : un score **A+** sur securityheaders.com est un signal de professionnalisme pertinent pour un portfolio de Tech Lead. C'est l'argument qui justifie cette annexe — pas une menace à corriger.
+
+Le fichier `wwwroot/_headers` préparé en **Phase 08** porte les headers que la balise `<meta>` ne peut pas (`X-Content-Type-Options`, `X-Frame-Options`/`frame-ancestors`, `Permissions-Policy`, `HSTS`) et fait passer le score **C/D → A+**.
+
+### Point bloquant : l'URL `*.github.io`
+
+Tant que l'URL est `nabil-sidhoum.github.io`, **Cloudflare en proxy est impossible** : le proxy exige de gérer le DNS du domaine chez Cloudflare (changement de nameservers), or `github.io` appartient à GitHub. Pour activer Cloudflare, il faut **changer d'hébergeur (Cloudflare Pages)** ou un **domaine personnalisé**.
+
+> ⚠️ Le fichier `_headers` n'est lu **que** par **Cloudflare Pages** (l'hébergeur). Derrière un simple proxy Cloudflare devant GitHub Pages, il est ignoré — il faudrait recréer les headers via les *Transform Rules* / Workers de Cloudflare.
+
+### Options
+
+| Option | Coût | `_headers` actif ? | URL |
+|--------|------|--------------------|-----|
+| **A. Cloudflare Pages + sous-domaine `*.pages.dev`** | **0 €** | ✅ nativement | `nabil-sidhoum.pages.dev` |
+| **B. Domaine perso + Cloudflare Pages** | ~10–15 €/an | ✅ nativement | `tondomaine.dev` |
+| **C. Domaine perso + GitHub Pages derrière proxy Cloudflare** | ~10–15 €/an | ⚠️ partiel (Transform Rules / Workers) | `tondomaine.dev` |
+| **D. Rester GitHub Pages seul** (état après Phase 10) | 0 € | ❌ | `nabil-sidhoum.github.io` |
+
+L'option **A** atteint le A+ **gratuitement**. On peut garder les deux hébergements en parallèle (GitHub Pages `.github.io` **et** Cloudflare Pages `.pages.dev`) sur le même repo. L'option **B** ajoute en plus un domaine perso (vitrine renforcée).
+
+### Subtilité build — Blazor WASM .NET 10 sur Cloudflare Pages
+
+L'environnement de build de Cloudflare Pages n'inclut pas .NET 10 en preset. Montage robuste réutilisant le workflow de la Phase 10 :
+
+1. **GitHub Actions** exécute le `dotnet publish -c Release` (déjà en place).
+2. Une étape pousse `output/wwwroot` vers Cloudflare Pages en **Direct Upload** via `wrangler` (`cloudflare/wrangler-action`), avec `CLOUDFLARE_API_TOKEN` en secret.
+
+Ce montage évite de dépendre du build natif de Cloudflare Pages et garde une seule source de build (.NET). À implémenter uniquement si l'option A ou B est retenue.
+
+Référence des règles CSP/headers : `.claude/rules/csp-security.md`.

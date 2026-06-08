@@ -2,6 +2,9 @@ using System;
 
 namespace BlazorPortfolio.Client.Services
 {
+    // État d'UI partagé (Scoped) entre composants qui ne sont pas dans la même
+    // hiérarchie de rendu : Nav ouvre le menu mobile, MobileMenu y réagit.
+    // Le pattern observable (OnChange) évite de chaîner des [Parameter] entre eux.
     public sealed class UIStateService
     {
         public bool IsMobileMenuOpen { get; private set; }

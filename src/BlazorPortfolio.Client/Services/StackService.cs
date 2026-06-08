@@ -25,6 +25,7 @@ namespace BlazorPortfolio.Client.Services
             }
             catch (HttpRequestException)
             {
+                // Résilience : un JSON injoignable renvoie une liste vide plutôt qu'une erreur.
                 return [];
             }
         }

@@ -4,7 +4,7 @@
 
 Portfolio personnel, **Blazor WebAssembly .NET 10**. SPA statique hébergée sur **GitHub Pages**, déployée automatiquement via GitHub Actions sur push `main`. Zéro backend, zéro API externe — données chargées dynamiquement depuis des fichiers JSON statiques via `HttpClient`.
 
-**Refonte en cours** — design système README (`Portfolio.html` de référence dans `.claude/plans/`). Branche de travail : `feature/redesign-portfolio`.
+**Refonte en cours** — design système README. Branche de travail : `feature/redesign-portfolio`.
 
 ---
 
@@ -70,8 +70,6 @@ src/BlazorPortfolio.Client/
     ├── posts/        # index.json + articles .md (blog)
     └── data/         # experiences.json, projects.json, educations.json
 ```
-
-**Référence visuelle** : `.claude/plans/Portfolio.html` fait foi pour palette, typographie, layout et responsive.
 
 ---
 

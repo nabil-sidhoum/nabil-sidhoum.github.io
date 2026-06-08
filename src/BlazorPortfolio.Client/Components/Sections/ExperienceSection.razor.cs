@@ -23,6 +23,10 @@ namespace BlazorPortfolio.Client.Components.Sections
             _loading = false;
         }
 
+        // Génère un pseudo-hash court (style « commit SHA ») affiché en décor à côté de
+        // chaque expérience. Implémentation maison volontaire : string.GetHashCode() n'est
+        // PAS déterministe entre exécutions/plateformes, ce hash l'est (rendu stable).
+        // Le masque 0x0FFFFFFF force un positif tenant sur 7 chiffres hexadécimaux.
         private static string GenerateHash(string seed)
         {
             int hash = 0;

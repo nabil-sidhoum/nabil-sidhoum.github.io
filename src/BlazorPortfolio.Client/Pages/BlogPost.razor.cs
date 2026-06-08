@@ -17,6 +17,8 @@ namespace BlazorPortfolio.Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
+            // null couvre les deux cas refusés par le service : slug invalide (rejeté
+            // par la garde anti-path-traversal) ou article inexistant (404).
             _htmlContent = await BlogService.GetArticleContentAsync(Slug);
             _notFound = _htmlContent == null;
         }

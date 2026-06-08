@@ -91,6 +91,8 @@ flowchart TD
 | `data/projects.json` | `ProjectInfo` | `ProjectService` | ProjectsSection |
 | `posts/index.json` + `posts/*.md` | `BlogArticle` | `BlogService` | Blog · BlogPost |
 
+> `data/educations.json` est présent dans le dépôt mais n'est pas encore affiché (pas de section dédiée).
+
 ---
 
 ## 🚀 CI/CD

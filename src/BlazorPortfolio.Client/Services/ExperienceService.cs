@@ -19,6 +19,7 @@ namespace BlazorPortfolio.Client.Services
 
         public async Task<List<ExperienceInfo>> GetExperiencesAsync()
         {
+            // Données statiques : un seul chargement HTTP, mémorisé pour les appels suivants.
             if (_cache != null)
             {
                 return _cache;
@@ -31,6 +32,7 @@ namespace BlazorPortfolio.Client.Services
             }
             catch (HttpRequestException)
             {
+                // Résilience : pas de crash si le JSON est absent, la section reste vide.
                 return [];
             }
         }

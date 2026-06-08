@@ -155,6 +155,37 @@ flowchart LR
     pr --> merge["merge → branche cible"]
 ```
 
+### 🤖 Review automatisée par agents
+
+L'étape *review* ne dépend pas de la bonne volonté : selon les fichiers présents dans le diff, des **sous-agents Claude Code spécialisés** sont déclenchés automatiquement, chacun avec un périmètre précis. `lead-dev` orchestre une review consolidée avant le merge.
+
+```mermaid
+flowchart TD
+    diff["git diff de la branche"] --> q{"fichiers modifiés ?"}
+    q -->|"*.cs"| dr["dotnet-reviewer<br/>conventions C#"]
+    q -->|"changement structurel"| ar["architecture-reviewer<br/>responsabilités Blazor"]
+    q -->|"*Tests.cs"| tr["test-reviewer<br/>qualité xUnit"]
+    q -->|"index.html · wwwroot/ · Services"| sr["security-reviewer<br/>CSP · secrets"]
+    q -->|"fin de phase UI"| uv["ui-verifier<br/>screenshots · CSP runtime"]
+    dr --> pr["Pull Request"]
+    ar --> pr
+    tr --> pr
+    sr --> pr
+    uv --> pr
+    pr --> lead["lead-dev<br/>review consolidée (/project:review-pr)"]
+```
+
+| Agent | Déclenché par | Rôle |
+|---|---|---|
+| `dotnet-reviewer` | modification de `*.cs` | Conventions C# (style, patterns) |
+| `architecture-reviewer` | changement structurel | Séparation des responsabilités Blazor |
+| `test-reviewer` | présence de `*Tests.cs` | Qualité des tests xUnit (AAA, mocks) |
+| `security-reviewer` | `index.html`, `wwwroot/`, Services | Sécurité Blazor WASM, CSP, secrets |
+| `ui-verifier` | fin d'une phase UI | Vérification visuelle + CSP runtime (screenshots) |
+| `lead-dev` | review de PR complète | Orchestration et synthèse des reviewers |
+
+> Les définitions de ces agents vivent hors dépôt (`.claude/agents/`, non versionné) : le schéma documente le *process* de qualité, pas un outillage réutilisable en l'état.
+
 ### Commandes essentielles
 
 ```bash

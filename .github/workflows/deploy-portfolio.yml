@@ -1,45 +1,48 @@
 name: deploy-portfolio
 
+# Se déclenche uniquement après une exécution réussie de la CI sur main.
+# Le découplage CI -> deploy garantit qu'on ne publie que du code vérifié.
 on:
   workflow_run:
-    workflows: [ "ci-portfolio" ]   # Se déclenche uniquement après la CI
+    workflows: [ "ci-portfolio" ]
     types: [ completed ]
     branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     permissions:
-      contents: write   # Donne les droits d'écriture au GITHUB_TOKEN
+      contents: write   # requis pour pousser sur la branche gh-pages
 
     steps:
       # 1. Récupérer le code source
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 2. Installer .NET 8
+      # 2. Installer le SDK .NET (version pilotée par src/global.json)
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          global-json-file: src/global.json
 
       # 3. Compiler et publier Blazor WebAssembly
       - name: Publish Blazor
         run: dotnet publish src/BlazorPortfolio.Client/BlazorPortfolio.Client.csproj -c Release -o build
 
-      # 5. Corriger le chemin de base pour GitHub Pages
-      # Pour le repo principal username.github.io, base href = /
+      # 4. Forcer le base href pour GitHub Pages
+      # Repo principal nabil-sidhoum.github.io => base href = /
       - name: Update base href
-        run: sed -i 's#<base href=".*" />#<base href="/" />#' build/wwwroot/index.html
+        run: sed -i 's#<base href="[^"]*" />#<base href="/" />#' build/wwwroot/index.html
 
-      # 6. Ajouter un fallback 404 pour Blazor SPA
+      # 5. Fallback 404 pour le routing SPA Blazor
       - name: Create 404.html for SPA fallback
         run: cp build/wwwroot/index.html build/wwwroot/404.html
 
-      # 7. Déployer vers GitHub Pages (branche gh-pages)
+      # 6. Déployer vers GitHub Pages (branche gh-pages)
+      # peaceiris crée automatiquement .nojekyll (indispensable pour _framework/)
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/wwwroot

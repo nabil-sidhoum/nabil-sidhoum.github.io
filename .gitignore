@@ -455,3 +455,6 @@ anomalies.local.md
 
 # Configuration MCP locale (serveurs MCP propres au poste)
 .mcp.json
+
+# Sortie de publication Blazor (dotnet publish -o build) — artefact de déploiement
+/build/

@@ -19,6 +19,7 @@ namespace BlazorPortfolio.Client.Components.Nav
 
         protected override void OnInitialized()
         {
+            // S'abonne à l'état partagé : quand Nav ouvre/ferme le menu, ce composant re-rend.
             UIState.OnChange += HandleStateChange;
         }
 
@@ -29,12 +30,15 @@ namespace BlazorPortfolio.Client.Components.Nav
                 _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/scroll.js");
             }
 
+            // On ne touche au scroll du body que sur un VRAI changement d'état
+            // (garde _previousMenuOpen) : sinon chaque re-rendu rejouerait lock/unlock.
             bool currentOpen = UIState.IsMobileMenuOpen;
             if (currentOpen != _previousMenuOpen && _module != null)
             {
                 _previousMenuOpen = currentOpen;
                 if (currentOpen)
                 {
+                    // Menu plein écran ouvert : on fige le scroll de la page derrière.
                     await _module.InvokeVoidAsync("lockScroll");
                 }
                 else
@@ -56,6 +60,8 @@ namespace BlazorPortfolio.Client.Components.Nav
 
         public async ValueTask DisposeAsync()
         {
+            // Désabonnement indispensable : sans lui, le service Scoped garderait une
+            // référence vers ce composant détruit (fuite mémoire).
             UIState.OnChange -= HandleStateChange;
             if (_module != null)
             {

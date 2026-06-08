@@ -22,8 +22,11 @@ namespace BlazorPortfolio.Client.Components.Nav
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+            // JS interop seulement après le 1er rendu : le DOM (les sections observées
+            // par le scroll-spy) doit exister avant d'initialiser l'IntersectionObserver.
             if (firstRender)
             {
+                // DotNetObjectReference permet au module JS de rappeler OnSectionVisible (JS → C#).
                 _dotnetRef = DotNetObjectReference.Create(this);
                 _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/scroll-spy.js");
                 await _module.InvokeVoidAsync("init", _dotnetRef);
@@ -49,6 +52,8 @@ namespace BlazorPortfolio.Client.Components.Nav
 
         public async ValueTask DisposeAsync()
         {
+            // Ordre important : on coupe l'observer JS et on libère le module AVANT le
+            // DotNetObjectReference, pour qu'aucun callback ne vise un objet déjà disposé.
             if (_module != null)
             {
                 await _module.InvokeVoidAsync("dispose");

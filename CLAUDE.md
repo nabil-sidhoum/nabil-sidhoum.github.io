@@ -180,7 +180,7 @@ Les agents sont dans `.claude/agents/` (gitignored — proviennent d'un repo pri
 | 07 — Blog routing | `feature/redesign-p07-blog-routing` | ✅ Mergée (PR #15) |
 | 08 — Sécurité CSP | `feature/redesign-p08-securite-csp` | ✅ Mergée (PR #16) |
 | 09 — Polish + QA | `feature/redesign-p09-polish-qa` | ✅ Mergée (PR #18) |
-| 10 — Déploiement | `feature/redesign-p10-deploiement` | ⏳ À faire (prochaine) |
+| 10 — Déploiement | `feature/redesign-p10-deploiement` | ✅ Mergée (PR #21) |
 
 ---
 

@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BlazorPortfolio.Client</title>
+
+    <!-- Sécurité -->
+    <!-- frame-ancestors et X-Frame-Options ne sont pas supportés en <meta> : assurés par _headers (Cloudflare) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO -->
+    <title>Nabil Sidhoum — Tech Lead .NET | AI Agent Engineering</title>
+    <meta name="description" content="Portfolio de Nabil Sidhoum — Tech Lead .NET, 11 ans d'expérience. Clean Architecture, CQRS, MediatR, agents IA. Paris, France.">
+    <meta name="author" content="Nabil Sidhoum">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nabil Sidhoum — Tech Lead .NET">
+    <meta property="og:description" content="Senior .NET Tech Lead — Clean Architecture, CQRS, AI Agent Engineering. Paris.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nabil-sidhoum.github.io">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nabil Sidhoum — Tech Lead .NET">
+    <meta name="twitter:description" content="Senior .NET Tech Lead — Clean Architecture, CQRS, AI Agent Engineering.">
+
     <base href="/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/app.css" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/theme.css" />
     <link href="BlazorPortfolio.Client.styles.css" rel="stylesheet" />
 </head>
-
 <body>
     <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <div class="app-loading">
+            <p>chargement...</p>
+        </div>
     </div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script src="js/scroll.js"></script>
 </body>
-
 </html>

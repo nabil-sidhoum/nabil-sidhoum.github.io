@@ -1,7 +1,6 @@
 [
   {
     "Societe": "IRBIS Finance",
-    "Logo": "/images/experiences/irbis_finance_logo.jpg",
     "Poste": "Tech Lead .NET",
     "Lieu": "Paris 08, Île-de-France",
     "DateDebut": "2021-07-01",
@@ -24,7 +23,6 @@
   },
   {
     "Societe": "SoftFluent",
-    "Logo": "/images/experiences/softfluent_logo.jpg",
     "Poste": "Consultant .NET",
     "Lieu": "Paris, Île-de-France, France",
     "DateDebut": "2017-10-01",
@@ -43,7 +41,6 @@
   },
   {
     "Societe": "Capgemini",
-    "Logo": "/images/experiences/capgemini_logo.jpg",
     "Poste": "Consultant .NET",
     "Lieu": "Paris, Île-de-France, France",
     "DateDebut": "2015-03-01",
@@ -54,7 +51,7 @@
       "Mise en place d'une infrastructure DevOps et développement CRM pour Unibail-Rodamco",
       "Maintenance applicative ASP.NET pour Domus VI",
       "Conception de pages de recherche CRM et tests de charge pour ASIP Santé",
-      "Réalisation d'un POC d'intégration Odigo (solution de téléphonie cloud) pour évaluer les faisabilités d'un couplage téléphonie-informatique"
+      "Réalisation d'un POC d'intégration Odigo (solution de téléphonie cloud)"
     ],
     "Competences": [
       ".NET Framework", "C#", "Dynamics CRM", "JavaScript", "API REST", "WPF"

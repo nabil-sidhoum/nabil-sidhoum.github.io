@@ -1,0 +1,39 @@
+[
+  {
+    "Key": ".net",
+    "IsAccent": false,
+    "Items": [
+      "C# 14",
+      ".NET 8 / 10",
+      "ASP.NET Core",
+      "Blazor WebAssembly",
+      "EF Core",
+      "SQL Server",
+      "Clean Architecture",
+      "DDD",
+      "CQRS",
+      "MediatR",
+      "Hangfire",
+      "PuppeteerSharp",
+      "Microsoft Dynamics CRM",
+      "Bloomberg BLPAPI",
+      "SIX Telekurs",
+      "NuGet",
+      "Azure DevOps",
+      "xUnit"
+    ]
+  },
+  {
+    "Key": "ai",
+    "IsAccent": true,
+    "Items": [
+      "Claude Code",
+      "MCP servers",
+      "Multi-agent",
+      "Groq",
+      "Llama 3.3",
+      "OpenAI",
+      "LLM integration"
+    ]
+  }
+]

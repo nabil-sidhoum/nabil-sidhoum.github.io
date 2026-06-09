@@ -1,0 +1,348 @@
+/* ============================================================
+   FONT FACES — self-hosted, aucune dépendance externe
+   ============================================================ */
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono/jetbrains-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono/jetbrains-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono/jetbrains-mono-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono/jetbrains-mono-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/ibm-plex-sans/ibm-plex-sans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/ibm-plex-sans/ibm-plex-sans-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/ibm-plex-sans/ibm-plex-sans-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/ibm-plex-sans/ibm-plex-sans-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   TOKENS DARK (défaut)
+   ============================================================ */
+
+:root[data-theme="dark"] {
+  --bg:          #0d0d0f;
+  --bg-elev:     #141418;
+  --fg:          #e5e5e5;
+  --fg-strong:   #fafafa;
+  --fg-muted:    #9ca3af;
+  --fg-dim:      #6b7280;
+  --rule:        #1e1e22;
+  --rule-strong: #2a2a30;
+  --accent:      #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.12);
+  --accent-line: rgba(59, 130, 246, 0.32);
+  --selection:   rgba(59, 130, 246, 0.35);
+
+  --shadow-nav:  0 1px 0 var(--rule), 0 8px 24px -16px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ============================================================
+   TOKENS LIGHT
+   ============================================================ */
+
+:root[data-theme="light"] {
+  --bg:          #fafaf9;
+  --bg-elev:     #f2f1ef;
+  --fg:          #1a1a1a;
+  --fg-strong:   #050505;
+  --fg-muted:    #6b7280;
+  --fg-dim:      #9ca3af;
+  --rule:        #e5e5e5;
+  --rule-strong: #d4d4d4;
+  --accent:      #2563eb;
+  --accent-soft: rgba(59, 130, 246, 0.10);
+  --accent-line: rgba(37, 99, 235, 0.32);
+  --selection:   rgba(59, 130, 246, 0.25);
+
+  --shadow-nav:  0 1px 0 var(--rule), 0 8px 24px -16px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--rule) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+  color: var(--fg);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+/* ============================================================
+   SPLASH DE CHARGEMENT (avant démarrage WASM)
+   ============================================================ */
+
+.app-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-loading p {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  color: var(--fg-dim);
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--fg-strong);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+
+/* ============================================================
+   CLASSES UTILITAIRES PARTAGÉES
+   ============================================================ */
+
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.comment {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  color: var(--fg-muted);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.comment::before { content: "// "; color: var(--fg-dim); }
+
+.divider {
+  color: var(--fg-dim);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  margin: 72px 0 48px;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+}
+.divider::after {
+  content: " ────────────────────────────────────────────────────────────────────";
+  color: var(--fg-dim);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 4px;
+  border: 1px solid var(--rule-strong);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.pill.accent {
+  border-color: var(--accent-line);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-primary:hover {
+  background: color-mix(in oklab, var(--accent) 88%, white);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--rule-strong);
+}
+.btn-outline:hover {
+  border-color: var(--fg-muted);
+  background: var(--bg-elev);
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+h1.h-readme {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 6px 0 0;
+  color: var(--fg-strong);
+}
+h1.h-readme::before {
+  content: "# ";
+  color: var(--fg-muted);
+  font-weight: 400;
+}
+
+h2.h-readme {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: clamp(20px, 2.6vw, 26px);
+  letter-spacing: -0.4px;
+  margin: 0 0 20px;
+  color: var(--fg-strong);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+h2.h-readme::before {
+  content: "##";
+  color: var(--accent);
+  font-weight: 400;
+  flex-shrink: 0;
+}
+h2.h-readme .sub {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--fg-muted);
+  letter-spacing: 0;
+}
+
+.badge {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--rule-strong);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+}
+.badge.open {
+  border-color: var(--accent-line);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.badge.show {
+  border-style: dashed;
+  color: var(--fg-muted);
+}
+
+
+/* ============================================================
+   RESPONSIVE — breakpoints globaux
+   ============================================================ */
+
+@media (max-width: 767px) {
+  /* background-attachment: fixed n'est pas accéléré GPU sur iOS Safari → lag au scroll */
+  body { background-attachment: scroll; }
+  .divider { margin: 56px 0 36px; }
+  h2.h-readme { flex-wrap: wrap; }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45); }
+  50% { box-shadow: 0 0 0 5px rgba(34, 197, 94, 0); }
+}
+.pulse { animation: pulse 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+@media print {
+  body { background: #fff; background-image: none; color: #000; }
+}
+
+/* ============================================================ */
+/* TOGGLE THÈME — visibilité icônes                             */
+/* ============================================================ */
+:root[data-theme="dark"]  .icon-light { display: none; }
+:root[data-theme="light"] .icon-dark  { display: none; }

@@ -140,7 +140,7 @@ gitGraph
 - `main` : stable, déployée. Push direct interdit, **merge rebase uniquement** (historique linéaire).
 - Branches de travail : `feat/*`, `fix/*`, `docs/*`, `ci/*`, `refactor/*`, `chore/*`.
 
-Politique complète : [`.claude/rules/git-workflow.md`](.claude/rules/git-workflow.md).
+Politique complète : [`.claude/rules/git-workflow.md`](.claude/rules/git-workflow.md). Détail de la refonte phase par phase : [`docs/refonte-2026.md`](docs/refonte-2026.md).
 
 ---
 

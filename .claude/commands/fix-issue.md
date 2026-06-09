@@ -4,11 +4,11 @@ Analyse le bug décrit et applique un fix conforme à l'architecture et aux conv
 
 1. **Identifier la couche** — quel fichier, quelle couche (Domain / Application / Infrastructure / Api) ?
 2. **Lire le code concerné** avant de proposer quoi que ce soit
-3. **Consulter `.claude/history/fixes.md`** — un bug similaire a-t-il déjà été corrigé ?
+3. **Consulter `.claude/issues/fixes.md`** — un bug similaire a-t-il déjà été corrigé ?
 4. **Proposer le fix** — conforme à `.claude/rules/`
 5. **Attendre validation** avant d'appliquer
 6. **Vérifier la couverture** — le fix est couvert par un test existant ? Sinon, créer le test selon `.claude/rules/testing.md`
-7. **Mettre à jour `.claude/history/fixes.md`** après application :
+7. **Mettre à jour `.claude/issues/fixes.md`** après application :
 
 ```markdown
 ## YYYY-MM-DD — Titre court du problème

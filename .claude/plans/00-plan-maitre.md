@@ -1,5 +1,7 @@
 # Plan de refonte — Portfolio Blazor WASM
 
+> **Document historique** — plan de la refonte terminée en juin 2026. Conservé comme archive de planification ; ne décrit pas l'état courant du projet. Synthèse de ce qui a réellement été livré : [`docs/refonte-2026.md`](../../docs/refonte-2026.md).
+
 ## Vue d'ensemble
 
 Refonte complète du portfolio Blazor WebAssembly hébergé sur GitHub Pages (`nabil-sidhoum.github.io`).

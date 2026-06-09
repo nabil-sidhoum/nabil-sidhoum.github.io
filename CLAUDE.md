@@ -4,7 +4,7 @@
 
 Portfolio personnel, **Blazor WebAssembly .NET 10**. SPA statique hébergée sur **GitHub Pages**, déployée automatiquement via GitHub Actions sur push `main`. Zéro backend, zéro API externe — données chargées dynamiquement depuis des fichiers JSON statiques via `HttpClient`.
 
-**Refonte en cours** — design système README. Branche de travail : `feature/redesign-portfolio`.
+> Le projet est issu d'une refonte complète (migration .NET 10 + design system maison) menée par phases puis clôturée en juin 2026. Récit complet : [`docs/refonte-2026.md`](docs/refonte-2026.md).
 
 ---
 
@@ -24,8 +24,8 @@ Portfolio personnel, **Blazor WebAssembly .NET 10**. SPA statique hébergée sur
 | `Microsoft.AspNetCore.Components.WebAssembly` | 10.0.8 |
 | `xunit` | 2.9.3 |
 | `RichardSzalay.MockHttp` | 7.0.0 |
-| `Markdig` | 0.38.0 *(ajouté en Phase 07 — blog)* |
-| GitHub Actions | deploy.yml *(Phase 10)* |
+| `Markdig` | 0.38.0 *(rendu Markdown du blog)* |
+| GitHub Actions | `ci-portfolio` · `quality-portfolio` · `deploy-portfolio` |
 
 Design system : CSS custom avec tokens dark/light — pas de framework CSS externe.
 
@@ -49,7 +49,7 @@ dotnet format --verify-no-changes
 
 ---
 
-## Architecture cible (refonte)
+## Architecture
 
 ```
 src/BlazorPortfolio.Client/
@@ -93,46 +93,9 @@ Schema `experiences.json` : champs `Societe`, `Poste`, `Lieu`, `DateDebut`, `Dat
 
 ---
 
-## Workflow de refonte — une branche par phase
+## Workflow Git
 
-Chaque phase de la refonte suit ce process strict :
-
-### Convention de branches
-
-```
-feature/redesign-portfolio        ← branche d'intégration (base et cible de toutes les PR de phase)
-  └── feature/redesign-p01-preparation
-  └── feature/redesign-p02-design-system
-  └── feature/redesign-p03-navigation
-  └── feature/redesign-p04-hero-about
-  └── feature/redesign-p05-stack-projects
-  └── feature/redesign-p06-experience-blog-contact
-  └── feature/redesign-p07-blog-routing
-  └── feature/redesign-p08-securite-csp
-  └── feature/redesign-p09-polish-qa
-  └── feature/redesign-p10-deploiement
-```
-
-`feature/redesign-portfolio` sera mergée sur `main` à la fin de la Phase 10.
-
-### Process par phase (ordre strict)
-
-```
-1. git checkout feature/redesign-portfolio && git pull
-2. git checkout -b feature/redesign-pXX-nom
-3. Implémenter la phase
-4. dotnet build        → 0 erreur obligatoire avant de continuer
-5. dotnet test         → si des tests existent pour cette phase
-6. ui-verifier         → screenshots dans .claude/screenshots/phase-XX-nom/ (phases UI uniquement)
-7. /project:review     → dotnet-reviewer + architecture-reviewer sur les fichiers modifiés
-8. git commit
-9. git push + PR vers feature/redesign-portfolio
-```
-
-### Règles commits et PR
-
-- Politique Git complète (branches, protection, méthodes de merge, conventions de commit) : voir [`git-workflow.md`](.claude/rules/git-workflow.md)
-- Spécifique refonte : un commit par phase (sauf si la phase est trop volumineuse)
+Modèle **une branche par unité de travail** (`feat/*`, `fix/*`, `docs/*`, `chore/*`, `ci/*`, `refactor/*`), jamais de commit direct sur `main` — tout passe par une Pull Request mergée en *rebase* (historique linéaire). Politique complète : [`git-workflow.md`](.claude/rules/git-workflow.md).
 
 ---
 
@@ -165,23 +128,6 @@ Les agents sont dans `.claude/agents/` (gitignored — proviennent d'un repo pri
 
 ---
 
-## État de la refonte
-
-| Phase | Branche | Statut |
-|-------|---------|--------|
-| 01 — Préparation repo | `feature/redesign-p01-preparation` | ✅ Mergée (PR #8) |
-| 02 — Design system (tokens CSS + fonts) | `feature/redesign-p02-design-system` | ✅ Mergée (PR #9) |
-| 03 — Layout + navigation | `feature/redesign-p03-navigation` | ✅ Mergée (PR #10) |
-| 04 — Hero + About | `feature/redesign-p04-hero-about` | ✅ Mergée (PR #11) |
-| 05 — Stack + Projects | `feature/redesign-p05-stack-projects` | ✅ Mergée (PR #12) |
-| 06 — Experience + Blog + Contact | `feature/redesign-p06-experience-blog-contact` | ✅ Mergée (PR #14) |
-| 07 — Blog routing | `feature/redesign-p07-blog-routing` | ✅ Mergée (PR #15) |
-| 08 — Sécurité CSP | `feature/redesign-p08-securite-csp` | ✅ Mergée (PR #16) |
-| 09 — Polish + QA | `feature/redesign-p09-polish-qa` | ✅ Mergée (PR #18) |
-| 10 — Déploiement | `feature/redesign-p10-deploiement` | ✅ Mergée (PR #21) |
-
----
-
 ## Règles détaillées
 
 - [Architecture](.claude/rules/clean-architecture.md)
@@ -190,3 +136,8 @@ Les agents sont dans `.claude/agents/` (gitignored — proviennent d'un repo pri
 - [Tests](.claude/rules/testing.md)
 - [Sécurité CSP & headers](.claude/rules/csp-security.md)
 - [Workflow Git — branches, protection, contribution](.claude/rules/git-workflow.md)
+
+## Historique
+
+- [Refonte du portfolio (2026)](docs/refonte-2026.md) — récit de la migration .NET 10 + design system, phase par phase *(versionné)*
+- `.claude/issues/fixes.md` — journal local des corrections (alimenté par `/project:fix-issue`, non versionné)

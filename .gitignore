@@ -444,7 +444,7 @@ $RECYCLE.BIN/
 # Log file
 *.dblog
 
-.claude/history/
+.claude/issues/
 .claude/agents/
 .claude/reports/
 anomalies.local.md

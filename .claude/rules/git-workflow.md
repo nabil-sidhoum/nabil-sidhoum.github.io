@@ -1,21 +1,21 @@
 # Workflow Git — branches, protection, contribution
 
-> Source de vérité de la politique Git du dépôt : modèle de branches, protection, méthodes de merge et process de contribution. Le détail spécifique à la **refonte en cours** (branche par phase, tableau d'état) reste dans `CLAUDE.md`.
+> Source de vérité de la politique Git du dépôt : modèle de branches, protection, méthodes de merge et process de contribution. Le détail du modèle **branche par phase** employé pendant la refonte (terminée) est archivé dans [`docs/refonte-2026.md`](../../docs/refonte-2026.md).
 
 ## Modèle de branches
 
 | Branche | Rôle | Durée de vie |
 |---------|------|--------------|
 | `main` | Branche stable, déployée sur GitHub Pages | permanente |
-| `feature/redesign-portfolio` | Branche d'**intégration** de la refonte (base et cible des PR de phase) | temporaire (jusqu'à fin Phase 10) |
+| ~~`feature/redesign-portfolio`~~ | Branche d'**intégration** de la refonte (base des PR de phase) | **supprimée** après merge final sur `main` (PR #23) |
 | `feat/*`, `fix/*`, `docs/*`, `chore/*`, `ci/*`, `refactor/*` | Branches de travail — une par unité logique | supprimées au merge |
 
-- Aucune modification directe sur `main` ni sur la branche d'intégration : tout passe par une **Pull Request**.
-- Pendant la refonte, les PR de phase ciblent `feature/redesign-portfolio`. Hors refonte, les branches de travail ciblent `main`.
+- Aucune modification directe sur `main` : tout passe par une **Pull Request**.
+- Les branches de travail ciblent `main`. *(Pendant la refonte — terminée — les PR de phase ciblaient la branche d'intégration `feature/redesign-portfolio`.)*
 
 ## Protection des branches (rulesets GitHub)
 
-Deux **rulesets** (enforcement `active`, **aucun bypass — s'appliquent aussi à l'owner**).
+Un **ruleset actif** sur `main` (enforcement `active`, **aucun bypass — s'applique aussi à l'owner**). Le ruleset `Protect redesign integration` a été **supprimé en fin de refonte** (voir plus bas).
 
 ### `main` — ruleset `Protect main` (id `17370109`)
 
@@ -28,17 +28,13 @@ Discipline complète. **Aucun push direct possible**, même en admin.
 | Résolution des conversations | Commentaires de review résolus avant merge |
 | Merge `rebase` uniquement | Imposé par le ruleset (`allowed_merge_methods`) ; préserve les commits distincts |
 | Historique linéaire | Aucun commit de merge sur `main` |
+| Status checks requis | `build-and-test` (CI) + `Conventions C# (dotnet format)` doivent passer avant merge |
 | Force-push interdit | `non_fast_forward` |
 | Suppression interdite | `main` ne peut pas être supprimée |
 
-### `feature/redesign-portfolio` — ruleset `Protect redesign integration` (id `17370581`)
+### ~~`feature/redesign-portfolio` — ruleset `Protect redesign integration` (id `17370581`)~~ — supprimé
 
-Protection **minimale** : un filet contre les fausses manips irréversibles, **sans** imposer de process (le workflow PR par phase reste volontaire).
-
-| Règle | Effet |
-|-------|-------|
-| Force-push interdit | `non_fast_forward` — protège le travail accumulé des phases |
-| Suppression interdite | la branche d'intégration ne peut pas être supprimée par erreur |
+Ruleset **supprimé en fin de refonte** (juin 2026), avant la suppression de la branche d'intégration. Conservé ici pour mémoire : protection minimale (force-push + suppression interdits) sans imposer de process, le workflow PR par phase restant volontaire.
 
 ## Réglages du repo
 
@@ -47,7 +43,7 @@ Protection **minimale** : un filet contre les fausses manips irréversibles, **s
 
 ## Process de contribution
 
-1. Brancher depuis la cible à jour (`main`, ou `feature/redesign-portfolio` en refonte).
+1. Brancher depuis `main` à jour.
 2. Implémenter l'unité logique.
 3. `dotnet build` → 0 erreur obligatoire.
 4. `dotnet test` → si des tests existent.
@@ -74,9 +70,9 @@ chore:    maintenance, configuration
 ## Opérations sensibles
 
 - **Hotfix urgent sur `main`** : aucun bypass admin — passer le ruleset `Protect main` en `enforcement: disabled` temporairement, puis le réactiver.
-- **Suppression volontaire de l'intégration (fin Phase 10)** : le ruleset `Protect redesign integration` bloque la suppression (y compris l'auto-delete au merge final). Le retirer d'abord, puis supprimer la branche :
+- **Suppression de l'intégration (fin de refonte)** — ✅ *effectuée* : le ruleset `Protect redesign integration` (qui bloquait la suppression, y compris l'auto-delete au merge final) a été retiré avant suppression de la branche. Procédure utilisée :
   ```bash
   gh api -X DELETE repos/{owner}/{repo}/rulesets/17370581
   git push origin --delete feature/redesign-portfolio
   ```
-- **Ajout du status check CI (Phase 10)** : ajouter le check requis (workflow `deploy.yml`) au ruleset `Protect main` une fois le pipeline vert une première fois.
+- **Status checks requis sur `main`** — ✅ *configurés* : `build-and-test` (`ci-portfolio`) et `Conventions C# (dotnet format)` (`quality-portfolio`), tous deux déclenchés sur `pull_request`. ⚠️ **Ne pas** rendre requis le workflow `deploy-portfolio` : il se déclenche en `workflow_run` **après merge sur `main`** (post-merge), ne tourne jamais sur le commit d'une PR, et le rendre obligatoire **verrouillerait toutes les PR** (statut « Expected » jamais satisfait).

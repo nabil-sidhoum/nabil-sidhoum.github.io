@@ -1,6 +1,13 @@
 {
   "articles": [
     {
+      "Slug": "automatiser-veille-technique-dotnet",
+      "Title": "J'ai automatisé ma veille technique .NET — et ce que ça m'a appris sur l'usage pragmatique des LLM",
+      "Summary": "veille-tech automatise ma veille .NET, IA et architecture : collecte RSS, déduplication, scoring LLM, publication Discord. Zéro serveur, zéro euro. Le récit d'un parti pris : placer le LLM là où il apporte un vrai gain, le jugement, et garder le reste déterministe.",
+      "PublishedAt": "2026-06-18",
+      "Tags": [ ".NET", "IA", "LLM", "Architecture" ]
+    },
+    {
       "Slug": "hermes-agent-pourquoi-pas",
       "Title": "Pourquoi j'ai choisi de ne pas intégrer Hermes Agent dans mon pipeline de veille technique .NET",
       "Summary": "Hermes Agent a explosé sur GitHub et truste la première place d'OpenRouter. Je l'ai analysé pour mon pipeline de veille .NET — et j'ai dit non. Le récit d'un choix d'outil où l'adéquation architecturale prime sur le feature set.",

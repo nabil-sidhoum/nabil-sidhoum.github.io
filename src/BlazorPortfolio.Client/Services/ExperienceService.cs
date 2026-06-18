@@ -17,7 +17,7 @@ namespace BlazorPortfolio.Client.Services
             _http = http ?? throw new ArgumentNullException(nameof(http));
         }
 
-        public async Task<List<ExperienceInfo>> GetExperiencesAsync()
+        public async Task<IReadOnlyList<ExperienceInfo>> GetExperiencesAsync()
         {
             // Données statiques : un seul chargement HTTP, mémorisé pour les appels suivants.
             if (_cache != null)

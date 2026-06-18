@@ -23,7 +23,7 @@ namespace BlazorPortfolio.Client.Tests
             ExperienceService service = new ExperienceService(http);
 
             // Act
-            List<ExperienceInfo> result = await service.GetExperiencesAsync();
+            IReadOnlyList<ExperienceInfo> result = await service.GetExperiencesAsync();
 
             // Assert
             Assert.NotNull(result);
@@ -42,7 +42,7 @@ namespace BlazorPortfolio.Client.Tests
             ExperienceService service = new ExperienceService(http);
 
             // Act
-            List<ExperienceInfo> result = await service.GetExperiencesAsync();
+            IReadOnlyList<ExperienceInfo> result = await service.GetExperiencesAsync();
 
             // Assert
             Assert.NotNull(result);
@@ -60,8 +60,8 @@ namespace BlazorPortfolio.Client.Tests
             ExperienceService service = new ExperienceService(http);
 
             // Act
-            List<ExperienceInfo> premier = await service.GetExperiencesAsync();
-            List<ExperienceInfo> second = await service.GetExperiencesAsync();
+            IReadOnlyList<ExperienceInfo> premier = await service.GetExperiencesAsync();
+            IReadOnlyList<ExperienceInfo> second = await service.GetExperiencesAsync();
 
             // Assert
             Assert.Same(premier, second);

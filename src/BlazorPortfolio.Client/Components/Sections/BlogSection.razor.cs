@@ -12,7 +12,7 @@ namespace BlazorPortfolio.Client.Components.Sections
         private const int MaxPreview = 3;
 
         [Inject]
-        private BlogService BlogService { get; set; }
+        private IBlogService BlogService { get; set; }
 
         private IReadOnlyList<BlogArticle> _articles = [];
 

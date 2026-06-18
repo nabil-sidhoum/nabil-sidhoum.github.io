@@ -23,11 +23,11 @@ namespace BlazorPortfolio.Client
 
             // En WebAssembly une « session » = une instance d'app : Scoped se comporte
             // comme un singleton applicatif, ce qui rend le cache des services cohérent.
-            builder.Services.AddScoped<UIStateService>();
-            builder.Services.AddScoped<ProjectService>();
-            builder.Services.AddScoped<ExperienceService>();
-            builder.Services.AddScoped<BlogService>();
-            builder.Services.AddScoped<StackService>();
+            builder.Services.AddScoped<IUIStateService, UIStateService>();
+            builder.Services.AddScoped<IProjectService, ProjectService>();
+            builder.Services.AddScoped<IExperienceService, ExperienceService>();
+            builder.Services.AddScoped<IBlogService, BlogService>();
+            builder.Services.AddScoped<IStackService, StackService>();
 
             await builder.Build().RunAsync();
         }

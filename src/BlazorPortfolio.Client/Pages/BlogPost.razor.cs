@@ -7,7 +7,7 @@ namespace BlazorPortfolio.Client.Pages
     public partial class BlogPost
     {
         [Inject]
-        private BlogService BlogService { get; set; }
+        private IBlogService BlogService { get; set; }
 
         [Parameter]
         public string Slug { get; set; }

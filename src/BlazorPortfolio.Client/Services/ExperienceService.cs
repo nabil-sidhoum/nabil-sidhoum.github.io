@@ -7,7 +7,7 @@ using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Services
 {
-    public sealed class ExperienceService
+    public sealed class ExperienceService : IExperienceService
     {
         private readonly HttpClient _http;
         private List<ExperienceInfo> _cache;

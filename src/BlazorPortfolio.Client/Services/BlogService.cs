@@ -9,7 +9,7 @@ using Markdig;
 
 namespace BlazorPortfolio.Client.Services
 {
-    public sealed class BlogService
+    public sealed class BlogService : IBlogService
     {
         private const string SlugPattern = "^[a-z0-9-]+$";
 

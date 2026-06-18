@@ -12,25 +12,13 @@ Dans mon cas : non. Et voilà pourquoi — parce que la réponse en dit plus sur
 
 ## Mon pipeline de veille technique
 
-Depuis plusieurs mois, je fais tourner `veille-tech`, un pipeline automatisé sur GitHub Actions. L'objectif : surveiller une trentaine de flux RSS sur .NET, l'IA et l'architecture logicielle, scorer les articles par pertinence, et publier une synthèse sur Discord deux fois par semaine.
+Depuis plusieurs mois, je fais tourner `veille-tech`, un pipeline automatisé sur GitHub Actions. L'objectif : surveiller une vingtaine de flux RSS répartis sur trois profils (.NET, IA, architecture logicielle), scorer les articles par pertinence, et publier les retenus sur Discord trois fois par semaine, à raison d'un profil par jour.
 
 L'architecture est intentionnellement simple :
 
-```
-[GitHub Actions — cron 2×/semaine]
-        ↓
-[Collecte RSS — ~30 sources]
-        ↓
-[Déduplication — SQLite via EF Core]
-        ↓
-[Scoring par article — LLM (Groq)]
-        ↓
-[Synthèse globale — LLM (Groq)]
-        ↓
-[Publication Discord — webhook]
-```
+![Schéma du pipeline veille-tech : 3 crons GitHub Actions, collecte RSS, déduplication SQLite, scoring LLM Groq, assemblage Markdown local, publication Discord](/posts/assets/veille-pipeline.svg)
 
-Stack : .NET 10, C#, GitHub Actions, Groq comme provider LLM. Coût mensuel : **0 €** (repo public, minutes Actions gratuites). Aucune infrastructure à maintenir : le pipeline s'exécute, produit un rapport, et s'arrête. Stateless par design.
+Stack : .NET 10, C#, GitHub Actions, Groq comme provider LLM. Coût mensuel : **0 €** (repo public, minutes Actions gratuites). Aucune infrastructure à maintenir : le pipeline s'exécute, produit son rapport, et s'arrête. Le LLM ne sert qu'au scoring article par article ; l'assemblage du rapport reste 100 % local et déterministe. Stateless par design.
 
 ---
 
@@ -55,7 +43,7 @@ Sur le papier, c'est impressionnant. En pratique, il faut comprendre ce que cett
 | **État** | Stateless — SQLite pour dédup uniquement | Stateful — mémoire cross-session |
 | **Infrastructure** | GitHub Actions runners (gratuit) | VPS ou serverless |
 | **Coût** | 0 €/mois | Variable selon usage |
-| **Durée d'un run** | ~2-3 minutes | Continu |
+| **Durée d'un run** | ~2 à 5 min (scoring séquentiel throttlé) | Continu |
 | **Interaction** | Aucune pendant le run | Conversationnelle, asynchrone |
 | **Amélioration dans le temps** | Non — déterministe par design | Oui — skills auto-générés |
 

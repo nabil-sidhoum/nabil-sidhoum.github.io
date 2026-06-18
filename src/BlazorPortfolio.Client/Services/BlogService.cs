@@ -19,7 +19,11 @@ namespace BlazorPortfolio.Client.Services
 
         // DisableHtml : le Markdown des articles ne peut pas injecter de HTML brut
         // (protection anti-XSS, cohérente avec la CSP stricte du site).
-        private static readonly MarkdownPipeline _markdownPipeline = new MarkdownPipelineBuilder().DisableHtml().Build();
+        // UsePipeTables : active le rendu des tableaux GFM (non géré par CommonMark seul).
+        private static readonly MarkdownPipeline _markdownPipeline = new MarkdownPipelineBuilder()
+            .DisableHtml()
+            .UsePipeTables()
+            .Build();
 
         private readonly HttpClient _httpClient;
         private IReadOnlyList<BlogArticle> _cachedArticles;

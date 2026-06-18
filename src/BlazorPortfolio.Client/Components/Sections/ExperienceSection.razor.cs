@@ -14,7 +14,7 @@ namespace BlazorPortfolio.Client.Components.Sections
         [Inject]
         private IExperienceService ExperienceService { get; set; }
 
-        private List<ExperienceInfo> _experiences = [];
+        private IReadOnlyList<ExperienceInfo> _experiences = [];
         private bool _loading = true;
 
         protected override async Task OnInitializedAsync()

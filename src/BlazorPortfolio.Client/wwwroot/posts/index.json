@@ -1,3 +1,11 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "Slug": "hermes-agent-pourquoi-pas",
+      "Title": "Pourquoi j'ai choisi de ne pas intégrer Hermes Agent dans mon pipeline de veille technique .NET",
+      "Summary": "Hermes Agent a explosé sur GitHub et truste la première place d'OpenRouter. Je l'ai analysé pour mon pipeline de veille .NET — et j'ai dit non. Le récit d'un choix d'outil où l'adéquation architecturale prime sur le feature set.",
+      "PublishedAt": "2026-06-16",
+      "Tags": [ ".NET", "IA", "Architecture", "Agents IA" ]
+    }
+  ]
 }

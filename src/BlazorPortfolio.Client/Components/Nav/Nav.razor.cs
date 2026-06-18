@@ -9,7 +9,7 @@ namespace BlazorPortfolio.Client.Components.Nav
     public partial class Nav : IAsyncDisposable
     {
         [Inject]
-        private UIStateService UIState { get; set; }
+        private IUIStateService UIState { get; set; }
 
         [Inject]
         private IJSRuntime JS { get; set; }

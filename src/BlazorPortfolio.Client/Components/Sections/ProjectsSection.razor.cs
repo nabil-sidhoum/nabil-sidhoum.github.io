@@ -9,7 +9,7 @@ namespace BlazorPortfolio.Client.Components.Sections
     public partial class ProjectsSection
     {
         [Inject]
-        private ProjectService ProjectService { get; set; }
+        private IProjectService ProjectService { get; set; }
 
         private IEnumerable<ProjectInfo> _projects = [];
 

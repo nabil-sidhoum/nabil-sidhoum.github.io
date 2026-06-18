@@ -7,7 +7,7 @@ using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Services
 {
-    public sealed class StackService
+    public sealed class StackService : IStackService
     {
         private readonly HttpClient _http;
 

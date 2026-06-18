@@ -9,7 +9,7 @@ namespace BlazorPortfolio.Client.Pages
     public partial class Blog
     {
         [Inject]
-        private BlogService BlogService { get; set; }
+        private IBlogService BlogService { get; set; }
 
         private IReadOnlyList<BlogArticle> _articles;
 

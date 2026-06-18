@@ -12,7 +12,7 @@ namespace BlazorPortfolio.Client.Components.Sections
         private const int YearLength = 4;
 
         [Inject]
-        private ExperienceService ExperienceService { get; set; }
+        private IExperienceService ExperienceService { get; set; }
 
         private List<ExperienceInfo> _experiences = [];
         private bool _loading = true;

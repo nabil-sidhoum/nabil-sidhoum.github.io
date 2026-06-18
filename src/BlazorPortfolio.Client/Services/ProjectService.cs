@@ -7,7 +7,7 @@ using BlazorPortfolio.Client.Models;
 
 namespace BlazorPortfolio.Client.Services
 {
-    public sealed class ProjectService
+    public sealed class ProjectService : IProjectService
     {
         private readonly HttpClient _http;
 

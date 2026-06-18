@@ -9,7 +9,7 @@ namespace BlazorPortfolio.Client.Components.Sections
     public partial class StackSection
     {
         [Inject]
-        private StackService StackService { get; set; }
+        private IStackService StackService { get; set; }
 
         private IEnumerable<StackCategoryInfo> _categories = [];
 

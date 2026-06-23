@@ -133,6 +133,7 @@ Les agents sont dans `.claude/agents/` (gitignored — proviennent d'un repo pri
 - [Architecture](.claude/rules/clean-architecture.md)
 - [Conventions C#](.claude/rules/csharp-conventions.md)
 - [Conventions Blazor](.claude/rules/blazor-conventions.md)
+- [Conventions Blog — articles & diagrammes SVG](.claude/rules/blog-conventions.md)
 - [Tests](.claude/rules/testing.md)
 - [Sécurité CSP & headers](.claude/rules/csp-security.md)
 - [Workflow Git — branches, protection, contribution](.claude/rules/git-workflow.md)

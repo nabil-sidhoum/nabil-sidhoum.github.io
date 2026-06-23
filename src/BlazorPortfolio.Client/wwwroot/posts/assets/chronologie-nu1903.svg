@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Chronologie de la detection de la faille">
+  <text x="460" y="46" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Comment une faille a remonté sans changer une ligne de code</text>
+  <text x="460" y="70" text-anchor="middle" fill="#6b7280" font-size="13">Trois conditions se sont alignées, et mon dispositif d'alerte a fait son travail</text>
+
+  <!-- Event card A -->
+  <rect x="24" y="90" width="270" height="120" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="40" y="120" fill="#3b82f6" font-size="14" font-weight="700">Fin 2023 — .NET 8</text>
+  <text x="40" y="144" fill="#cbd5e1" font-size="12.5">
+    <tspan x="40" dy="0">L'audit NuGet apparaît.</tspan>
+    <tspan x="40" dy="18">Codes NU1901 à NU1904.</tspan>
+    <tspan x="40" dy="18">Mode par défaut : direct</tspan>
+    <tspan x="40" dy="18">(dépendances directes only).</tspan>
+  </text>
+
+  <!-- Event card B -->
+  <rect x="325" y="90" width="270" height="120" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="341" y="120" fill="#3b82f6" font-size="14" font-weight="700">15 juillet 2025</text>
+  <text x="341" y="144" fill="#cbd5e1" font-size="12.5">
+    <tspan x="341" dy="0">CVE-2025-6965 publiée.</tspan>
+    <tspan x="341" dy="18">lib.e_sqlite3 ≤ 2.1.11</tspan>
+    <tspan x="341" dy="18">devient vulnérable.</tspan>
+    <tspan x="341" dy="18">CVSS 7.2 (haute sévérité).</tspan>
+  </text>
+
+  <!-- Event card C -->
+  <rect x="626" y="90" width="270" height="120" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="642" y="120" fill="#3b82f6" font-size="14" font-weight="700">Passage à .NET 10</text>
+  <text x="642" y="144" fill="#cbd5e1" font-size="12.5">
+    <tspan x="642" dy="0">NuGetAuditMode = all.</tspan>
+    <tspan x="642" dy="18">L'audit descend désormais</tspan>
+    <tspan x="642" dy="18">dans les dépendances</tspan>
+    <tspan x="642" dy="18">transitives.</tspan>
+  </text>
+
+  <!-- Arrows between cards -->
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M298 150 H321"/>
+    <path d="M599 150 H622"/>
+  </g>
+  <g fill="#6b7280">
+    <path d="M321 150 l-8 -5 v10 z"/>
+    <path d="M622 150 l-8 -5 v10 z"/>
+  </g>
+
+  <!-- Persistent condition band -->
+  <rect x="24" y="226" width="872" height="48" rx="10" fill="#3a2a08" stroke="#f59e0b"/>
+  <text x="460" y="255" text-anchor="middle" fill="#fbbf24" font-size="13">
+    <tspan font-weight="700">Constante : TreatWarningsAsErrors</tspan> (mon choix, depuis le début) — tout avertissement NuGet devient une erreur de build.
+  </text>
+
+  <!-- Down arrow to result -->
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M460 274 V298"/></g>
+  <path d="M460 300 l-6 -9 h12 z" fill="#6b7280"/>
+
+  <!-- Result node (alert) -->
+  <rect x="200" y="302" width="520" height="74" rx="12" fill="#3f1212" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="460" y="332" text-anchor="middle" fill="#fca5a5" font-size="15" font-weight="700">Build stoppé en ~20 s  =  ALERTE</text>
+  <text x="460" y="356" text-anchor="middle" fill="#fecaca" font-size="12.5">Une faille connue remonte automatiquement, sans aucun commit de ma part.</text>
+
+  <!-- Down arrow to resolution -->
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M460 376 V400"/></g>
+  <path d="M460 402 l-6 -9 h12 z" fill="#6b7280"/>
+
+  <!-- Resolution node -->
+  <rect x="200" y="404" width="520" height="68" rx="12" fill="#0a2e1a" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="460" y="431" text-anchor="middle" fill="#86efac" font-size="14" font-weight="700">Correctif : override vers SourceGear.sqlite3 3.50.4.5</text>
+  <text x="460" y="453" text-anchor="middle" fill="#bbf7d0" font-size="12.5">Faille retirée de l'arbre de dépendances, alerte toujours armée pour la prochaine.</text>
+</svg>

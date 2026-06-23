@@ -1,6 +1,13 @@
 {
   "articles": [
     {
+      "Slug": "ci-cassee-dette-invisible",
+      "Title": "Ma CI a cassé sans que je touche une ligne de code : anatomie d'une dette invisible",
+      "Summary": "Un build au rouge sans le moindre commit. Le coupable : une advisory tombée sur une dépendance transitive de SQLite, révélée par le changement de défaut de l'audit NuGet en .NET 10. L'autopsie d'une dette invisible, et pourquoi je refuse de faire taire l'alarme plutôt que de retirer la faille.",
+      "PublishedAt": "2026-06-23",
+      "Tags": [ ".NET", "CI/CD", "Sécurité", "NuGet" ]
+    },
+    {
       "Slug": "automatiser-veille-technique-dotnet",
       "Title": "J'ai automatisé ma veille technique .NET — et ce que ça m'a appris sur l'usage pragmatique des LLM",
       "Summary": "veille-tech automatise ma veille .NET, IA et architecture : collecte RSS, déduplication, scoring LLM, publication Discord. Zéro serveur, zéro euro. Le récit d'un parti pris : placer le LLM là où il apporte un vrai gain, le jugement, et garder le reste déterministe.",

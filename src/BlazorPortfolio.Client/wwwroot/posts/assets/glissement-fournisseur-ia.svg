@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Chronologie en trois étapes du glissement d'un fournisseur d'IA, du positionnement éthique vers le contrôle des utilisateurs">
+  <desc>Une timeline numérotée et colorée du bleu vers le rouge relie trois étapes : un positionnement éthique de départ, le retrait de modèles pour tous faute de pouvoir filtrer par nationalité, puis la vérification d'identité biométrique des comptes particuliers. Un encadré conclut sur une entreprise qui se dote des moyens d'identifier et différencier ses utilisateurs.</desc>
+
+  <defs>
+    <linearGradient id="escalade" x1="0" y1="148" x2="0" y2="406" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.5" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+
+  <text x="470" y="40" text-anchor="middle" fill="#3b82f6" font-size="21" font-weight="700">Le glissement d'un fournisseur qui se voulait éthique</text>
+  <text x="470" y="66" text-anchor="middle" fill="#6b7280" font-size="13">Trois étapes, du discours de retenue aux moyens du contrôle</text>
+
+  <!-- Timeline : ligne d'escalade + connecteur vers le constat -->
+  <path d="M88 148 V406" stroke="url(#escalade)" stroke-width="4" fill="none"/>
+  <path d="M88 423 V478" stroke="#6b7280" stroke-width="2" fill="none"/>
+  <path d="M88 482 l-6 -9 h12 z" fill="#6b7280"/>
+
+  <!-- ÉTAPE 1 -->
+  <rect x="130" y="96" width="780" height="104" rx="12" fill="#15233b" stroke="#3b82f6"/>
+  <!-- pictogramme : bouclier + coche (principes) -->
+  <g stroke="#93c5fd" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M172 132 L184 137 L184 150 Q184 160 172 165 Q160 160 160 150 L160 137 Z"/>
+    <path d="M166 148 L170 153 L179 142"/>
+  </g>
+  <text x="208" y="132" fill="#93c5fd" font-size="14.5" font-weight="700">Le point de départ — l'éthique en étendard</text>
+  <text x="208" y="156" fill="#cbd5e1" font-size="12.5">
+    <tspan x="208" dy="0">IA constitutionnelle, refus public que ses modèles servent</tspan>
+    <tspan x="208" dy="18">à la surveillance et au ciblage des migrants. La retenue comme marque.</tspan>
+  </text>
+
+  <!-- ÉTAPE 2 -->
+  <rect x="130" y="216" width="780" height="116" rx="12" fill="#3a2a08" stroke="#f59e0b"/>
+  <!-- pictogramme : globe (nationalité / géographie) -->
+  <g stroke="#fbbf24" stroke-width="2" fill="none">
+    <circle cx="172" cy="274" r="14"/>
+    <ellipse cx="172" cy="274" rx="6" ry="14"/>
+    <path d="M158 274 H186"/>
+    <path d="M161 266 H183"/>
+    <path d="M161 282 H183"/>
+  </g>
+  <text x="208" y="246" fill="#fbbf24" font-size="14.5" font-weight="700">Juin 2026 — la directive d'export control</text>
+  <text x="208" y="270" fill="#fcd9a8" font-size="12.5">
+    <tspan x="208" dy="0">Elle vise les ressortissants étrangers. Mais filtrer un accès par</tspan>
+    <tspan x="208" dy="18">nationalité étant impossible à garantir, <tspan font-family="'JetBrains Mono', ui-monospace, monospace">Fable 5</tspan> et <tspan font-family="'JetBrains Mono', ui-monospace, monospace">Mythos 5</tspan> sont</tspan>
+    <tspan x="208" dy="18">désactivés pour TOUT LE MONDE.</tspan>
+  </text>
+
+  <!-- ÉTAPE 3 -->
+  <rect x="130" y="348" width="780" height="116" rx="12" fill="#3f1212" stroke="#ef4444"/>
+  <!-- pictogramme : visage scanné (biométrie) -->
+  <g stroke="#fca5a5" stroke-width="2" fill="none" stroke-linecap="round">
+    <circle cx="172" cy="404" r="11"/>
+    <path d="M167 407 Q172 411 177 407"/>
+    <path d="M155 394 V388 H161"/>
+    <path d="M183 388 H189 V394"/>
+    <path d="M155 416 V422 H161"/>
+    <path d="M183 422 H189 V416"/>
+  </g>
+  <circle cx="168" cy="402" r="1.3" fill="#fca5a5"/>
+  <circle cx="176" cy="402" r="1.3" fill="#fca5a5"/>
+  <text x="208" y="378" fill="#fca5a5" font-size="14.5" font-weight="700">8 juillet — la vérification d'identité</text>
+  <text x="208" y="402" fill="#fecaca" font-size="12.5">
+    <tspan x="208" dy="0">Pièce d'identité, selfie, géométrie faciale exigés des comptes</tspan>
+    <tspan x="208" dy="18">Free, Pro et Max (Team, Enterprise et API exemptés).</tspan>
+    <tspan x="208" dy="18">L'individu doit prouver biométriquement qui il est.</tspan>
+  </text>
+
+  <!-- Pastilles numérotées (au-dessus de la ligne) -->
+  <g font-weight="700" font-size="15" text-anchor="middle">
+    <circle cx="88" cy="148" r="17" fill="#3b82f6"/>
+    <text x="88" y="153" fill="#ffffff">1</text>
+    <circle cx="88" cy="274" r="17" fill="#f59e0b"/>
+    <text x="88" y="279" fill="#ffffff">2</text>
+    <circle cx="88" cy="406" r="17" fill="#ef4444"/>
+    <text x="88" y="411" fill="#ffffff">3</text>
+  </g>
+
+  <!-- CONSTAT (renforcé) -->
+  <rect x="70" y="492" width="840" height="86" rx="13" fill="#0b1220" stroke="#64748b" stroke-width="1.6"/>
+  <text x="490" y="522" text-anchor="middle" fill="#e2e8f0" font-size="15" font-weight="700">Le constat</text>
+  <text x="490" y="546" text-anchor="middle" fill="#cbd5e1" font-size="13">
+    <tspan x="490" dy="0">D'une IA qui refusait la surveillance à une entreprise qui se dote des moyens</tspan>
+    <tspan x="490" dy="18">d'identifier ses utilisateurs et, demain, de les différencier par zone géographique.</tspan>
+  </text>
+</svg>

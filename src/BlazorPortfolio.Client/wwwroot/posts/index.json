@@ -1,6 +1,13 @@
 {
   "articles": [
     {
+      "Slug": "tournant-anthropic-plan-de-sortie",
+      "Title": "Une IA « éthique » qui veut tout savoir de moi : repenser ma dépendance à Claude",
+      "Summary": "Anthropic faisait de l'éthique sa marque de fabrique. En quelques semaines de l'été 2026, ses meilleurs modèles sont retirés pour tous sur une directive d'export US, et l'entreprise se met à exiger la biométrie de ses utilisateurs particuliers. Comment un Tech Lead traite ce changement de nature : portage technique, exposition juridique et plan de sortie raisonné vers Mistral.",
+      "PublishedAt": "2026-06-24",
+      "Tags": [ "IA", "Souveraineté", "Éthique", "Agents IA" ]
+    },
+    {
       "Slug": "ci-cassee-dette-invisible",
       "Title": "Ma CI a cassé sans que je touche une ligne de code : anatomie d'une dette invisible",
       "Summary": "Un build au rouge sans le moindre commit. Le coupable : une advisory tombée sur une dépendance transitive de SQLite, révélée par le changement de défaut de l'audit NuGet en .NET 10. L'autopsie d'une dette invisible, et pourquoi je refuse de faire taire l'alarme plutôt que de retirer la faille.",

@@ -1,6 +1,13 @@
 {
   "articles": [
     {
+      "Slug": "securiser-entrees-sorties-llm",
+      "Title": "J'ai ajouté une règle de sécurité LLM à mon template. Elle a trouvé une faille dans mon propre code",
+      "Summary": "En resynchronisant veille-tech sur la dernière version de mon template .claude, j'ai fait tourner une règle de revue dédiée aux intégrations LLM que je venais d'y ajouter. Sept constats, dont un critique : mon pipeline donnait à manger du RSS non maîtrisé à un modèle distant, sans aucune frontière entre données et instructions. Le récit d'une correction en trois verrous, et du canal d'action que je ne regardais pas.",
+      "PublishedAt": "2026-07-27",
+      "Tags": [ "IA", "LLM", "Sécurité", "OWASP" ]
+    },
+    {
       "Slug": "tournant-anthropic-plan-de-sortie",
       "Title": "Une IA « éthique » qui veut tout savoir de moi : repenser ma dépendance à Claude",
       "Summary": "Anthropic faisait de l'éthique sa marque de fabrique. En quelques semaines de l'été 2026, ses meilleurs modèles sont retirés pour tous sur une directive d'export US, et l'entreprise se met à exiger la biométrie de ses utilisateurs particuliers. Comment un Tech Lead traite ce changement de nature : portage technique, exposition juridique et plan de sortie raisonné vers Mistral.",

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 620" role="img" aria-labelledby="title desc" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif">
+  <title id="title">Surface d'attaque du pipeline de veille et ses trois points de contrôle</title>
+  <desc id="desc">Chaîne complète depuis les flux RSS non maîtrisés jusqu'à la publication Discord. Trois verrous ont été ajoutés : le cloisonnement des données dans le prompt avant l'appel au LLM distant, la validation de la sortie du modèle avant assemblage du rapport, et la neutralisation des mentions dans le payload Discord. Le modèle n'a aucun outil exposé et ne reçoit aucun secret.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/>
+    </marker>
+    <style>
+      .box   { fill: #1b2230; stroke: #3b82f6; stroke-width: 1.5; }
+      .risk  { fill: #2a1e22; stroke: #f87171; stroke-width: 1.5; }
+      .guard { fill: #16241d; stroke: #34d399; stroke-width: 1.5; }
+      .lbl   { fill: #e8edf3; font-size: 13px; }
+      .sub   { fill: #9aa7b8; font-size: 11px; }
+      .glbl  { fill: #a7f3d0; font-size: 12px; }
+      .flow  { stroke: #3b82f6; stroke-width: 1.5; }
+      .mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    </style>
+  </defs>
+
+  <rect class="risk" x="30" y="15" width="540" height="58" rx="8"/>
+  <text class="lbl" x="300" y="35" text-anchor="middle" dominant-baseline="middle">Flux RSS externes</text>
+  <text class="sub" x="300" y="55" text-anchor="middle" dominant-baseline="middle">contenu non maîtrisé : titre, URL, résumé, corps de l'article</text>
+
+  <line class="flow" x1="300" y1="73" x2="300" y2="103" marker-end="url(#arrow)"/>
+
+  <rect class="guard" x="30" y="105" width="540" height="70" rx="8"/>
+  <text class="glbl" x="300" y="126" text-anchor="middle" dominant-baseline="middle">Verrou 1 : cloisonnement du prompt</text>
+  <text class="sub" x="300" y="146" text-anchor="middle" dominant-baseline="middle">balises de délimitation, neutralisation des séquences,</text>
+  <text class="sub" x="300" y="162" text-anchor="middle" dominant-baseline="middle">règle d'unicité vérifiée avant tout appel</text>
+
+  <line class="flow" x1="300" y1="175" x2="300" y2="205" marker-end="url(#arrow)"/>
+
+  <rect class="box" x="30" y="207" width="540" height="70" rx="8"/>
+  <text class="lbl" x="300" y="228" text-anchor="middle" dominant-baseline="middle">Scoring par LLM (API distante)</text>
+  <text class="sub" x="300" y="248" text-anchor="middle" dominant-baseline="middle">aucun outil exposé, aucun secret dans le prompt</text>
+  <text class="sub" x="300" y="264" text-anchor="middle" dominant-baseline="middle">le contrat se résume à <tspan class="mono">Task&lt;string&gt; CompleteAsync</tspan></text>
+
+  <line class="flow" x1="300" y1="277" x2="300" y2="307" marker-end="url(#arrow)"/>
+
+  <rect class="guard" x="30" y="309" width="540" height="70" rx="8"/>
+  <text class="glbl" x="300" y="330" text-anchor="middle" dominant-baseline="middle">Verrou 2 : validation de la sortie</text>
+  <text class="sub" x="300" y="350" text-anchor="middle" dominant-baseline="middle">score borné de 1 à 5, catégorie confrontée à l'énumération,</text>
+  <text class="sub" x="300" y="366" text-anchor="middle" dominant-baseline="middle">réponse vide ou illisible écartée</text>
+
+  <line class="flow" x1="300" y1="379" x2="300" y2="409" marker-end="url(#arrow)"/>
+
+  <rect class="box" x="30" y="411" width="540" height="58" rx="8"/>
+  <text class="lbl" x="300" y="431" text-anchor="middle" dominant-baseline="middle">Assemblage du rapport Markdown</text>
+  <text class="sub" x="300" y="451" text-anchor="middle" dominant-baseline="middle">100 % local, sans LLM ; le résumé produit n'est pas persisté en base</text>
+
+  <line class="flow" x1="300" y1="469" x2="300" y2="499" marker-end="url(#arrow)"/>
+
+  <rect class="guard" x="30" y="501" width="540" height="58" rx="8"/>
+  <text class="glbl" x="300" y="521" text-anchor="middle" dominant-baseline="middle">Verrou 3 : <tspan class="mono">allowed_mentions</tspan></text>
+  <text class="sub" x="300" y="541" text-anchor="middle" dominant-baseline="middle">aucune mention interprétée, garde-fou appliqué par la plateforme</text>
+
+  <line class="flow" x1="300" y1="559" x2="300" y2="589" marker-end="url(#arrow)"/>
+
+  <rect class="box" x="30" y="591" width="540" height="24" rx="8"/>
+  <text class="lbl" x="300" y="604" text-anchor="middle" dominant-baseline="middle">Publication Discord</text>
+</svg>

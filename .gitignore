@@ -447,6 +447,8 @@ $RECYCLE.BIN/
 .claude/issues/
 .claude/agents/
 .claude/reports/
+# Captures de vérification visuelle (ui-verifier) — artefacts locaux, jamais commités
+.claude/screenshots/
 anomalies.local.md
 
 # Playwright MCP (screenshots et snapshots temporaires)

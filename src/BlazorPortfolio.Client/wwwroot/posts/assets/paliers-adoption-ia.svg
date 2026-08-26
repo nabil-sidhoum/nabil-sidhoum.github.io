@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Les cinq paliers d'adoption de l'IA et qui verifie a chaque etape">
+  <desc>Les cinq paliers d'adoption de l'IA décrits par Boris Cherny, de Gated à AI-native. À mesure que le nombre d'agents par développeur augmente, la vérification passe du développeur qui relit chaque changement à la machine qui vérifie seule. Le palier 2, Parallel, est mis en évidence : c'est celui où l'IA vérifie son propre travail par les tests, le build et le lint, ce qui suppose que ces trois-là sachent dire non.</desc>
+
+  <text x="460" y="42" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Ce qui change d'un palier à l'autre, c'est qui vérifie</text>
+  <text x="460" y="66" text-anchor="middle" fill="#6b7280" font-size="13">Échelle d'adoption de l'IA — Boris Cherny, juillet 2026</text>
+
+  <!-- Palier 0 -->
+  <rect x="24" y="92" width="165" height="150" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="40" y="118" fill="#6b7280" font-size="11" font-family="'JetBrains Mono', ui-monospace, monospace">PALIER 0</text>
+  <text x="40" y="140" fill="#3b82f6" font-size="15" font-weight="700">Gated</text>
+  <text x="40" y="166" fill="#cbd5e1" font-size="12.5">
+    <tspan x="40" dy="0">0 agent</tspan>
+    <tspan x="40" dy="20">L'accès à l'IA est</tspan>
+    <tspan x="40" dy="17">restreint.</tspan>
+  </text>
+
+  <!-- Palier 1 -->
+  <rect x="199" y="92" width="165" height="150" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="215" y="118" fill="#6b7280" font-size="11" font-family="'JetBrains Mono', ui-monospace, monospace">PALIER 1</text>
+  <text x="215" y="140" fill="#3b82f6" font-size="15" font-weight="700">Assisted</text>
+  <text x="215" y="166" fill="#cbd5e1" font-size="12.5">
+    <tspan x="215" dy="0">~1 agent par dev</tspan>
+    <tspan x="215" dy="20">Le développeur relit</tspan>
+    <tspan x="215" dy="17">presque chaque</tspan>
+    <tspan x="215" dy="17">changement.</tspan>
+  </text>
+
+  <!-- Palier 2 : celui qui compte -->
+  <rect x="374" y="86" width="172" height="162" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="392" y="114" fill="#3b82f6" font-size="11" font-family="'JetBrains Mono', ui-monospace, monospace">PALIER 2</text>
+  <text x="392" y="136" fill="#3b82f6" font-size="15" font-weight="700">Parallel</text>
+  <text x="392" y="162" fill="#cbd5e1" font-size="12.5">
+    <tspan x="392" dy="0">~10 agents par dev</tspan>
+    <tspan x="392" dy="20" font-weight="700">L'IA vérifie son</tspan>
+    <tspan x="392" dy="17" font-weight="700">propre travail :</tspan>
+    <tspan x="392" dy="17" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">tests, build, lint</tspan>
+  </text>
+
+  <!-- Palier 3 -->
+  <rect x="556" y="92" width="165" height="150" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="572" y="118" fill="#6b7280" font-size="11" font-family="'JetBrains Mono', ui-monospace, monospace">PALIER 3</text>
+  <text x="572" y="140" fill="#3b82f6" font-size="15" font-weight="700">Supervised</text>
+  <text x="572" y="158" fill="#3b82f6" font-size="15" font-weight="700">autonomy</text>
+  <text x="572" y="182" fill="#cbd5e1" font-size="12.5">
+    <tspan x="572" dy="0">~100 agents</tspan>
+    <tspan x="572" dy="20">L'IA écrit tout ou</tspan>
+    <tspan x="572" dy="17">presque.</tspan>
+  </text>
+
+  <!-- Palier 4 -->
+  <rect x="731" y="92" width="165" height="150" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="747" y="118" fill="#6b7280" font-size="11" font-family="'JetBrains Mono', ui-monospace, monospace">PALIER 4</text>
+  <text x="747" y="140" fill="#3b82f6" font-size="15" font-weight="700">AI-native</text>
+  <text x="747" y="166" fill="#cbd5e1" font-size="12.5">
+    <tspan x="747" dy="0">1 000+ agents</tspan>
+    <tspan x="747" dy="20">Les agents sont</tspan>
+    <tspan x="747" dy="17">lancés par l'IA,</tspan>
+    <tspan x="747" dy="17">pas par une personne.</tspan>
+  </text>
+
+  <!-- Flèches entre paliers -->
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M193 167 H366"/>
+    <path d="M550 167 H723"/>
+  </g>
+  <g fill="#6b7280">
+    <path d="M366 167 l-8 -5 v10 z"/>
+    <path d="M723 167 l-8 -5 v10 z"/>
+  </g>
+
+  <!-- Axe : qui vérifie -->
+  <line x1="24" y1="292" x2="896" y2="292" stroke="#6b7280" stroke-width="1.5"/>
+  <path d="M896 292 l-9 -5 v10 z" fill="#6b7280"/>
+  <text x="24" y="284" fill="#6b7280" font-size="12.5">une personne relit chaque changement</text>
+  <text x="896" y="284" text-anchor="end" fill="#6b7280" font-size="12.5">la machine vérifie seule</text>
+
+  <!-- Le point de bascule -->
+  <circle cx="460" cy="292" r="6" fill="#3b82f6"/>
+  <text x="460" y="326" text-anchor="middle" fill="#3b82f6" font-size="13.5" font-weight="700">Le point de bascule</text>
+  <text x="460" y="350" text-anchor="middle" fill="#6b7280" font-size="12.5">
+    <tspan x="460" dy="0">À partir d'ici, la vérification n'est plus faite par une personne.</tspan>
+    <tspan x="460" dy="19">Elle suppose donc que les tests, le build et le lint sachent dire NON.</tspan>
+    <tspan x="460" dy="19">S'ils répondent oui quoi qu'on leur soumette, l'agent ne vérifie rien.</tspan>
+  </text>
+
+  <text x="460" y="424" text-anchor="middle" fill="#6b7280" font-size="12" font-style="italic">« Ce qui sépare les paliers, c'est la confiance, pas le modèle. »</text>
+</svg>

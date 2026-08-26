@@ -87,7 +87,7 @@ C'est ce que résout la seconde partie du chantier : quatre règles d'architectu
 
 ![Les quatre couches et leurs dépendances autorisées, avec les quatre dépendances interdites que chaque test attrape](/posts/assets/dependances-couches.svg)
 
-Le tableau se lit dans les deux sens. Les flèches vertes sont légitimes, les rouges échouent :
+Le diagramme se lit dans les deux sens. Les flèches bleues sont légitimes, les rouges échouent :
 
 | Test | Ce qu'il interdit | Ce que sa violation casse |
 |---|---|---|

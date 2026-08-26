@@ -3,7 +3,7 @@
     {
       "Slug": "regles-qui-peuvent-echouer",
       "Title": "Pour que l'IA vérifie mon code, il fallait d'abord que mes règles puissent échouer",
-      "Summary": "L'échelle d'adoption de l'IA de Boris Cherny place au palier 2 le moment où l'IA vérifie son propre travail par les tests, le build et le lint. En me situant dessus, j'ai découvert que mon template .NET prescrivait 101 règles dont aucune ne cassait le build, et seize règles d'architecture qu'absolument rien ne vérifiait. Le récit d'une conversion : de la suggestion à la contrainte, le critère qui décide ce qu'on a le droit d'imposer, et le test vert qui ne vérifiait rien.",
+      "Summary": "L'échelle d'adoption de l'IA de Boris Cherny place au palier 2 le moment où l'IA vérifie son propre travail par les tests, le build et le lint. En me situant dessus, j'ai découvert que mon template .NET prescrivait 101 règles dont aucune ne cassait le build, et seize règles d'architecture que rien ne vérifiait. Le récit d'une conversion : de la suggestion à la contrainte, et le test vert qui ne vérifiait rien.",
       "PublishedAt": "2026-08-26",
       "Tags": [
         ".NET",

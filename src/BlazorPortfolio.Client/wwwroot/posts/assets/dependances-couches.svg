@@ -48,7 +48,7 @@
   <path d="M488 168 l9 -5 v10 z" fill="#f87171"/>
   <circle cx="524" cy="196" r="15" fill="#f87171"/>
   <text x="524" y="201" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T1</text>
-  <text x="524" y="228" text-anchor="middle" fill="#f87171" font-size="12.5">Le Domain ne sort jamais</text>
+  <text x="524" y="228" text-anchor="middle" fill="#6b7280" font-size="12.5">Le Domain ne sort jamais</text>
 
   <!-- T2 : Application vers Infrastructure -->
   <g stroke="#f87171" stroke-width="2.5" fill="none">
@@ -57,7 +57,7 @@
   <path d="M355 352 l-5 -9 h10 z" fill="#f87171"/>
   <circle cx="355" cy="271" r="15" fill="#f87171"/>
   <text x="355" y="276" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T2</text>
-  <text x="330" y="262" text-anchor="end" fill="#f87171" font-size="12.5">
+  <text x="330" y="262" text-anchor="end" fill="#6b7280" font-size="12.5">
     <tspan x="330" dy="0">le handler qui prend</tspan>
     <tspan x="330" dy="17">un DbContext</tspan>
   </text>
@@ -69,7 +69,7 @@
   <path d="M700 352 l-5 -9 h10 z" fill="#f87171"/>
   <circle cx="700" cy="271" r="15" fill="#f87171"/>
   <text x="700" y="276" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T3</text>
-  <text x="726" y="262" fill="#f87171" font-size="12.5">
+  <text x="726" y="262" fill="#6b7280" font-size="12.5">
     <tspan x="726" dy="0">EF Core n'entre pas</tspan>
     <tspan x="726" dy="17">dans le Domain</tspan>
   </text>
@@ -81,7 +81,7 @@
   <path d="M640 444 l-5 9 h10 z" fill="#f87171"/>
   <circle cx="300" cy="478" r="15" fill="#f87171"/>
   <text x="300" y="483" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T8</text>
-  <text x="326" y="470" fill="#f87171" font-size="12.5">le contrôleur qui interroge la base directement</text>
+  <text x="326" y="470" fill="#6b7280" font-size="12.5">le contrôleur qui interroge la base directement</text>
 
   <!-- Légende -->
   <g stroke="#3b82f6" stroke-width="2" fill="none"><path d="M782 128 H822"/></g>

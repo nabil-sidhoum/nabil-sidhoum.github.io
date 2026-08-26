@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Les quatre couches, leurs dependances autorisees et les quatre dependances interdites testees">
+  <desc>Les quatre couches d'une architecture en oignon : Api, Application, Domain et Infrastructure, plus les frameworks de persistance EF Core, Dapper et System.Data. Les flèches bleues sont les dépendances autorisées : Api vers Application, Application vers Domain, Infrastructure vers Application, Domain et la persistance. Quatre flèches rouges marquent les dépendances interdites, chacune portant le test qui l'attrape : T1 interdit au Domain de dépendre de toute autre couche, T2 interdit à Application de dépendre d'Infrastructure, T3 interdit au Domain de référencer un framework de persistance, T8 l'interdit à l'Api.</desc>
+
+  <text x="460" y="42" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">La violation ne se voit pas dans un fichier, elle se voit dans le graphe</text>
+  <text x="460" y="66" text-anchor="middle" fill="#6b7280" font-size="13">Quatre interdictions de dépendance devenues des tests qui échouent</text>
+
+  <!-- Couches -->
+  <rect x="40" y="110" width="180" height="72" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="130" y="140" text-anchor="middle" fill="#cbd5e1" font-size="15" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">Api</text>
+  <text x="130" y="162" text-anchor="middle" fill="#6b7280" font-size="12">Contrôleurs, routage</text>
+
+  <rect x="300" y="110" width="180" height="72" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="390" y="140" text-anchor="middle" fill="#cbd5e1" font-size="15" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">Application</text>
+  <text x="390" y="162" text-anchor="middle" fill="#6b7280" font-size="12">Handlers, interfaces</text>
+
+  <rect x="560" y="110" width="180" height="72" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="650" y="140" text-anchor="middle" fill="#3b82f6" font-size="15" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">Domain</text>
+  <text x="650" y="162" text-anchor="middle" fill="#6b7280" font-size="12">Entités, POCO purs</text>
+
+  <rect x="300" y="360" width="180" height="72" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="390" y="390" text-anchor="middle" fill="#cbd5e1" font-size="15" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">Infrastructure</text>
+  <text x="390" y="412" text-anchor="middle" fill="#6b7280" font-size="12">Dépôts, clients HTTP</text>
+
+  <rect x="560" y="360" width="200" height="72" rx="10" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="660" y="390" text-anchor="middle" fill="#6b7280" font-size="14" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">EF Core · Dapper</text>
+  <text x="660" y="410" text-anchor="middle" fill="#6b7280" font-size="12">System.Data</text>
+
+  <!-- Dépendances autorisées -->
+  <g stroke="#3b82f6" stroke-width="2" fill="none">
+    <path d="M220 146 H292"/>
+    <path d="M480 146 H552"/>
+    <path d="M420 360 V190"/>
+    <path d="M480 396 H552"/>
+    <path d="M480 390 C 566 390 600 300 645 192"/>
+  </g>
+  <g fill="#3b82f6">
+    <path d="M292 146 l-9 -5 v10 z"/>
+    <path d="M552 146 l-9 -5 v10 z"/>
+    <path d="M420 190 l-5 9 h10 z" transform="rotate(180 420 194)"/>
+    <path d="M552 396 l-9 -5 v10 z"/>
+    <path d="M645 192 l-6 10 l12 -2 z"/>
+  </g>
+
+  <!-- T1 : Domain ne sort jamais -->
+  <g stroke="#f87171" stroke-width="2.5" fill="none">
+    <path d="M560 168 H488"/>
+  </g>
+  <path d="M488 168 l9 -5 v10 z" fill="#f87171"/>
+  <circle cx="524" cy="196" r="15" fill="#f87171"/>
+  <text x="524" y="201" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T1</text>
+  <text x="524" y="228" text-anchor="middle" fill="#f87171" font-size="12.5">Le Domain ne sort jamais</text>
+
+  <!-- T2 : Application vers Infrastructure -->
+  <g stroke="#f87171" stroke-width="2.5" fill="none">
+    <path d="M355 190 V352"/>
+  </g>
+  <path d="M355 352 l-5 -9 h10 z" fill="#f87171"/>
+  <circle cx="355" cy="271" r="15" fill="#f87171"/>
+  <text x="355" y="276" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T2</text>
+  <text x="330" y="262" text-anchor="end" fill="#f87171" font-size="12.5">
+    <tspan x="330" dy="0">le handler qui prend</tspan>
+    <tspan x="330" dy="17">un DbContext</tspan>
+  </text>
+
+  <!-- T3 : Domain vers persistance -->
+  <g stroke="#f87171" stroke-width="2.5" fill="none">
+    <path d="M700 190 V352"/>
+  </g>
+  <path d="M700 352 l-5 -9 h10 z" fill="#f87171"/>
+  <circle cx="700" cy="271" r="15" fill="#f87171"/>
+  <text x="700" y="276" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T3</text>
+  <text x="726" y="262" fill="#f87171" font-size="12.5">
+    <tspan x="726" dy="0">EF Core n'entre pas</tspan>
+    <tspan x="726" dy="17">dans le Domain</tspan>
+  </text>
+
+  <!-- T8 : Api vers persistance -->
+  <g stroke="#f87171" stroke-width="2.5" fill="none">
+    <path d="M130 190 V478 H640 V444"/>
+  </g>
+  <path d="M640 444 l-5 9 h10 z" fill="#f87171"/>
+  <circle cx="300" cy="478" r="15" fill="#f87171"/>
+  <text x="300" y="483" text-anchor="middle" fill="#0d0d0f" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">T8</text>
+  <text x="326" y="470" fill="#f87171" font-size="12.5">le contrôleur qui interroge la base directement</text>
+
+  <!-- Légende -->
+  <g stroke="#3b82f6" stroke-width="2" fill="none"><path d="M782 128 H822"/></g>
+  <path d="M822 128 l-9 -5 v10 z" fill="#3b82f6"/>
+  <text x="832" y="132" fill="#6b7280" font-size="12">autorisée</text>
+  <g stroke="#f87171" stroke-width="2.5" fill="none"><path d="M782 156 H822"/></g>
+  <path d="M822 156 l-9 -5 v10 z" fill="#f87171"/>
+  <text x="832" y="160" fill="#6b7280" font-size="12">interdite</text>
+</svg>

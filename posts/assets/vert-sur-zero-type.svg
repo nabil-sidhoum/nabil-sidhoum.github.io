@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Une regle qui n'inspecte aucun type rend un succes ; le garde-fou de non-vacuite la fait echouer">
+  <desc>Comparaison de deux chemins d'exécution d'une règle d'architecture. À gauche, sans garde-fou : la sélection ne ramène aucun type, la règle est trivialement satisfaite et le test passe au vert alors qu'il n'a rien vérifié. À droite, avec le garde-fou de non-vacuité : la règle exige d'abord d'inspecter au moins un type, échoue sinon, et le message d'erreur nomme les deux causes possibles, une référence de projet non complétée ou des couches nommées autrement.</desc>
+
+  <text x="460" y="42" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Une règle sans sujet est trivialement satisfaite</text>
+  <text x="460" y="66" text-anchor="middle" fill="#6b7280" font-size="13">Le même test, sur une solution où les couches n'ont pas été branchées</text>
+
+  <!-- Colonne gauche : sans garde-fou -->
+  <text x="220" y="106" text-anchor="middle" fill="#6b7280" font-size="13" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">SANS GARDE-FOU</text>
+
+  <rect x="60" y="124" width="320" height="58" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="220" y="150" text-anchor="middle" fill="#cbd5e1" font-size="12.5">Sélectionner les types du Domain</text>
+  <text x="220" y="170" text-anchor="middle" fill="#6b7280" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">→ 0 type</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M220 182 V214"/></g>
+  <path d="M220 214 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="60" y="216" width="320" height="76" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="220" y="242" text-anchor="middle" fill="#cbd5e1" font-size="12.5">
+    <tspan x="220" dy="0">« Aucun type du Domain ne dépend</tspan>
+    <tspan x="220" dy="18">de l'Infrastructure »</tspan>
+    <tspan x="220" dy="20" fill="#6b7280" font-size="12">vrai par vacuité, sur un ensemble vide</tspan>
+  </text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M220 292 V324"/></g>
+  <path d="M220 324 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="60" y="326" width="320" height="62" rx="10" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="220" y="352" text-anchor="middle" fill="#22c55e" font-size="15" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">VERT</text>
+  <text x="220" y="374" text-anchor="middle" fill="#cbd5e1" font-size="12.5">Le test passe. Il n'a rien vérifié.</text>
+
+  <!-- Colonne droite : avec garde-fou -->
+  <text x="700" y="106" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">AVEC LE GARDE-FOU</text>
+
+  <rect x="540" y="124" width="320" height="58" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="700" y="150" text-anchor="middle" fill="#cbd5e1" font-size="12.5">Sélectionner les types du Domain</text>
+  <text x="700" y="170" text-anchor="middle" fill="#6b7280" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">→ 0 type</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M700 182 V214"/></g>
+  <path d="M700 214 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="540" y="216" width="320" height="76" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="700" y="242" text-anchor="middle" fill="#3b82f6" font-size="12.5" font-weight="700">
+    <tspan x="700" dy="0">Exiger au moins un type inspecté</tspan>
+    <tspan x="700" dy="20" fill="#cbd5e1" font-weight="400">La règle n'est même pas évaluée :</tspan>
+    <tspan x="700" dy="18" fill="#cbd5e1" font-weight="400">elle n'a pas de sujet.</tspan>
+  </text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M700 292 V324"/></g>
+  <path d="M700 324 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="540" y="326" width="320" height="62" rx="10" fill="#450a0a" stroke="#f87171" stroke-width="2"/>
+  <text x="700" y="352" text-anchor="middle" fill="#f87171" font-size="15" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">ROUGE</text>
+  <text x="700" y="374" text-anchor="middle" fill="#cbd5e1" font-size="12.5">Le message nomme les deux causes.</text>
+
+  <!-- Conclusion -->
+  <text x="460" y="428" text-anchor="middle" fill="#3b82f6" font-size="13.5" font-weight="700">Plus on monte l'échelle, moins il reste de monde pour s'apercevoir qu'un test ment</text>
+  <text x="460" y="452" text-anchor="middle" fill="#6b7280" font-size="12.5">Un dispositif de vérification se juge à ce qu'il refuse, pas à ce qu'il valide.</text>
+</svg>

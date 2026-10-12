@@ -9,8 +9,8 @@
     "Descriptions": [
       "Réécriture progressive du legacy .NET Framework vers .NET 5, puis .NET 6 et .NET 8 LTS, en Clean Architecture et sans big-bang",
       "Génération des fiches PDF clients ramenée de 40-60 s à 4-5 s : refonte des requêtes, puis rendu Chromium avec PuppeteerSharp",
-      "Écosystème de 5 applications autour de Dynamics 365 : API de données, jobs Hangfire, espace client, portail PDF et API appelée par le CRM",
-      "10 packages NuGet internes (Dynamics 365, Bloomberg, SIX Telekurs, OpenStack Swift, IA, e-mail, SFTP), publiés par des pipelines Azure DevOps sur tag Git",
+      "Écosystème de 5 applications autour de Dynamics CRM (Dynamics 365 Customer Engagement) : API de données, jobs Hangfire, espace client, portail PDF et API appelée par le CRM",
+      "10 packages NuGet internes (Dynamics CRM, Bloomberg, SIX Telekurs, OpenStack Swift, IA, e-mail, SFTP), publiés par des pipelines Azure DevOps sur tag Git",
       "Gestion d'un incident majeur chez l'hébergeur (3 semaines d'indisponibilité) : espace client reconstruit sur une autre infrastructure et rétabli en 1,5 semaine",
       "Flux Git protégé avec recette métier et revue obligatoire de chaque PR, conventions de code et documentation d'accueil",
       "Recrutement d'un consultant et d'un second développeur ; formation d'un junior pendant trois ans jusqu'au poste de lead dev",
@@ -19,7 +19,7 @@
     "Competences": [
       "C#", ".NET 8", "ASP.NET Core", "Entity Framework Core", "Clean Architecture",
       "SQL Server", "Azure DevOps", "Hangfire", "MediatR", "Serilog", "PuppeteerSharp",
-      "Dynamics 365", "NuGet", "Bloomberg BLPAPI", "SIX Telekurs", "OpenStack Swift", "OpenAI"
+      "Dynamics CRM", "NuGet", "Bloomberg BLPAPI", "SIX Telekurs", "OpenStack Swift", "OpenAI"
     ]
   },
   {
@@ -30,7 +30,7 @@
     "DateFin": "2021-06-30",
     "Accroche": "Consultant .NET chez SoftFluent, je suis intervenu sur plusieurs missions clients à forts enjeux métier, dont les missions fondatrices chez IRBIS Finance qui ont conduit à mon recrutement en CDI.",
     "Descriptions": [
-      "Conception et développement, seul, du MVP de l'espace client IRBIS Finance (ASP.NET MVC connecté à Dynamics 365), mis en ligne en 8 mois",
+      "Conception et développement, seul, du MVP de l'espace client IRBIS Finance (ASP.NET MVC connecté à Dynamics CRM), mis en ligne en 8 mois",
       "Schéma SQL et socle de réplication CRM vers SQL Server pour IRBIS Finance (2020)",
       "Formation et accompagnement des Lead Devs Delphi d'EIG (éditeur de logiciels du secteur médico-social) vers .NET et la Clean Architecture",
       "Groupe IGS : maintenance applicative, migration .NET Framework 4.5 vers 4.7 et migration de TFS vers Azure DevOps",

@@ -4,21 +4,22 @@
     "Poste": "Tech Lead .NET",
     "Lieu": "Paris 08, Île-de-France",
     "DateDebut": "2021-07-01",
-    "DateFin": null,
-    "Accroche": "Recruté en CDI après avoir conçu le MVP de la plateforme en tant que consultant, j'ai pris la responsabilité technique complète d'un écosystème de 5 applications .NET interconnectées en production, dans le domaine de la distribution de produits structurés via conseillers en gestion de patrimoine.",
+    "DateFin": "2026-08-31",
+    "Accroche": "Recruté en CDI après avoir conçu le MVP de la plateforme en tant que consultant, j'ai été le référent technique et l'architecte d'un écosystème de 5 applications .NET en production, dans la distribution de produits structurés via conseillers en gestion de patrimoine. Tech Lead de 2021 à 2023, promu CTO en 2024.",
     "Descriptions": [
-      "Migration progressive .NET Framework 4.6 vers .NET 8 sans interruption de service",
-      "Conception et maintien d'une Clean Architecture modulaire : API centrale, orchestrateur de jobs Hangfire, portail documentaire, extension Dynamics CRM",
-      "Intégration de flux financiers temps réel Bloomberg BLPAPI et SIX Telekurs",
-      "Publication et maintien de 10 packages NuGet privés (connecteurs Bloomberg, SIX, OpenStack Swift, OpenAI)",
-      "Mise en place de l'organisation technique from scratch : CI/CD Azure DevOps, conventions de code, onboarding écrit, code review systématique",
-      "Recrutement et encadrement d'un développeur junior jusqu'à l'autonomie complète",
-      "Intégration de l'IA générative en production via un connecteur OpenAI avec BulkHead pattern"
+      "Réécriture progressive du legacy .NET Framework vers .NET 5, puis .NET 6 et .NET 8 LTS, en Clean Architecture et sans big-bang",
+      "Génération des fiches PDF clients ramenée de 40-60 s à 4-5 s : refonte des requêtes, puis rendu Chromium avec PuppeteerSharp",
+      "Écosystème de 5 applications autour de Dynamics 365 : API de données, jobs Hangfire, espace client, portail PDF et API appelée par le CRM",
+      "10 packages NuGet internes (Dynamics 365, Bloomberg, SIX Telekurs, OpenStack Swift, IA, e-mail, SFTP), publiés par des pipelines Azure DevOps sur tag Git",
+      "Gestion d'incident majeur : après une tentative de vol de données, l'hébergeur a mis ses systèmes hors ligne 3 semaines ; espace client reconstruit ailleurs et rétabli en 1,5 semaine",
+      "Flux Git protégé avec recette métier et revue obligatoire de chaque PR, conventions de code et documentation d'accueil",
+      "Recrutement d'un consultant et d'un second développeur ; formation d'un junior pendant trois ans jusqu'au poste de lead dev",
+      "Connecteur OpenAI interne (package NuGet, BulkHead pattern) pour fiabiliser les appels d'IA générative en production"
     ],
     "Competences": [
       "C#", ".NET 8", "ASP.NET Core", "Entity Framework Core", "Clean Architecture",
-      "SQL Server", "Azure DevOps", "Hangfire", "PuppeteerSharp", "Dynamics CRM",
-      "NuGet", "Bloomberg BLPAPI", "SIX Telekurs", "OpenStack Swift", "OpenAI"
+      "SQL Server", "Azure DevOps", "Hangfire", "MediatR", "Serilog", "PuppeteerSharp",
+      "Dynamics 365", "NuGet", "Bloomberg BLPAPI", "SIX Telekurs", "OpenStack Swift", "OpenAI"
     ]
   },
   {
@@ -27,12 +28,13 @@
     "Lieu": "Paris, Île-de-France, France",
     "DateDebut": "2017-10-01",
     "DateFin": "2021-06-30",
-    "Accroche": "Consultant .NET au sein de SoftFluent, j'ai intervenu sur plusieurs missions clients dans le domaine de la finance et de l'assurance, dont une mission longue durée chez IRBIS Finance qui a conduit à mon recrutement en CDI.",
+    "Accroche": "Consultant .NET chez SoftFluent, je suis intervenu sur plusieurs missions clients à forts enjeux métier, dont les missions fondatrices chez IRBIS Finance qui ont conduit à mon recrutement en CDI.",
     "Descriptions": [
-      "Conception et développement du MVP de l'espace client B2B IRBIS Finance en ASP.NET MVC",
-      "Mise en place d'une Clean Architecture pour EIG (éditeur de logiciels secteur médico-social)",
-      "Maintenance applicative et optimisation pour le Groupe IGS",
-      "Encadrement technique et transfert de compétences sur plusieurs missions"
+      "Conception et développement, seul, du MVP de l'espace client IRBIS Finance (ASP.NET MVC connecté à Dynamics 365), mis en ligne en 8 mois",
+      "Schéma SQL et socle de réplication CRM vers SQL Server pour IRBIS Finance (2020)",
+      "Formation et accompagnement des Lead Devs Delphi d'EIG (éditeur de logiciels du secteur médico-social) vers .NET et la Clean Architecture",
+      "Groupe IGS : maintenance applicative, migration .NET Framework 4.5 vers 4.7 et migration de TFS vers Azure DevOps",
+      "Mise en place de bonnes pratiques (Clean Code, structuration du domaine, testabilité) et accompagnement des équipes sur l'architecture"
     ],
     "Competences": [
       ".NET Core", "ASP.NET Core MVC", "Clean Architecture", "Entity Framework Core",
@@ -47,7 +49,7 @@
     "DateFin": "2017-09-30",
     "Accroche": "Consultant .NET chez Capgemini, j'ai débuté par un stage de fin d'étude avant d'être recruté en CDI, intervenant principalement sur des projets CRM Dynamics dans des contextes grands comptes.",
     "Descriptions": [
-      "Développement CRM Dynamics pour Orange Caraïbes et Réunion-Mayotte, avec encadrement d'une équipe de 4 développeurs",
+      "Développement CRM Dynamics pour Orange Caraïbes et Réunion-Mayotte, au sein d'une équipe de 2 développeurs et jusqu'à 5 stagiaires, avec un encadrement informel des stagiaires",
       "Mise en place d'une infrastructure DevOps et développement CRM pour Unibail-Rodamco",
       "Maintenance applicative ASP.NET pour Domus VI",
       "Conception de pages de recherche CRM et tests de charge pour ASIP Santé",

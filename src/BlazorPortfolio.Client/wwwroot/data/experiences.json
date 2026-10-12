@@ -9,7 +9,7 @@
     "Descriptions": [
       "Réécriture progressive du legacy .NET Framework vers .NET 5, puis .NET 6 et .NET 8 LTS, en Clean Architecture et sans big-bang",
       "Génération des fiches PDF clients ramenée de 40-60 s à 4-5 s : refonte des requêtes, puis rendu Chromium avec PuppeteerSharp",
-      "Écosystème de 5 applications autour de Dynamics CRM (Dynamics 365 Customer Engagement) : API de données, jobs Hangfire, espace client, portail PDF et API appelée par le CRM",
+      "Écosystème de 5 applications autour de Dynamics CRM : API de données, jobs Hangfire, espace client, portail PDF et API appelée par le CRM",
       "10 packages NuGet internes (Dynamics CRM, Bloomberg, SIX Telekurs, OpenStack Swift, IA, e-mail, SFTP), publiés par des pipelines Azure DevOps sur tag Git",
       "Gestion d'un incident majeur chez l'hébergeur (3 semaines d'indisponibilité) : espace client reconstruit sur une autre infrastructure et rétabli en 1,5 semaine",
       "Flux Git protégé avec recette métier et revue obligatoire de chaque PR, conventions de code et documentation d'accueil",
@@ -47,9 +47,9 @@
     "Lieu": "Paris, Île-de-France, France",
     "DateDebut": "2015-03-01",
     "DateFin": "2017-09-30",
-    "Accroche": "Consultant .NET chez Capgemini, j'ai débuté par un stage de fin d'étude avant d'être recruté en CDI, intervenant principalement sur des projets CRM Dynamics dans des contextes grands comptes.",
+    "Accroche": "Consultant .NET chez Capgemini, j'ai débuté par un stage de fin d'étude avant d'être recruté en CDI, intervenant principalement sur des projets Dynamics CRM dans des contextes grands comptes.",
     "Descriptions": [
-      "Développement CRM Dynamics pour Orange Caraïbes et Réunion-Mayotte, au sein d'une équipe de 2 développeurs et jusqu'à 5 stagiaires, avec un encadrement informel des stagiaires",
+      "Développement Dynamics CRM pour Orange Caraïbes et Réunion-Mayotte, au sein d'une équipe de 2 développeurs et jusqu'à 5 stagiaires, avec un encadrement informel des stagiaires",
       "Mise en place d'une infrastructure DevOps et développement CRM pour Unibail-Rodamco",
       "Maintenance applicative ASP.NET pour Domus VI",
       "Conception de pages de recherche CRM et tests de charge pour ASIP Santé",

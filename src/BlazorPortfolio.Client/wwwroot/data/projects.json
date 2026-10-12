@@ -29,7 +29,7 @@
   {
     "Nom": "DynamicsCrmConnector",
     "BadgeType": "OpenSource",
-    "Description": "Connecteur HTTP asynchrone pour l'API Web OData de Microsoft Dynamics CRM. Authentification OAuth2 (ClientId / SecretId), CRUD complet, mapping fortement typé, support FetchXML et pagination automatique. Tests xUnit + Moq + MockHttp, CI gated publish.",
+    "Description": "Connecteur HTTP asynchrone pour l'API Web OData de Dynamics CRM. Authentification OAuth2 (ClientId / SecretId), CRUD complet, mapping fortement typé, support FetchXML et pagination automatique. Tests xUnit + Moq + MockHttp, CI gated publish.",
     "GithubUrl": "https://github.com/nabil-sidhoum/DynamicsCrmConnector",
     "ExtraUrl": "https://www.nuget.org/packages/Tools.DynamicsCRM",
     "ExtraLabel": "NuGet",

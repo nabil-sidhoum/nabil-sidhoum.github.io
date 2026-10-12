@@ -11,7 +11,7 @@
       "Génération des fiches PDF clients ramenée de 40-60 s à 4-5 s : refonte des requêtes, puis rendu Chromium avec PuppeteerSharp",
       "Écosystème de 5 applications autour de Dynamics 365 : API de données, jobs Hangfire, espace client, portail PDF et API appelée par le CRM",
       "10 packages NuGet internes (Dynamics 365, Bloomberg, SIX Telekurs, OpenStack Swift, IA, e-mail, SFTP), publiés par des pipelines Azure DevOps sur tag Git",
-      "Gestion d'incident majeur : après une tentative de vol de données, l'hébergeur a mis ses systèmes hors ligne 3 semaines ; espace client reconstruit ailleurs et rétabli en 1,5 semaine",
+      "Gestion d'un incident majeur chez l'hébergeur (3 semaines d'indisponibilité) : espace client reconstruit sur une autre infrastructure et rétabli en 1,5 semaine",
       "Flux Git protégé avec recette métier et revue obligatoire de chaque PR, conventions de code et documentation d'accueil",
       "Recrutement d'un consultant et d'un second développeur ; formation d'un junior pendant trois ans jusqu'au poste de lead dev",
       "Connecteur OpenAI interne (package NuGet, BulkHead pattern) pour fiabiliser les appels d'IA générative en production"

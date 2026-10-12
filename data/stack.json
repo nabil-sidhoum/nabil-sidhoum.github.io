@@ -15,7 +15,7 @@
       "MediatR",
       "Hangfire",
       "PuppeteerSharp",
-      "Microsoft Dynamics CRM",
+      "Dynamics CRM",
       "Bloomberg BLPAPI",
       "SIX Telekurs",
       "NuGet",

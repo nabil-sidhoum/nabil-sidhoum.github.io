@@ -35,6 +35,30 @@
                         {
                             <p class="accroche">@exp.Accroche</p>
                         }
+                        @if (HasDetails(exp))
+                        {
+                            <details class="show" open="@isHead">
+                                <summary>git show <span class="count">(@LinesLabel(exp))</span></summary>
+                                @if (exp.Descriptions?.Count > 0)
+                                {
+                                    <ul class="diff">
+                                        @foreach (string description in exp.Descriptions)
+                                        {
+                                            <li>@description</li>
+                                        }
+                                    </ul>
+                                }
+                                @if (exp.Competences?.Count > 0)
+                                {
+                                    <div class="pills">
+                                        @foreach (string competence in exp.Competences)
+                                        {
+                                            <span class="pill">@competence</span>
+                                        }
+                                    </div>
+                                }
+                            </details>
+                        }
                     </div>
                 </div>
             }

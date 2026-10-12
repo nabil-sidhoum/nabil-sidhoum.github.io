@@ -20,11 +20,11 @@
   {
     "Nom": "PageCorrelationId",
     "BadgeType": "OpenSource",
-    "Description": "Middleware ASP.NET Core de propagation d'un Correlation ID métier. Né d'un besoin réel en production : relier dans les logs toutes les requêtes déclenchées par une même ouverture de page. Package NuGet, badge CI.",
+    "Description": "Middleware ASP.NET Core de propagation d'un Correlation ID métier. Né d'un besoin réel en production : relier dans les logs toutes les requêtes déclenchées par une même ouverture de page. 13 tests, badge CI.",
     "GithubUrl": "https://github.com/nabil-sidhoum/PageCorrelationId",
     "ExtraUrl": null,
     "ExtraLabel": null,
-    "Competences": [ "ASP.NET Core", "Middleware", "DelegatingHandler", "NuGet", "GitHub Actions" ]
+    "Competences": [ "ASP.NET Core", "Middleware", "DelegatingHandler", "GitHub Actions" ]
   },
   {
     "Nom": "DynamicsCrmConnector",

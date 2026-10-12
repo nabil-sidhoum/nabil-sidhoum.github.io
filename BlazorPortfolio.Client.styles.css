@@ -647,6 +647,68 @@ nav a:hover[b-v4ny1ivt8j] { color: var(--accent); }
     color: var(--fg-dim);
 }
 
+.show summary[b-p3l7hkbxch] {
+    width: fit-content;
+    list-style: none;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 12px;
+    user-select: none;
+}
+
+.show summary[b-p3l7hkbxch]::-webkit-details-marker {
+    display: none;
+}
+
+.show summary[b-p3l7hkbxch]::before {
+    content: "▸ ";
+}
+
+.show[open] summary[b-p3l7hkbxch]::before {
+    content: "▾ ";
+}
+
+.show summary:focus-visible[b-p3l7hkbxch] {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.show summary .count[b-p3l7hkbxch] {
+    color: var(--fg-dim);
+}
+
+.show .diff[b-p3l7hkbxch] {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.show .diff li[b-p3l7hkbxch] {
+    position: relative;
+    padding-left: 16px;
+    color: var(--fg);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.show .diff li[b-p3l7hkbxch]::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+}
+
+.show .pills[b-p3l7hkbxch] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
 @media (max-width: 767px) {
     .commit[b-p3l7hkbxch] {
         grid-template-columns: auto auto 1fr;
@@ -677,6 +739,10 @@ nav a:hover[b-v4ny1ivt8j] { color: var(--accent); }
 
     .commit-body .accroche[b-p3l7hkbxch] {
         font-size: 11px;
+    }
+
+    .show .diff li[b-p3l7hkbxch] {
+        font-size: 11.5px;
     }
 }
 /* /Components/Sections/HeroSection.razor.rz.scp.css */

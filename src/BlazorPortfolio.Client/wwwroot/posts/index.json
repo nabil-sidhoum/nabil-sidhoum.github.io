@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "Slug": "blog-repondait-404",
+      "Title": "Mon blog répondait 404 aux robots, et je ne l'avais jamais vu",
+      "Summary": "Chaque lien direct vers un article de ce blog renvoyait « page introuvable » aux robots d'aperçu et aux moteurs de recherche, alors que le navigateur l'affichait normalement. L'histoire d'une SPA Blazor sur GitHub Pages, d'un comportement de plateforme mesuré plutôt que supposé, et d'un correctif généré au déploiement, avec un rappel : vérifier avec le lecteur qui compte, pas avec le plus indulgent.",
+      "PublishedAt": "2026-10-12",
+      "Tags": [
+        "Blazor",
+        "GitHub Pages",
+        "CI/CD",
+        "SEO"
+      ]
+    },
+    {
       "Slug": "regles-qui-peuvent-echouer",
       "Title": "Pour que l'IA vérifie mon code, il fallait d'abord que mes règles puissent échouer",
       "Summary": "L'échelle d'adoption de l'IA de Boris Cherny place au palier 2 le moment où l'IA vérifie son propre travail par les tests, le build et le lint. En me situant dessus, j'ai découvert que mon template .NET prescrivait 101 règles dont aucune ne cassait le build, et seize règles d'architecture que rien ne vérifiait. Le récit d'une conversion : de la suggestion à la contrainte, et le test vert qui ne vérifiait rien.",

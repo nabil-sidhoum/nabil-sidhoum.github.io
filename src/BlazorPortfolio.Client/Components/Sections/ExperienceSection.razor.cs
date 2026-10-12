@@ -38,6 +38,18 @@ namespace BlazorPortfolio.Client.Components.Sections
             return (hash & 0x0FFFFFFF).ToString("x7", CultureInfo.InvariantCulture);
         }
 
+        private static bool HasDetails(ExperienceInfo experience)
+        {
+            return experience.Descriptions?.Count > 0 || experience.Competences?.Count > 0;
+        }
+
+        // Libellé du bloc repliable, façon statistique de commit : « 8 lignes », « 1 ligne ».
+        private static string LinesLabel(ExperienceInfo experience)
+        {
+            int count = experience.Descriptions?.Count ?? 0;
+            return count == 1 ? "1 ligne" : $"{count} lignes";
+        }
+
         private static string YearOf(string date)
         {
             if (string.IsNullOrEmpty(date) || date.Length < YearLength)

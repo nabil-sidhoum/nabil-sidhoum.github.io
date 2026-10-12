@@ -39,7 +39,13 @@ jobs:
       - name: Create 404.html for SPA fallback
         run: cp build/wwwroot/index.html build/wwwroot/404.html
 
-      # 6. Déployer vers GitHub Pages (branche gh-pages)
+      # 6. Une page statique par route du blog : /blog et /blog/<slug> répondent
+      # en 200 (et non plus via 404.html), avec des balises og:* propres à chaque
+      # article pour les aperçus de liens (LinkedIn, Slack) et les moteurs de recherche
+      - name: Generate static blog routes
+        run: python3 .github/scripts/generate_static_routes.py build/wwwroot
+
+      # 7. Déployer vers GitHub Pages (branche gh-pages)
       # peaceiris crée automatiquement .nojekyll (indispensable pour _framework/)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

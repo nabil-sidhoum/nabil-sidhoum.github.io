@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Une même URL, deux lectures : le navigateur affiche l'article, le robot d'aperçu reçoit une page introuvable">
+  <desc>Avant le correctif. La requête GET sur /blog/regles-qui-peuvent-echouer arrive sur GitHub Pages, qui ne trouve aucun fichier et sert 404.html avec le code HTTP 404. Le navigateur exécute ensuite Blazor, dont le routeur lit l'URL et affiche l'article : pour un visiteur, tout semble normal, à une erreur console près. Le robot d'aperçu ou le moteur de recherche, lui, s'arrête au code HTTP et au HTML reçu : il voit une page introuvable avec les balises og génériques du site.</desc>
+
+  <text x="460" y="42" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Une même URL, deux lectures</text>
+  <text x="460" y="66" text-anchor="middle" fill="#6b7280" font-size="13">Avant le correctif : GitHub Pages n'a aucun fichier pour /blog/&lt;slug&gt;</text>
+
+  <!-- Requête -->
+  <rect x="250" y="86" width="420" height="44" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="113" text-anchor="middle" fill="#cbd5e1" font-size="13" font-family="'JetBrains Mono', ui-monospace, monospace">GET /blog/regles-qui-peuvent-echouer</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M460 130 V154"/></g>
+  <path d="M460 156 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- GitHub Pages -->
+  <rect x="250" y="158" width="420" height="62" rx="10" fill="#450a0a" stroke="#f87171" stroke-width="2"/>
+  <text x="460" y="184" text-anchor="middle" fill="#cbd5e1" font-size="13">GitHub Pages : aucun fichier, il sert 404.html</text>
+  <text x="460" y="206" text-anchor="middle" fill="#f87171" font-size="14" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">HTTP 404</text>
+
+  <!-- Fourche -->
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M460 220 V238 H220 V262"/>
+    <path d="M460 238 H700 V262"/>
+  </g>
+  <path d="M220 264 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M700 264 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- Colonne gauche : navigateur -->
+  <text x="220" y="286" text-anchor="middle" fill="#6b7280" font-size="12.5" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">LE NAVIGATEUR</text>
+  <rect x="60" y="298" width="320" height="62" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="220" y="324" text-anchor="middle" fill="#cbd5e1" font-size="12.5">Exécute Blazor, dont le routeur</text>
+  <text x="220" y="344" text-anchor="middle" fill="#cbd5e1" font-size="12.5">lit l'URL et charge l'article</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M220 360 V382"/></g>
+  <path d="M220 384 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="60" y="386" width="320" height="62" rx="10" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="220" y="412" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="700">L'article s'affiche</text>
+  <text x="220" y="434" text-anchor="middle" fill="#cbd5e1" font-size="12">Seule trace : une erreur dans la console</text>
+
+  <!-- Colonne droite : robot -->
+  <text x="700" y="286" text-anchor="middle" fill="#6b7280" font-size="12.5" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">LE ROBOT D'APERÇU</text>
+  <rect x="540" y="298" width="320" height="62" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="700" y="324" text-anchor="middle" fill="#cbd5e1" font-size="12.5">S'arrête au code HTTP</text>
+  <text x="700" y="344" text-anchor="middle" fill="#cbd5e1" font-size="12.5">et au HTML tel qu'il arrive</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M700 360 V382"/></g>
+  <path d="M700 384 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="540" y="386" width="320" height="62" rx="10" fill="#450a0a" stroke="#f87171" stroke-width="2"/>
+  <text x="700" y="412" text-anchor="middle" fill="#f87171" font-size="14" font-weight="700">Page introuvable</text>
+  <text x="700" y="434" text-anchor="middle" fill="#cbd5e1" font-size="12">Titre et résumé génériques du site</text>
+
+  <!-- Conclusion -->
+  <text x="460" y="488" text-anchor="middle" fill="#3b82f6" font-size="13.5" font-weight="700">Le visiteur ne voit rien. Le robot ne voit que ça.</text>
+</svg>

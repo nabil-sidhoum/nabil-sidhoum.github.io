@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "Slug": "premier-plugin-claude-code",
+      "Title": "Mon premier plugin pour Claude Code : une jauge de contexte et de quota, pas à pas",
+      "Summary": "Une longue tâche dans Claude Code s'arrête quand le contexte ou le quota s'épuise, et on le découvre après coup. J'ai écrit mon premier plugin pour mettre ces chiffres sous les yeux, au-dessus du champ de saisie. Voici comment, étape par étape : les types fouillés avant le code, le chemin absolu qui ne marchait que chez moi, les tests sans moteur, et le test qui avait tort.",
+      "PublishedAt": "2026-10-14",
+      "Tags": [
+        "Claude Code",
+        "Agents IA",
+        "TypeScript",
+        "Tests"
+      ]
+    },
+    {
       "Slug": "blog-repondait-404",
       "Title": "Mon blog répondait 404 aux robots, et je ne l'avais jamais vu",
       "Summary": "Chaque lien direct vers un article de ce blog renvoyait « page introuvable » aux robots d'aperçu et aux moteurs de recherche, alors que le navigateur l'affichait normalement. L'histoire d'une SPA Blazor sur GitHub Pages, d'un comportement de plateforme mesuré plutôt que supposé, et d'un correctif généré au déploiement, avec un rappel : vérifier avec le lecteur qui compte, pas avec le plus indulgent.",

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 490" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="La jauge reçoit ses chiffres de trois sources, les range dans son état, les met en forme par des fonctions pures et dessine une ligne colorée au-dessus du champ de saisie">
+  <desc>Cycle de mise à jour de la jauge quota-guard. Trois sources alimentent l'état du plugin : la lecture de l'usage à l'ouverture de la session, l'événement session.measure poussé après chaque tour, et une minuterie qui ticke chaque minute pour recalculer le temps restant. L'état contient la dernière mesure, le modèle actif et un compteur de minutes. Des fonctions de mise en forme pures, testées sans moteur, en tirent le texte et la couleur de chaque segment selon les seuils de 70 et 90 %, et affichent n/d pour une donnée absente. Le hook de rendu du composant AbovePrompt dessine enfin la ligne au-dessus du champ de saisie. Exemple relevé à la livraison : contexte à 66 % en vert, limite de cinq heures à 71 % en orange, limite de sept jours à 52 % en vert, modèle Opus 5.5.</desc>
+
+  <text x="460" y="42" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Une jauge qui lit, et ne fait rien d'autre</text>
+  <text x="460" y="66" text-anchor="middle" fill="#6b7280" font-size="13">Trois sources alimentent l'état du plugin ; la mise en forme décide du texte et de la couleur</text>
+
+  <!-- Sources -->
+  <rect x="40" y="96" width="260" height="66" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="170" y="122" text-anchor="middle" fill="#cbd5e1" font-size="13">À l'ouverture de la session</text>
+  <text x="170" y="144" text-anchor="middle" fill="#6b7280" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">$.session.usage()</text>
+
+  <rect x="330" y="96" width="260" height="66" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="122" text-anchor="middle" fill="#cbd5e1" font-size="13">Après chaque tour</text>
+  <text x="460" y="144" text-anchor="middle" fill="#6b7280" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">session.measure</text>
+
+  <rect x="620" y="96" width="260" height="66" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="750" y="122" text-anchor="middle" fill="#cbd5e1" font-size="13">Chaque minute, entre deux tours</text>
+  <text x="750" y="144" text-anchor="middle" fill="#6b7280" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">$.clock.every(1 min)</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M170 162 V200"/>
+    <path d="M460 162 V200"/>
+    <path d="M750 162 V200"/>
+  </g>
+  <path d="M170 202 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M460 202 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M750 202 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- État -->
+  <rect x="120" y="204" width="680" height="58" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="229" text-anchor="middle" fill="#cbd5e1" font-size="13">État du plugin</text>
+  <text x="460" y="249" text-anchor="middle" fill="#6b7280" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">mesure · modèle · minute</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M460 262 V292"/></g>
+  <path d="M460 294 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- Mise en forme -->
+  <rect x="120" y="296" width="680" height="66" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="460" y="322" text-anchor="middle" fill="#3b82f6" font-size="13.5" font-weight="700">Mise en forme : des fonctions pures, testées sans moteur</text>
+  <text x="460" y="344" text-anchor="middle" fill="#cbd5e1" font-size="12.5">orange à 70 %, rouge à 90 %, réglables · n/d pour toute donnée absente · jamais d'exception</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M460 362 V392"/></g>
+  <path d="M460 394 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- Bande -->
+  <text x="40" y="390" fill="#6b7280" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">ui.render · AbovePrompt</text>
+  <rect x="40" y="396" width="840" height="46" rx="8" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="424" text-anchor="middle" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace"><tspan fill="#22c55e">Contexte 663 k / 1,0 M (66 %)</tspan><tspan fill="#94a3b8"> · </tspan><tspan fill="#fbbf24">5 h 71 %, réinit. dans 2 h 12</tspan><tspan fill="#94a3b8"> · </tspan><tspan fill="#22c55e">7 j 52 %, réinit. ven. 16/10</tspan><tspan fill="#94a3b8"> · </tspan><tspan fill="#cbd5e1">Opus 5.5</tspan></text>
+
+  <text x="460" y="472" text-anchor="middle" fill="#6b7280" font-size="12.5">La bande au-dessus du champ de saisie, relevée le jour de la livraison : la limite de cinq heures est déjà orange</text>
+</svg>

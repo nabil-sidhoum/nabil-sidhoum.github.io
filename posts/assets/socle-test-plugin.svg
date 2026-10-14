@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="En session, le moteur de Claude Code répond sous le plugin ; sous l'exécuteur de tests il n'y a rien, et le test doit fournir son propre socle">
+  <desc>Comparaison de deux situations. À gauche, en session : le plugin quota-guard est posé sur le moteur de Claude Code, qui fournit les vrais chiffres via session.measure, l'heure réelle et le rendu du reste de l'écran. À droite, sous claude plugin test : rien ne joue le moteur, chaque appel lève l'erreur no implementation for session.measure, sauf si le test fournit un socle composé d'un gestionnaire session.measure qui renvoie ce qu'on lui donne, d'une horloge simulée arrêtée au 14 octobre 2026 à midi, et d'un rendu qui répond par une boîte vide.</desc>
+
+  <text x="460" y="42" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Sous un test, personne ne joue le moteur</text>
+  <text x="460" y="66" text-anchor="middle" fill="#6b7280" font-size="13">Ce que Claude Code fournit en session, le test doit l'écrire lui-même</text>
+
+  <!-- Colonne gauche : en session -->
+  <text x="220" y="106" text-anchor="middle" fill="#6b7280" font-size="13" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">EN SESSION</text>
+
+  <rect x="60" y="124" width="320" height="54" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="220" y="156" text-anchor="middle" fill="#cbd5e1" font-size="13" font-family="'JetBrains Mono', ui-monospace, monospace">quota-guard</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M220 178 V210"/></g>
+  <path d="M220 212 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="60" y="214" width="320" height="112" rx="10" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="220" y="240" text-anchor="middle" fill="#22c55e" font-size="13.5" font-weight="700">Le moteur de Claude Code</text>
+  <text x="220" y="266" text-anchor="middle" fill="#cbd5e1" font-size="12.5">
+    <tspan x="220" dy="0">les vrais chiffres, après chaque tour</tspan>
+    <tspan x="220" dy="20">l'heure réelle</tspan>
+    <tspan x="220" dy="20">le reste de l'écran</tspan>
+  </text>
+
+  <!-- Colonne droite : sous claude plugin test -->
+  <text x="700" y="106" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">SOUS claude plugin test</text>
+
+  <rect x="540" y="124" width="320" height="54" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="700" y="156" text-anchor="middle" fill="#cbd5e1" font-size="13" font-family="'JetBrains Mono', ui-monospace, monospace">quota-guard</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none"><path d="M700 178 V210"/></g>
+  <path d="M700 212 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <rect x="540" y="214" width="320" height="112" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="700" y="240" text-anchor="middle" fill="#3b82f6" font-size="13.5" font-weight="700">Le socle écrit dans le test</text>
+  <text x="700" y="266" text-anchor="middle" fill="#cbd5e1" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">
+    <tspan x="700" dy="0">session.measure → renvoie l'entrée</tspan>
+    <tspan x="700" dy="20">mock.clock → 14/10/2026 12:00</tspan>
+    <tspan x="700" dy="20">ui.render → une Box vide</tspan>
+  </text>
+
+  <!-- Sans socle -->
+  <rect x="540" y="348" width="320" height="44" rx="10" fill="#450a0a" stroke="#f87171" stroke-width="2"/>
+  <text x="700" y="375" text-anchor="middle" fill="#fca5a5" font-size="10.5" font-family="'JetBrains Mono', ui-monospace, monospace">sans lui : no implementation for session.measure</text>
+
+  <text x="220" y="375" text-anchor="middle" fill="#6b7280" font-size="12.5">
+    <tspan x="220" dy="0">Le même module, les mêmes appels :</tspan>
+    <tspan x="220" dy="18">seul change ce qui répond en dessous</tspan>
+  </text>
+</svg>

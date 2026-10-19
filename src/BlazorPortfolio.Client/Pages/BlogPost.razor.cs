@@ -21,9 +21,22 @@ namespace BlazorPortfolio.Client.Pages
         private string _htmlContent;
         private bool _notFound;
         private string _pageTitle = DefaultTitle;
+        private string _loadedSlug;
 
-        protected override async Task OnInitializedAsync()
+        protected override async Task OnParametersSetAsync()
         {
+            // Le routeur réutilise l'instance quand seul le slug change (lien d'un
+            // article vers un autre) : OnInitializedAsync ne serait pas rappelé.
+            if (Slug == _loadedSlug)
+            {
+                return;
+            }
+
+            _loadedSlug = Slug;
+            _htmlContent = null;
+            _notFound = false;
+            _pageTitle = DefaultTitle;
+
             // null couvre les deux cas refusés par le service : slug invalide (rejeté
             // par la garde anti-path-traversal) ou article inexistant (404).
             _htmlContent = await BlogService.GetArticleContentAsync(Slug);

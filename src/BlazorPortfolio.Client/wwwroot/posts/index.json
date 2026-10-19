@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "Slug": "alarme-dependances-a-sonne",
+      "Title": "Mon alarme de dépendances a sonné quatre jours avant la panne",
+      "Summary": "En juin, une advisory sur une dépendance transitive avait cassé ma veille en production. J'avais ajouté en réponse une CI déclenchée chaque jour, même sans commit. En octobre, elle a détecté une nouvelle faille, dans l'override que j'avais moi-même posé en juillet, quatre jours avant le prochain run de production. Le récit d'un dispositif simple qui a fait son travail, et de ce qu'il ne garantit pas.",
+      "PublishedAt": "2026-10-19",
+      "Tags": [
+        ".NET",
+        "CI/CD",
+        "Sécurité",
+        "NuGet"
+      ]
+    },
+    {
       "Slug": "premier-plugin-claude-code",
       "Title": "Mon premier plugin pour Claude Code : une jauge de contexte et de quota, pas à pas",
       "Summary": "Une longue tâche dans Claude Code s'arrête quand le contexte ou le quota s'épuise, et on le découvre après coup. J'ai écrit mon premier plugin pour mettre ces chiffres sous les yeux, au-dessus du champ de saisie. Voici comment, étape par étape : les types fouillés avant le code, le chemin absolu qui ne marchait que chez moi, les tests sans moteur, et le test qui avait tort.",

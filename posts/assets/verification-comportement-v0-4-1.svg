@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 450" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Résultat de la vérification du comportement de la version 0.4.1 sur une vraie fonctionnalité : trois promesses tenues, une tenue seulement en partie">
+  <desc>Tableau de bord en quatre cartes. Verdict de PR calculé, un rapport et un log par passe : tenu. Commande de PR qui annonce puis propose de lancer : tenu. Relance après un arrêt à la limite de tours : tenu, deux fois sur deux. Vérificateur d'interface qui libère le serveur d'aperçu : partiel, tenu seulement quand l'agent va au bout ; coupé à sa limite de tours, il a laissé le serveur ouvert et l'appel suivant a échoué.</desc>
+
+  <text x="460" y="38" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Ce que la 0.4.1 promettait, et ce qui s'est passé</text>
+  <text x="460" y="62" text-anchor="middle" fill="#6b7280" font-size="13">Une fonctionnalité entière de l'adoptant, du plan à la relecture de PR</text>
+
+  <!-- Carte 1 -->
+  <rect x="40" y="86" width="840" height="64" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="64" y="114" fill="#86efac" font-size="15" font-weight="700">Verdict de PR calculé</text>
+  <text x="64" y="136" fill="#dcfce7" font-size="12.5">Un rapport et un log par passe</text>
+  <rect x="772" y="104" width="86" height="28" rx="14" fill="#22c55e"/>
+  <text x="815" y="123" text-anchor="middle" fill="#052e16" font-size="13" font-weight="700">Tenu</text>
+
+  <!-- Carte 2 -->
+  <rect x="40" y="162" width="840" height="64" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="64" y="190" fill="#86efac" font-size="15" font-weight="700">Commande de PR</text>
+  <text x="64" y="212" fill="#dcfce7" font-size="12.5">Elle annonce ce qu'elle va faire, puis propose de lancer</text>
+  <rect x="772" y="180" width="86" height="28" rx="14" fill="#22c55e"/>
+  <text x="815" y="199" text-anchor="middle" fill="#052e16" font-size="13" font-weight="700">Tenu</text>
+
+  <!-- Carte 3 -->
+  <rect x="40" y="238" width="840" height="64" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="64" y="266" fill="#86efac" font-size="15" font-weight="700">Relance après un arrêt à la limite de tours</text>
+  <text x="64" y="288" fill="#dcfce7" font-size="12.5">Deux fois sur deux</text>
+  <rect x="772" y="256" width="86" height="28" rx="14" fill="#22c55e"/>
+  <text x="815" y="275" text-anchor="middle" fill="#052e16" font-size="13" font-weight="700">Tenu</text>
+
+  <!-- Carte 4 -->
+  <rect x="40" y="314" width="840" height="100" rx="12" fill="#78350f" stroke="#f59e0b" stroke-width="2"/>
+  <text x="64" y="342" fill="#fcd34d" font-size="15" font-weight="700">Serveur d'aperçu libéré par le vérificateur d'interface</text>
+  <text x="64" y="366" fill="#fef3c7" font-size="12.5">Tenu seulement quand l'agent va au bout.</text>
+  <text x="64" y="386" fill="#fef3c7" font-size="12.5">Coupé à sa limite de tours, il a laissé le serveur ouvert, et l'appel suivant a échoué.</text>
+  <rect x="772" y="332" width="86" height="28" rx="14" fill="#f59e0b"/>
+  <text x="815" y="351" text-anchor="middle" fill="#451a03" font-size="13" font-weight="700">Partiel</text>
+
+  <text x="460" y="440" text-anchor="middle" fill="#6b7280" font-size="12">Source : le journal de l'adoptant, lu après la publication du tag</text>
+</svg>

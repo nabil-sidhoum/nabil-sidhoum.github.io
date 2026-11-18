@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 604" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Cinq autres corrections de la version 0.4.1, chacune présentée avec ce qui se passait avant et ce que fait la version">
+  <desc>Diagramme avant et après en cinq lignes. Ligne 1 : un verdict de relecture de PR faux (AVERTISSEMENT pour un seul constat MOYEN) devient un verdict recalculé depuis les compteurs, avec l'écart signalé. Ligne 2 : un rapport écrasé par une deuxième passe le même jour devient un rapport par passe, nommé à la minute avec la branche et le commit. Ligne 3 : un hook de commit qui refusait CHANGELOG comme de l'anglais ne reconnaît plus qu'un mot entier, et son message invite à reformuler. Ligne 4 : un serveur d'aperçu oublié en écoute est remplacé par un contrôle de libération du port, noté dans le rapport. Ligne 5 : une commande de PR muette annonce maintenant que rien n'est publié et propose de lancer les commandes.</desc>
+
+  <text x="280" y="38" text-anchor="middle" fill="#3b82f6" font-size="21" font-weight="700">Cinq autres corrections de la 0.4.1</text>
+  <text x="145" y="84" text-anchor="middle" fill="#6b7280" font-size="14" font-weight="700">Avant</text>
+  <text x="415" y="84" text-anchor="middle" fill="#6b7280" font-size="14" font-weight="700">Avec la 0.4.1</text>
+
+  <!-- Connecteurs -->
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M272 146 H 280"/>
+    <path d="M272 244 H 280"/>
+    <path d="M272 342 H 280"/>
+    <path d="M272 440 H 280"/>
+    <path d="M272 538 H 280"/>
+  </g>
+  <g fill="#6b7280">
+    <path d="M289 146 l-9 -5 v10 z"/>
+    <path d="M289 244 l-9 -5 v10 z"/>
+    <path d="M289 342 l-9 -5 v10 z"/>
+    <path d="M289 440 l-9 -5 v10 z"/>
+    <path d="M289 538 l-9 -5 v10 z"/>
+  </g>
+
+  <!-- Ligne 1 -->
+  <rect x="20" y="104" width="250" height="84" rx="12" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+  <text x="36" y="130" fill="#fecaca" font-size="15" font-weight="700">Verdict de PR faux</text>
+  <text x="36" y="152" fill="#fee2e2" font-size="13">AVERTISSEMENT pour un seul</text>
+  <text x="36" y="170" fill="#fee2e2" font-size="13">constat MOYEN</text>
+  <rect x="290" y="104" width="250" height="84" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="306" y="130" fill="#86efac" font-size="15" font-weight="700">Verdict recalculé</text>
+  <text x="306" y="152" fill="#dcfce7" font-size="13">Depuis les compteurs,</text>
+  <text x="306" y="170" fill="#dcfce7" font-size="13">écart signalé</text>
+
+  <!-- Ligne 2 -->
+  <rect x="20" y="202" width="250" height="84" rx="12" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+  <text x="36" y="228" fill="#fecaca" font-size="15" font-weight="700">Rapport écrasé</text>
+  <text x="36" y="250" fill="#fee2e2" font-size="13">La deuxième passe du jour</text>
+  <text x="36" y="268" fill="#fee2e2" font-size="13">efface la première</text>
+  <rect x="290" y="202" width="250" height="84" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="306" y="228" fill="#86efac" font-size="15" font-weight="700">Un rapport par passe</text>
+  <text x="306" y="250" fill="#dcfce7" font-size="13">Nommé à la minute, avec</text>
+  <text x="306" y="268" fill="#dcfce7" font-size="13">branche et commit</text>
+
+  <!-- Ligne 3 -->
+  <rect x="20" y="300" width="250" height="84" rx="12" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+  <text x="36" y="326" fill="#fecaca" font-size="15" font-weight="700">Hook de commit trop strict</text>
+  <text x="36" y="348" fill="#fee2e2" font-size="13">« CHANGELOG » refusé comme</text>
+  <text x="36" y="366" fill="#fee2e2" font-size="13">de l'anglais</text>
+  <rect x="290" y="300" width="250" height="84" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="306" y="326" fill="#86efac" font-size="15" font-weight="700">Mot entier seulement</text>
+  <text x="306" y="348" fill="#dcfce7" font-size="13">Le message invite à</text>
+  <text x="306" y="366" fill="#dcfce7" font-size="13">reformuler, plus à contourner</text>
+
+  <!-- Ligne 4 -->
+  <rect x="20" y="398" width="250" height="84" rx="12" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+  <text x="36" y="424" fill="#fecaca" font-size="15" font-weight="700">Serveur d'aperçu oublié</text>
+  <text x="36" y="446" fill="#fee2e2" font-size="13">Il restait en écoute après</text>
+  <text x="36" y="464" fill="#fee2e2" font-size="13">la vérification</text>
+  <rect x="290" y="398" width="250" height="84" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="306" y="424" fill="#86efac" font-size="15" font-weight="700">Port contrôlé</text>
+  <text x="306" y="446" fill="#dcfce7" font-size="13">Libération vérifiée et notée</text>
+  <text x="306" y="464" fill="#dcfce7" font-size="13">dans le rapport</text>
+
+  <!-- Ligne 5 -->
+  <rect x="20" y="496" width="250" height="84" rx="12" fill="#7f1d1d" stroke="#ef4444" stroke-width="2"/>
+  <text x="36" y="522" fill="#fecaca" font-size="15" font-weight="700">Commande de PR muette</text>
+  <text x="36" y="544" fill="#fee2e2" font-size="13">Deux commandes rendues</text>
+  <text x="36" y="562" fill="#fee2e2" font-size="13">sans explication</text>
+  <rect x="290" y="496" width="250" height="84" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="306" y="522" fill="#86efac" font-size="15" font-weight="700">Intention annoncée</text>
+  <text x="306" y="544" fill="#dcfce7" font-size="13">Rien n'est publié, et elle</text>
+  <text x="306" y="562" fill="#dcfce7" font-size="13">propose de lancer</text>
+</svg>

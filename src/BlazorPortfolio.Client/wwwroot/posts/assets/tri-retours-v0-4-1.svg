@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 400" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Les 23 retours de l'adoptant répartis en trois destinations : 14 corrections dans la version 0.4.1, 8 chemins manquants reportés à la 0.5.0, 1 retour non traité">
+  <desc>Diagramme de tri. À gauche, une boîte « 23 retours de l'adoptant, écrits en douze jours ». Trois flèches en partent. La première mène à « 14 corrections, version 0.4.1, PATCH : un comportement promis qui n'était pas tenu ». La deuxième mène à « 8 chemins manquants, version 0.5.0, MINOR : maquettes, relecture du plan, ADR hors fonctionnalité ». La troisième mène à « 1 retour non traité : un seul cas, contourné en une phrase, repris s'il revient ».</desc>
+
+  <text x="460" y="40" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Trier les retours avant de corriger</text>
+  <text x="460" y="64" text-anchor="middle" fill="#6b7280" font-size="13">Une correction va dans le patch, un ajout attend la version mineure</text>
+
+  <!-- Source -->
+  <rect x="40" y="160" width="220" height="110" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="150" y="208" text-anchor="middle" fill="#cbd5e1" font-size="34" font-weight="700">23</text>
+  <text x="150" y="234" text-anchor="middle" fill="#cbd5e1" font-size="13">retours de l'adoptant</text>
+  <text x="150" y="254" text-anchor="middle" fill="#94a3b8" font-size="12">écrits en douze jours</text>
+
+  <!-- Connecteurs -->
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M260 200 C 320 200, 320 130, 384 130"/>
+    <path d="M260 215 H 384"/>
+    <path d="M260 230 C 320 230, 320 310, 384 310"/>
+  </g>
+  <g fill="#6b7280">
+    <path d="M392 130 l-9 -5 v10 z"/>
+    <path d="M392 215 l-9 -5 v10 z"/>
+    <path d="M392 310 l-9 -5 v10 z"/>
+  </g>
+
+  <!-- 0.4.1 -->
+  <rect x="396" y="92" width="484" height="76" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="420" y="124" fill="#22c55e" font-size="15" font-weight="700">14 corrections · version 0.4.1</text>
+  <text x="836" y="124" text-anchor="end" fill="#22c55e" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">PATCH</text>
+  <text x="420" y="150" fill="#dcfce7" font-size="12.5">Un comportement promis qui n'était pas tenu</text>
+
+  <!-- 0.5.0 -->
+  <rect x="396" y="177" width="484" height="76" rx="12" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="420" y="209" fill="#bfdbfe" font-size="15" font-weight="700">8 chemins manquants · version 0.5.0</text>
+  <text x="836" y="209" text-anchor="end" fill="#bfdbfe" font-size="12" font-weight="700" font-family="'JetBrains Mono', ui-monospace, monospace">MINOR</text>
+  <text x="420" y="235" fill="#dbeafe" font-size="12.5">Maquettes, relecture du plan, ADR hors fonctionnalité…</text>
+
+  <!-- Non traité -->
+  <rect x="396" y="272" width="484" height="76" rx="12" fill="#3f3f46" stroke="#71717a" stroke-width="2"/>
+  <text x="420" y="304" fill="#e4e4e7" font-size="15" font-weight="700">1 retour non traité, et écrit comme tel</text>
+  <text x="420" y="330" fill="#d4d4d8" font-size="12.5">Un seul cas, contourné en une phrase, repris s'il revient</text>
+
+  <text x="460" y="384" text-anchor="middle" fill="#6b7280" font-size="12">Règle de tri : la politique de versioning du template, écrite dans un ADR</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 360" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Chronologie de la version 0.4.1 : cinq lots mergés avec des gates verts, une vérification du texte en session neuve qui trouve deux écarts bloquants, un lot de plus, la publication et le tag, puis une vérification du comportement sur une vraie fonctionnalité de l'adoptant">
+  <desc>Frise de gauche à droite. Étape 1 : cinq lots mergés, tous les gates verts. Étape 2 : vérification du texte en session neuve, avant le tag ; elle trouve deux écarts bloquants que les gates laissaient passer, le hook de formatage muet et la relecture de PR non découpée. Étape 3 : un lot de plus corrige les deux écarts. Étape 4 : publication et tag v0.4.1. Étape 5 : vérification du comportement sur une fonctionnalité réelle de l'adoptant ; trois promesses tenues, une tenue seulement à moitié, renvoyée à la version 0.5.0.</desc>
+
+  <text x="460" y="40" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">Des gates verts, puis deux vérifications de plus</text>
+  <text x="460" y="64" text-anchor="middle" fill="#6b7280" font-size="13">Chacune en session neuve, qui constate et ne corrige rien</text>
+
+  <!-- Axe -->
+  <path d="M60 196 H 870" stroke="#6b7280" stroke-width="2"/>
+  <path d="M878 196 l-9 -5 v10 z" fill="#6b7280"/>
+
+  <g fill="#6b7280">
+    <circle cx="125" cy="196" r="6"/>
+    <circle cx="295" cy="196" r="6"/>
+    <circle cx="460" cy="196" r="6"/>
+    <circle cx="625" cy="196" r="6"/>
+    <circle cx="795" cy="196" r="6"/>
+  </g>
+
+  <!-- 1 -->
+  <rect x="50" y="96" width="150" height="80" rx="10" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="125" y="126" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="700">5 lots mergés</text>
+  <text x="125" y="148" text-anchor="middle" fill="#dcfce7" font-size="12">lints, smoke tests,</text>
+  <text x="125" y="165" text-anchor="middle" fill="#dcfce7" font-size="12">structure : verts</text>
+
+  <!-- 2 -->
+  <rect x="215" y="216" width="160" height="112" rx="10" fill="#451a03" stroke="#f59e0b" stroke-width="2"/>
+  <text x="295" y="242" text-anchor="middle" fill="#fbbf24" font-size="13.5" font-weight="700">Vérif. du texte</text>
+  <text x="295" y="262" text-anchor="middle" fill="#fef3c7" font-size="12">avant le tag</text>
+  <text x="295" y="286" text-anchor="middle" fill="#fef3c7" font-size="12">2 écarts bloquants</text>
+  <text x="295" y="304" text-anchor="middle" fill="#fef3c7" font-size="12">invisibles aux gates</text>
+
+  <!-- 3 -->
+  <rect x="385" y="96" width="150" height="80" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="126" text-anchor="middle" fill="#cbd5e1" font-size="14" font-weight="700">Un lot de plus</text>
+  <text x="460" y="148" text-anchor="middle" fill="#cbd5e1" font-size="12">hook de formatage,</text>
+  <text x="460" y="165" text-anchor="middle" fill="#cbd5e1" font-size="12">relecture de PR en lots</text>
+
+  <!-- 4 -->
+  <rect x="550" y="216" width="150" height="80" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="625" y="246" text-anchor="middle" fill="#bfdbfe" font-size="14" font-weight="700">Publication et tag</text>
+  <text x="625" y="270" text-anchor="middle" fill="#dbeafe" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">v0.4.1</text>
+
+  <!-- 5 -->
+  <rect x="715" y="86" width="160" height="94" rx="10" fill="#451a03" stroke="#f59e0b" stroke-width="2"/>
+  <text x="795" y="112" text-anchor="middle" fill="#fbbf24" font-size="13.5" font-weight="700">Vérif. du comportement</text>
+  <text x="795" y="132" text-anchor="middle" fill="#fef3c7" font-size="12">sur une vraie fonctionnalité</text>
+  <text x="795" y="152" text-anchor="middle" fill="#fef3c7" font-size="12">3 promesses tenues</text>
+  <text x="795" y="170" text-anchor="middle" fill="#fef3c7" font-size="12">1 à moitié → 0.5.0</text>
+
+  <text x="460" y="348" text-anchor="middle" fill="#6b7280" font-size="12">Les gates vérifient ce qui a été produit, les vérifications repartent de ce qui avait été promis</text>
+</svg>

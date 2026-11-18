@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "Slug": "template-claude-code-v0-4-1",
+      "Title": "Mon template Claude Code échouait en silence : ce que la version 0.4.1 corrige, et ce qu'elle repousse",
+      "Summary": "Un premier adoptant a écrit 23 retours sur mon template .NET pour Claude Code. La plupart décrivaient un outil qui se taisait : des agents arrêtés sans rapport, une relecture aveugle aux fichiers neufs, un hook qui ne formatait rien. Ce que la version 0.4.1 corrige, comment j'ai trié ce qui pouvait attendre la 0.5.0, et pourquoi des tests au vert ne m'ont pas suffi pour la livrer.",
+      "PublishedAt": "2026-11-18",
+      "Tags": [
+        "Claude Code",
+        "Agents IA",
+        ".NET",
+        "Qualité"
+      ]
+    },
+    {
       "Slug": "alarme-dependances-a-sonne",
       "Title": "Mon alarme de dépendances a sonné quatre jours avant la panne",
       "Summary": "En juin, une advisory sur une dépendance transitive avait cassé ma veille en production. J'avais ajouté en réponse une CI déclenchée chaque jour, même sans commit. En octobre, elle a détecté une nouvelle faille, dans l'override que j'avais moi-même posé en juillet, quatre jours avant le prochain run de production. Le récit d'un dispositif simple qui a fait son travail, et de ce qu'il ne garantit pas.",

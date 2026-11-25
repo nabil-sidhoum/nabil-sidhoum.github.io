@@ -75,11 +75,12 @@ Chapô introductif…
 
 ### Limites du rendu Markdown (Markdig)
 
-`BlogService` configure le pipeline avec `DisableHtml()` + `UsePipeTables()` :
+`BlogService` configure le pipeline avec `DisableHtml()` + `UsePipeTables()` + `UseMediaLinks()` :
 
 - **Aucun HTML brut** dans le `.md` : il est neutralisé (sécurité / cohérence CSP). Tout passe par la syntaxe Markdown.
 - **Tableaux GFM** (`| … | … |`) supportés.
 - Images : syntaxe Markdown standard `![alt](/posts/assets/...)` — jamais de balise `<img>`.
+- Vidéos : même syntaxe avec un `.mp4` self-hosted (`![titre](/posts/assets/film.mp4)`), rendue en `<video controls>`. Les hôtes externes sont vidés dans `BlogService` : une URL YouTube ou Vimeo ne produit pas d'iframe (`frame-src 'none'`). Compresser la vidéo avant de la committer.
 
 ---
 

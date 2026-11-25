@@ -96,6 +96,33 @@
     border-radius: 10px;
 }
 
+.prose ::deep video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.prose ::deep table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 1.4em;
+    font-size: 15px;
+    color: var(--fg-muted);
+}
+
+.prose ::deep th,
+.prose ::deep td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--rule);
+    text-align: left;
+    vertical-align: top;
+}
+
+.prose ::deep th {
+    color: var(--fg);
+    border-bottom-color: var(--rule-strong);
+}
+
 .prose ::deep hr {
     border: none;
     border-top: 1px solid var(--rule);
@@ -119,5 +146,17 @@
 @media (max-width: 767px) {
     .blog-post {
         padding: 80px 18px 48px;
+    }
+
+    /* Un tableau trop large défile dans la colonne au lieu de déborder de la page. */
+    .prose ::deep table {
+        display: block;
+        overflow-x: auto;
+        font-size: 14px;
+    }
+
+    .prose ::deep th,
+    .prose ::deep td {
+        padding: 8px 6px;
     }
 }

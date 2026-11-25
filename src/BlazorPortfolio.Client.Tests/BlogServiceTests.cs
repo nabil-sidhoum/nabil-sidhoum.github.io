@@ -171,5 +171,42 @@ namespace BlazorPortfolio.Client.Tests
             Assert.DoesNotContain("<script>", result);
             Assert.Contains("<h1", result);
         }
+
+        [Fact]
+        public async Task GetArticleContentAsync_RendUneVideo_QuandImageEstUnMp4()
+        {
+            // Arrange
+            MockHttpMessageHandler mockHttp = new MockHttpMessageHandler();
+            mockHttp.When("http://localhost/posts/avec-video.md")
+                    .Respond("text/markdown", "![Le film](/posts/assets/film.mp4)");
+            HttpClient http = new HttpClient(mockHttp) { BaseAddress = new Uri("http://localhost/") };
+            BlogService service = new BlogService(http);
+
+            // Act
+            string result = await service.GetArticleContentAsync("avec-video");
+
+            // Assert
+            Assert.Contains("<video", result);
+            Assert.Contains("controls", result);
+            Assert.Contains("src=\"/posts/assets/film.mp4\"", result);
+            Assert.DoesNotContain("<img", result);
+        }
+
+        [Fact]
+        public async Task GetArticleContentAsync_NeRendPasDIframe_QuandImageEstUneVideoExterne()
+        {
+            // Arrange
+            MockHttpMessageHandler mockHttp = new MockHttpMessageHandler();
+            mockHttp.When("http://localhost/posts/video-externe.md")
+                    .Respond("text/markdown", "![Le film](https://www.youtube.com/watch?v=mswPy5bt3TQ)");
+            HttpClient http = new HttpClient(mockHttp) { BaseAddress = new Uri("http://localhost/") };
+            BlogService service = new BlogService(http);
+
+            // Act
+            string result = await service.GetArticleContentAsync("video-externe");
+
+            // Assert
+            Assert.DoesNotContain("<iframe", result);
+        }
     }
 }

@@ -152,10 +152,10 @@ Les sessions ont tourné sur Claude Opus 5.5. Ses [tarifs](https://platform.clau
 
 | Session | Cache écrit | Cache lu | Sortie | Prix API |
 |---|---|---|---|---|
-| Prérequis | 53 k | 1,5 M | 12 k | 0,97 $ |
-| Plans et voix | 376 k | 22,9 M | 102 k | 9,61 $ |
-| Son et rendu | 206 k | 16,7 M | 87 k | 6,73 $ |
-| **Total** | **635 k** | **41,1 M** | **201 k** | **17,31 $** |
+| Prérequis | 53 k | 1,5 M | 12 k | 0,97 $ |
+| Plans et voix | 376 k | 22,9 M | 102 k | 9,61 $ |
+| Son et rendu | 206 k | 16,7 M | 87 k | 6,73 $ |
+| **Total** | **635 k** | **41,1 M** | **201 k** | **17,31 $** |
 
 Environ **17 dollars** pour une minute de vidéo, donc, hors taxes. L'entrée hors cache est négligeable (429 tokens). Le calcul de la voix, de la musique et des images n'y figure pas : il tourne sur ma machine.
 

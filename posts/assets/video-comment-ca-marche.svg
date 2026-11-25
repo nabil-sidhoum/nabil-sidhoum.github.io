@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" font-family="'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif" role="img" aria-label="D'une phrase à un MP4 : Claude Code suit les guides de la bibliothèque et écrit la narration, l'image et le son sous forme de code ; la machine calcule la voix, les images et le mixage, puis ffmpeg assemble">
+  <desc>Fonctionnement de lemo-opuscar. Une demande en une phrase arrive à Claude Code, qui suit les guides de la bibliothèque (réalisation, technique, style) et écrit trois choses : la narration dans lines.json, l'image dans film.js, le son dans music.py et mix.py. La machine exécute ensuite ce code. La voix est générée en premier, et Whisper en tire le début et la fin de chaque mot. Les mots calent le dessin : Chromium appelle render(t) image par image. Les traits dessinés calent le son : partition, bruitages et voix sont mixés. Enfin ffmpeg assemble l'image et le son en un MP4.</desc>
+
+  <text x="460" y="36" text-anchor="middle" fill="#3b82f6" font-size="20" font-weight="700">D'une phrase à un MP4, sans logiciel de montage</text>
+  <text x="460" y="60" text-anchor="middle" fill="#6b7280" font-size="13">L'agent écrit le code du film ; la machine l'exécute</text>
+
+  <!-- Demande -->
+  <rect x="280" y="82" width="360" height="46" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="110" text-anchor="middle" fill="#cbd5e1" font-size="13.5">Votre demande, en une phrase</text>
+  <path d="M460 128 V152" stroke="#6b7280" stroke-width="2" fill="none"/>
+  <path d="M460 156 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- Agent -->
+  <rect x="40" y="158" width="840" height="64" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="460" y="184" text-anchor="middle" fill="#60a5fa" font-size="14" font-weight="700">Claude Code écrit le film</text>
+  <text x="460" y="206" text-anchor="middle" fill="#cbd5e1" font-size="12.5">en suivant les guides de la bibliothèque : réalisation, technique, style</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M155 222 V246"/>
+    <path d="M460 222 V246"/>
+    <path d="M765 222 V246"/>
+  </g>
+  <path d="M155 250 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M460 250 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M765 250 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- Code écrit -->
+  <rect x="40" y="252" width="230" height="58" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="155" y="277" text-anchor="middle" fill="#cbd5e1" font-size="13.5">La narration</text>
+  <text x="155" y="297" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">lines.json</text>
+
+  <rect x="345" y="252" width="230" height="58" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="277" text-anchor="middle" fill="#cbd5e1" font-size="13.5">L'image</text>
+  <text x="460" y="297" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">film.js</text>
+
+  <rect x="650" y="252" width="230" height="58" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="765" y="277" text-anchor="middle" fill="#cbd5e1" font-size="13.5">Le son</text>
+  <text x="765" y="297" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="'JetBrains Mono', ui-monospace, monospace">music.py · mix.py</text>
+
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M155 310 V340"/>
+    <path d="M460 310 V340"/>
+    <path d="M765 310 V340"/>
+  </g>
+  <path d="M155 344 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M460 344 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M765 344 l-5 -9 h10 z" fill="#6b7280"/>
+
+  <!-- Exécution -->
+  <rect x="40" y="346" width="230" height="84" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="155" y="372" text-anchor="middle" fill="#60a5fa" font-size="13.5" font-weight="700">1. La voix est générée</text>
+  <text x="155" y="394" text-anchor="middle" fill="#cbd5e1" font-size="12.5">Whisper en tire le début</text>
+  <text x="155" y="412" text-anchor="middle" fill="#cbd5e1" font-size="12.5">et la fin de chaque mot</text>
+
+  <rect x="345" y="346" width="230" height="84" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="460" y="372" text-anchor="middle" fill="#60a5fa" font-size="13.5" font-weight="700">2. Le film est dessiné</text>
+  <text x="460" y="394" text-anchor="middle" fill="#cbd5e1" font-size="12.5">Chromium appelle <tspan font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12">render(t)</tspan></text>
+  <text x="460" y="412" text-anchor="middle" fill="#cbd5e1" font-size="12.5">image par image</text>
+
+  <rect x="650" y="346" width="230" height="84" rx="10" fill="#1e293b" stroke="#334155"/>
+  <text x="765" y="372" text-anchor="middle" fill="#60a5fa" font-size="13.5" font-weight="700">3. Le son est mixé</text>
+  <text x="765" y="394" text-anchor="middle" fill="#cbd5e1" font-size="12.5">voix, partition et bruitages</text>
+  <text x="765" y="412" text-anchor="middle" fill="#cbd5e1" font-size="12.5">calés sur le dessin</text>
+
+  <!-- Calages -->
+  <g stroke="#3b82f6" stroke-width="2" fill="none">
+    <path d="M270 388 H337"/>
+    <path d="M575 388 H642"/>
+  </g>
+  <path d="M343 388 l-9 -5 v10 z" fill="#3b82f6"/>
+  <path d="M648 388 l-9 -5 v10 z" fill="#3b82f6"/>
+  <text x="307" y="378" text-anchor="middle" fill="#3b82f6" font-size="12.5" font-weight="700">mots</text>
+  <text x="612" y="378" text-anchor="middle" fill="#3b82f6" font-size="12.5" font-weight="700">traits</text>
+
+  <!-- Assemblage -->
+  <g stroke="#6b7280" stroke-width="2" fill="none">
+    <path d="M460 430 V466"/>
+    <path d="M765 430 V494 H648"/>
+  </g>
+  <path d="M460 470 l-5 -9 h10 z" fill="#6b7280"/>
+  <path d="M642 494 l9 -5 v10 z" fill="#6b7280"/>
+
+  <rect x="280" y="472" width="360" height="46" rx="10" fill="#172554" stroke="#3b82f6" stroke-width="2"/>
+  <text x="460" y="500" text-anchor="middle" fill="#cbd5e1" font-size="13.5"><tspan fill="#60a5fa" font-weight="700">4. ffmpeg assemble</tspan> l'image et le son : le MP4</text>
+
+  <text x="460" y="546" text-anchor="middle" fill="#6b7280" font-size="12.5">Les étapes 1 à 4 tournent sur ma machine, sans appel à un modèle distant</text>
+</svg>

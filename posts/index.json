@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "Slug": "video-lemo-opuscar-claude-code",
+      "Title": "Une vidéo d'une minute entièrement codée par Claude Code : prérequis, résultat et prix",
+      "Summary": "J'ai essayé lemo-opuscar, une bibliothèque qui fait réaliser un film à un agent de code, pour expliquer le workflow de mon template .NET. Les prérequis, la sûreté du plugin, une voix Kokoro clonée avec Qwen sans carte graphique, la vidéo obtenue, ses péripéties, et les 17 dollars qu'elle aurait coûté à l'API.",
+      "PublishedAt": "2026-11-25",
+      "Tags": [
+        "Claude Code",
+        "Agents IA",
+        "Vidéo",
+        "Tutoriel"
+      ]
+    },
+    {
       "Slug": "template-claude-code-v0-4-1",
       "Title": "Mon template Claude Code échouait en silence : ce que la version 0.4.1 corrige, et ce qu'elle repousse",
       "Summary": "Un premier adoptant a écrit 23 retours sur mon template .NET pour Claude Code. La plupart décrivaient un outil qui se taisait : des agents arrêtés sans rapport, une relecture aveugle aux fichiers neufs, un hook qui ne formatait rien. Ce que la version 0.4.1 corrige, comment j'ai trié ce qui pouvait attendre la 0.5.0, et pourquoi des tests au vert ne m'ont pas suffi pour la livrer.",

@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BlazorPortfolio.Client.Models;
 using Markdig;
+using Markdig.Extensions.MediaLinks;
 
 namespace BlazorPortfolio.Client.Services
 {
@@ -20,9 +21,11 @@ namespace BlazorPortfolio.Client.Services
         // DisableHtml : le Markdown des articles ne peut pas injecter de HTML brut
         // (protection anti-XSS, cohérente avec la CSP stricte du site).
         // UsePipeTables : active le rendu des tableaux GFM (non géré par CommonMark seul).
+        // UseMediaLinks : une image Markdown vers un .mp4 devient une balise <video> self-hosted.
         private static readonly MarkdownPipeline _markdownPipeline = new MarkdownPipelineBuilder()
             .DisableHtml()
             .UsePipeTables()
+            .UseMediaLinks(CreateMediaOptions())
             .Build();
 
         private readonly HttpClient _httpClient;
@@ -75,6 +78,20 @@ namespace BlazorPortfolio.Client.Services
                 // Article absent (404) → null : la page affiche son état « introuvable ».
                 return null;
             }
+        }
+
+        private static MediaOptions CreateMediaOptions()
+        {
+            // Dimensions vides : la taille de la vidéo est laissée au CSS.
+            MediaOptions options = new MediaOptions
+            {
+                Width = string.Empty,
+                Height = string.Empty
+            };
+
+            // Aucun hôte externe (YouTube, Vimeo…) : pas d'iframe, cohérent avec frame-src 'none'.
+            options.Hosts.Clear();
+            return options;
         }
 
         private sealed class BlogIndex
